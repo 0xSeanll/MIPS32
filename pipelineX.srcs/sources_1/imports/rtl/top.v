@@ -1,0 +1,38 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date: 2017/11/07 13:50:53
+// Design Name: 
+// Module Name: top
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
+
+
+module top(
+	input wire clk,rst,
+	output wire[31:0] writedata,dataadr,
+	output wire memwrite
+    );
+	reg clkIM = 0;
+	always @(clk) begin
+		#1 clkIM <= clk;
+	end
+	
+	wire[31:0] pc,instr,readdata;
+
+	mips mips(clk,rst,pc,instr,memwrite,dataadr,writedata,readdata);
+	inst_mem imem(clkIM,pc[31:0],instr);
+	data_mem dmem(clk,{4{memwrite}},dataadr,writedata,readdata);
+endmodule
