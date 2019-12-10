@@ -118,7 +118,6 @@ module aludec (
 				`EXE_SW:		alucontrol	<=	`EXE_SW_OP;
 				`EXE_SWL:		alucontrol	<=	`EXE_SWL_OP;
 				`EXE_SWR:		alucontrol	<=	`EXE_SWR_OP;
-				`EXE_SYNC:		alucontrol	<=	`EXE_SYNC_OP;
 				`EXE_XORI:		alucontrol	<=	`EXE_XORI_OP;
 				default: begin
 					$display("[ALUDEC] op = %2d", op);
@@ -147,6 +146,7 @@ module aludec (
 				`EXE_MTLO:		alucontrol	<=	`EXE_MTLO_OP;
 				`EXE_JALR:		alucontrol	<=	`EXE_JALR_OP;
 				`EXE_JR:		alucontrol	<=	`EXE_JR_OP;
+				`EXE_SYNC:		alucontrol	<=	`EXE_SYNC_OP;				
 				default: begin
 					$display("[ALUDEC] funct = %2d", funct);
 //                	$stop;
@@ -168,15 +168,27 @@ module maindec(
     always @ (*)
     	if (op != 0)
 			case (op)
-					`EXE_ORI: 	controls <= `ARITH_IMME_CTRL;
-					`EXE_LUI: 	controls <= `ARITH_IMME_CTRL;
-					`EXE_ANDI:	controls <= `ARITH_IMME_CTRL;
-					`EXE_XORI:	controls <= `ARITH_IMME_CTRL;
+				`EXE_ORI, `EXE_LUI, `EXE_ANDI, `EXE_XORI:
+					controls <= `LOGIC_IMME_CTRL;
+
 				default: begin
-					$display("OP = %2d", op);
+					$display("[MAINDEC] OP = %2d", op);
 //					$stop;
 				end
 			endcase
-		else controls <= `ARITH_R_CTRL;
+		else
+			case (funct)
+				`EXE_OR, `EXE_AND, `EXE_XOR, `EXE_NOR:
+					controls <= `LOGIC_R_CTRL;
+				`EXE_SLL, `EXE_SRL, `EXE_SRA, `EXE_SLLV, `EXE_SRLV, `EXE_SRAV:
+					controls <= `SHIFT_CTRL;
+				`EXE_SYNC:
+					controls <= `SYNC_CTRL;
+				default: begin
+					$display("[MAINDEC] funct = %2d", funct);
+//					$stop;
+				end
+			endcase 
+//		controls <= `ARITH_R_CTRL;
 				
 endmodule

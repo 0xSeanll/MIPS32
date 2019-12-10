@@ -57,6 +57,7 @@ module datapath(
 	wire flushD,stallD; 
 	wire [31:0] signimmD,signimmshD;
 	wire [31:0] srcaD,srca2D,srcbD,srcb2D;
+	wire [4:0] saD;
 	//execute stage
 	wire [1:0] forwardaE,forwardbE;
 	wire [4:0] rsE,rtE,rdE;
@@ -64,6 +65,7 @@ module datapath(
 	wire [31:0] signimmE;
 	wire [31:0] srcaE,srca2E,srcbE,srcb2E,srcb3E;
 	wire [31:0] aluoutE;
+	wire [4:0] saE;
 	//mem stage
 	wire [4:0] writeregM;
 	//writeback stage
@@ -128,6 +130,7 @@ module datapath(
 	mux2 #(32) forwardamux(srcaD,aluoutM,forwardaD,srca2D);
 	mux2 #(32) forwardbmux(srcbD,aluoutM,forwardbD,srcb2D);
 	eqcmp comp(srca2D,srcb2D,equalD);
+	assign saD = instrD[10:6];
 	assign opD = instrD[31:26];
 	assign functD = instrD[5:0];
 	assign rsD = instrD[25:21];
@@ -141,11 +144,11 @@ module datapath(
 	floprc #(5) r4E(clk,rst,flushE,rsD,rsE);
 	floprc #(5) r5E(clk,rst,flushE,rtD,rtE);
 	floprc #(5) r6E(clk,rst,flushE,rdD,rdE);
+	floprc #(5) r7E(clk, rst, flushE, saD, saE);
 	mux3 #(32) forwardaemux(srcaE,resultW,aluoutM,forwardaE,srca2E);
 	mux3 #(32) forwardbemux(srcbE,resultW,aluoutM,forwardbE,srcb2E);
 	mux2 #(32) srcbmux(srcb2E,signimmE,alusrcE,srcb3E);
-	wire [4:0] sa;
-	ALU alu(srca2E,srcb3E,alucontrolE,sa,aluoutE);
+	ALU alu(srca2E,srcb3E,alucontrolE,saE,aluoutE);
 	mux2 #(5) wrmux(rtE,rdE,regdstE,writeregE);
 
 	//mem stage

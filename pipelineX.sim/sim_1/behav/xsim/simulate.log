@@ -10,17 +10,15 @@ Block Memory Generator module testbench.dut.dmem.inst.native_mem_mapped_module.b
 [ALU] op =  0
 [ALU] op =  0
 [ALU] op =  0
-[ALU] op = 124
-[ALU] op = 124
+[ALU] Hit SLL
 [ALU] Hit LUI
 [ALU] Hit ORI
-[ALU] Hit OR
-[ALU] Hit ANDI
-[ALU] Hit AND
-[ALU] Hit XORI
-[ALU] Hit XOR
-[ALU] Hit NOR
-[ALU] op = 124
-[ALU] op = 124
-[ALU] op = 124
-[ALU] op = 124
+[ALU] Hit SYNC
+[ALU] Hit SLL
+[ALU] Hit SLLV
+[ALU] Hit SRL
+[ALU] Hit SRLV
+[ALU] Hit SLL
+[ALU] Hit SRA
+[ALU] Hit SRAV
+[ALU] Hit SLL

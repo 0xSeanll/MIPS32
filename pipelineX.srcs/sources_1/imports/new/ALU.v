@@ -29,14 +29,21 @@ module ALU(
     );
     always @(*) begin
         case(aluop)
-        	`EXE_AND_OP:	result	<=	a & b;
+        	`EXE_AND_OP,
 			`EXE_ANDI_OP:	result	<=	a & b;
         	`EXE_LUI_OP:	result	<=	(b << 16);
         	`EXE_NOR_OP:	result	<=	~ (a | b);
-			`EXE_OR_OP:		result	<=	a | b;
+			`EXE_OR_OP,
 			`EXE_ORI_OP:	result	<=	a | b;
-			`EXE_XOR_OP:	result	<=	a ^ b;
+			`EXE_XOR_OP,
 			`EXE_XORI_OP:	result	<=	a ^ b;
+			`EXE_SLLV_OP:	result	<=	b << a[4:0];
+			`EXE_SRLV_OP:	result	<=	b >> a[4:0];
+			`EXE_SRAV_OP:	result	<=	({32{b[31]}} << (6'd32-{1'b0, a[4:0]})) | b >> a[4:0];
+			`EXE_SLL_OP:	result	<= 	b << sa;
+			`EXE_SRL_OP:	result	<=	b >> sa;
+			`EXE_SRA_OP:	result	<=	({32{b[31]}} << (6'd32 - {1'b0, sa})) | b >> sa;
+			`EXE_SYNC_OP:	result	<=	0;
 			default: begin
 				$display("[ALU] op = %2d", aluop);
 //				$stop;
@@ -56,6 +63,15 @@ module ALU(
 			`EXE_ORI_OP:	$display("[ALU] Hit ORI");
 			`EXE_XOR_OP:	$display("[ALU] Hit XOR");
 			`EXE_XORI_OP:	$display("[ALU] Hit XORI");
+			
+			`EXE_SLLV_OP:	$display("[ALU] Hit SLLV");
+			`EXE_SRLV_OP:	$display("[ALU] Hit SRLV");
+			`EXE_SRAV_OP:	$display("[ALU] Hit SRAV");
+			`EXE_SLL_OP:	$display("[ALU] Hit SLL");
+			`EXE_SRL_OP:	$display("[ALU] Hit SRL");
+			`EXE_SRA_OP:	$display("[ALU] Hit SRA");
+			
+			`EXE_SYNC_OP:	$display("[ALU] Hit SYNC");			
 			default: begin
 				$display("[ALU] op = %2d", aluop);
 //				$stop;

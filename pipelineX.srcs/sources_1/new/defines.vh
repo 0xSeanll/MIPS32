@@ -265,13 +265,25 @@
 
 // MEM_branch_alusrc_regdst_regwrite_J
 
-`define ARITH_R_CTRL    11'b000_0_0_1_1_0000
+//`define MFHI_CTRL		11'b010_0_0_0_0
+
+`define SYNC_CTRL		11'b000_0_0_0_0_0000
+
+`define SHIFT_CTRL		11'b000_0_0_1_1_0000
+`define EXE_SLL_CTRL	11'b000_0_0_1_1_0000
+`define EXE_SRL_CTRL	11'b000_0_0_1_1_0000
+`define EXE_SRA_CTRL	11'b000_0_0_1_1_0000
+`define EXE_SLLV_CTRL	11'b000_0_0_1_1_0000
+`define EXE_SRLV_CTRL	11'b000_0_0_1_1_0000
+`define EXE_SRAV_CTRL	11'b000_0_0_1_1_0000
+
+`define LOGIC_R_CTRL    11'b000_0_0_1_1_0000
 `define EXE_AND_CTRL    11'b000_0_0_1_1_0000
 `define EXE_OR_CTRL     11'b000_0_0_1_1_0000
 `define EXE_NOR_CTRL    11'b000_0_0_1_1_0000
 `define EXE_XOR_CTRL    11'b000_0_0_1_1_0000
 
-`define ARITH_IMME_CTRL 11'b000_0_1_0_1_0000
+`define LOGIC_IMME_CTRL 11'b000_0_1_0_1_0000
 `define EXE_ANDI_CTRL   11'b000_0_1_0_1_0000
 `define EXE_ORI_CTRL    11'b000_0_1_0_1_0000
 `define EXE_XORI_CTRL   11'b000_0_1_0_1_0000
