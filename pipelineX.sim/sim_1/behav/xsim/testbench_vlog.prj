@@ -15,6 +15,7 @@ verilog xil_defaultlib "C:/Users/a/Desktop/pipelineX/pipelineX.srcs/sources_1/ne
 "../../../../pipelineX.srcs/sources_1/new/flopenrc.v" \
 "../../../../pipelineX.srcs/sources_1/new/flopr.v" \
 "../../../../pipelineX.srcs/sources_1/new/floprc.v" \
+"../../../../pipelineX.srcs/sources_1/imports/rtl/hilo_reg.v" \
 "../../../../pipelineX.srcs/sources_1/imports/rtl/mips.v" \
 "../../../../pipelineX.srcs/sources_1/imports/new/mux2.v" \
 "../../../../pipelineX.srcs/sources_1/imports/new/mux3.v" \

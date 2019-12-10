@@ -25,11 +25,17 @@ module HazardUnit(
     input wire [4:0] WriteRegE, WriteRegM, WriteRegW,
     input wire MemtoRegE, MemtoRegM,
     input wire RegWriteE, RegWriteM, RegWriteW,
+    input wire writehiloM, writehiloW,
     input wire BranchD,
     output reg [1:0] ForwardAE, ForwardBE,
     output reg ForwardAD, ForwardBD,
+    output wire [1:0] fwdhiloE,
     output wire STALLF, STALLD, FLUSHE
     );
+    assign fwdhiloE = 	writehiloM ? 2'b01:
+    					writehiloW ? 2'b10: 
+    					/*else*/     2'b00;
+    					
     wire lwStall, branchStall;
     assign lwStall = MemtoRegE && ((RsD == RtE) || (RtD == RtE));
 	assign branchStall = (BranchD && RegWriteE && (WriteRegE == RsD || WriteRegE == RtD)) ||

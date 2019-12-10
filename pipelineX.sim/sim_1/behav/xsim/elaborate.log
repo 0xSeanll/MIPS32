@@ -9,15 +9,16 @@ Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
 Compiling module xil_defaultlib.maindec
 Compiling module xil_defaultlib.aludec
-Compiling module xil_defaultlib.floprc(N=13)
+Compiling module xil_defaultlib.floprc(N=14)
+Compiling module xil_defaultlib.flopr(N=4)
 Compiling module xil_defaultlib.flopr(N=3)
-Compiling module xil_defaultlib.flopr(N=2)
 Compiling module xil_defaultlib.controller
 Compiling module xil_defaultlib.HazardUnit
 Compiling module xil_defaultlib.mux2
 Compiling module xil_defaultlib.flopenr
 Compiling module xil_defaultlib.adder
 Compiling module xil_defaultlib.flopenrc
+Compiling module xil_defaultlib.hilo_reg
 Compiling module xil_defaultlib.Register
 Compiling module xil_defaultlib.SignExtend
 Compiling module xil_defaultlib.ShiftLeft2

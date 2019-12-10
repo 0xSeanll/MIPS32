@@ -23,9 +23,11 @@
 
 module ALU(
     input wire [31:0] a, b,
+    input wire [31:0] hi, lo,
     input wire [7:0] aluop,
     input wire [4:0] sa,
-    output reg [31:0] result
+    output reg [31:0] result,
+    output reg [31:0] hi_o, lo_o
     );
     always @(*) begin
         case(aluop)
@@ -44,6 +46,16 @@ module ALU(
 			`EXE_SRL_OP:	result	<=	b >> sa;
 			`EXE_SRA_OP:	result	<=	({32{b[31]}} << (6'd32 - {1'b0, sa})) | b >> sa;
 			`EXE_SYNC_OP:	result	<=	0;
+			`EXE_MFHI_OP:	result	<=	hi;
+			`EXE_MFLO_OP:	result	<=	lo;
+			`EXE_MTHI_OP: 	begin
+				hi_o	<=	a;
+				lo_o	<=	lo;
+			end
+			`EXE_MTLO_OP:begin
+				hi_o	<= hi;
+				lo_o	<= a;
+			end
 			default: begin
 				$display("[ALU] op = %2d", aluop);
 //				$stop;
@@ -71,7 +83,12 @@ module ALU(
 			`EXE_SRL_OP:	$display("[ALU] Hit SRL");
 			`EXE_SRA_OP:	$display("[ALU] Hit SRA");
 			
-			`EXE_SYNC_OP:	$display("[ALU] Hit SYNC");			
+			`EXE_SYNC_OP:	$display("[ALU] Hit SYNC");	
+			
+			`EXE_MFHI_OP:	$display("[ALU] Hit MFHI");
+			`EXE_MFLO_OP:	$display("[ALU] Hit MFLO");
+			`EXE_MTHI_OP:	$display("[ALU] Hit MTHI");
+			`EXE_MTLO_OP:	$display("[ALU] Hit MTLO");
 			default: begin
 				$display("[ALU] op = %2d", aluop);
 //				$stop;

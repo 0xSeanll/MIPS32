@@ -25,7 +25,6 @@ module hilo_reg(
 	input wire [31:0] hi, lo,
 	output reg [31:0] hi_o, lo_o
     );
-	
 	always @(negedge clk) begin
 		if (rst) begin
 			hi_o <= 0;

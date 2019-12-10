@@ -31,19 +31,21 @@ module controller(
 	
 	//execute stage
 	input wire flushE,
-	output wire memtoregE, alusrcE,
-	output wire regdstE, regwriteE,	
+	output wire memtoregE,
+	output wire alusrcE,
+	output wire regdstE, regwriteE,
 	output wire [7:0] alucontrolE,
 
 	//mem stage
-	output wire memtoregM, memwriteM, regwriteM,
+	output wire memtoregM, memwriteM, regwriteM, writehiloM,
 	//write back stage
-	output wire memtoregW, regwriteW
+	output wire memtoregW, regwriteW, writehiloW
 
     );
 	//decode stage
-	wire [1:0] aluopD;
-	wire memtoregD, memwriteD, alusrcD, regdstD, regwriteD;
+	wire memtoregD, memwriteD, regdstD, regwriteD;
+	wire writehiloD, writehiloE;
+	wire alusrcD;
 	wire [7:0] alucontrolD;
 
 	//execute stage
@@ -54,7 +56,7 @@ module controller(
     	opD, functD, rt,
 		memtoregD, memen, memwriteD,
 		branchD, alusrcD,
-		regdstD, regwriteD,
+		regdstD, regwriteD, writehiloD,
 		jumpD, jal, jr, bal
 	);
 	aludec ad(opD,functD,alucontrolD);
@@ -62,20 +64,20 @@ module controller(
 	assign pcsrcD = branchD & equalD;
 
 	//pipeline registers
-	floprc #(13) regE(
+	floprc #(14) regE(
 		clk, rst, flushE,
-		{memtoregD,memwriteD,alusrcD,regdstD,regwriteD,alucontrolD},
-		{memtoregE,memwriteE,alusrcE,regdstE,regwriteE,alucontrolE}
+		{memtoregD,memwriteD,alusrcD,regdstD,regwriteD,writehiloD,alucontrolD},
+		{memtoregE,memwriteE,alusrcE,regdstE,regwriteE,writehiloE,alucontrolE}
 	);
-	flopr #(3) regM(
+	flopr #(4) regM(
 		clk, rst,
-		{memtoregE,memwriteE,regwriteE},
-		{memtoregM,memwriteM,regwriteM}
+		{memtoregE,memwriteE,regwriteE,writehiloE},
+		{memtoregM,memwriteM,regwriteM,writehiloM}
 	);
-	flopr #(2) regW(
+	flopr #(3) regW(
 		clk, rst,
-		{memtoregM,regwriteM},
-		{memtoregW,regwriteW}
+		{memtoregM,regwriteM,writehiloM},
+		{memtoregW,regwriteW,writehiloW}
 	);
 endmodule
 
@@ -140,10 +142,6 @@ module aludec (
 				`EXE_MFLO:		alucontrol	<=	`EXE_MFLO_OP;
 				`EXE_MTHI:		alucontrol	<=	`EXE_MTHI_OP;
 				`EXE_MTLO:		alucontrol	<=	`EXE_MTLO_OP;
-				`EXE_MFHI:		alucontrol	<=	`EXE_MFHI_OP;
-				`EXE_MFLO:		alucontrol	<=	`EXE_MFLO_OP;
-				`EXE_MTHI:		alucontrol	<=	`EXE_MTHI_OP;
-				`EXE_MTLO:		alucontrol	<=	`EXE_MTLO_OP;
 				`EXE_JALR:		alucontrol	<=	`EXE_JALR_OP;
 				`EXE_JR:		alucontrol	<=	`EXE_JR_OP;
 				`EXE_SYNC:		alucontrol	<=	`EXE_SYNC_OP;				
@@ -159,18 +157,18 @@ module maindec(
     input [5:0] op, funct,
     input [4:0] rt,
 	output memtoreg, memen, memwrite,
-	output branch, alusrc,
-	output regdst, regwrite,
+	output branch,
+	output alusrc,
+	output regdst, regwrite, writehilo,
 	output jump, jal, jr, bal
     );
-    reg [10:0] controls;
-    assign {memtoreg, memen, memwrite, branch, alusrc, regdst, regwrite, jump, jal, jr, bal} = controls;
+    reg [11:0] controls;
+    assign {memtoreg, memen, memwrite, branch, alusrc, regdst, regwrite, writehilo, jump, jal, jr, bal} = controls;
     always @ (*)
     	if (op != 0)
 			case (op)
 				`EXE_ORI, `EXE_LUI, `EXE_ANDI, `EXE_XORI:
 					controls <= `LOGIC_IMME_CTRL;
-
 				default: begin
 					$display("[MAINDEC] OP = %2d", op);
 //					$stop;
@@ -184,6 +182,10 @@ module maindec(
 					controls <= `SHIFT_CTRL;
 				`EXE_SYNC:
 					controls <= `SYNC_CTRL;
+				`EXE_MTHI, `EXE_MTLO:
+					controls <= `MT_CTRL;
+				`EXE_MFHI, `EXE_MFLO:
+					controls <= `MF_CTRL;
 				default: begin
 					$display("[MAINDEC] funct = %2d", funct);
 //					$stop;

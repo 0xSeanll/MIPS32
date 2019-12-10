@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Tue Dec 10 10:46:16 2019
+# Process ID: 15224
+# Current directory: C:/Users/a/Desktop/pipelineX
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent16300 C:\Users\a\Desktop\pipelineX\pipelineX.xpr
+# Log file: C:/Users/a/Desktop/pipelineX/vivado.log
+# Journal file: C:/Users/a/Desktop/pipelineX\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/a/Desktop/pipelineX/pipelineX.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.3/data/ip'.
+WARNING: [IP_Flow 19-3664] IP 'inst_mem' generated file not found 'c:/Users/a/Desktop/pipelineX/pipelineX.srcs/sources_1/ip/inst_mem/inst_mem_sim_netlist.v'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'inst_mem' generated file not found 'c:/Users/a/Desktop/pipelineX/pipelineX.srcs/sources_1/ip/inst_mem/inst_mem_sim_netlist.vhdl'. Please regenerate to continue.
+open_project: Time (s): cpu = 00:00:23 ; elapsed = 00:00:12 . Memory (MB): peak = 658.230 ; gain = 103.184
+update_compile_order -fileset sources_1
+exit
+INFO: [Common 17-206] Exiting Vivado at Tue Dec 10 12:24:54 2019...

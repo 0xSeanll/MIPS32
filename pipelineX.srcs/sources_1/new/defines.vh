@@ -261,31 +261,41 @@
 // `define CP0_REG_PRID    5'b01111         //Ö»¶Á
 // `define CP0_REG_CONFIG    5'b10000       //Ö»¶Á
 
-// assign {memtoreg, memen, memwrite, branch, alusrc, regdst, regwrite, jump, jal, jr, bal} = control;
 
-// MEM_branch_alusrc_regdst_regwrite_J
+//memtoreg, memen, memwrite
+//branch
+//alusrc
+//regdst, regwrite, writehilo
+//jump, jal, jr, bal
 
-//`define MFHI_CTRL		11'b010_0_0_0_0
-
-`define SYNC_CTRL		11'b000_0_0_0_0_0000
-
-`define SHIFT_CTRL		11'b000_0_0_1_1_0000
-`define EXE_SLL_CTRL	11'b000_0_0_1_1_0000
-`define EXE_SRL_CTRL	11'b000_0_0_1_1_0000
-`define EXE_SRA_CTRL	11'b000_0_0_1_1_0000
-`define EXE_SLLV_CTRL	11'b000_0_0_1_1_0000
-`define EXE_SRLV_CTRL	11'b000_0_0_1_1_0000
-`define EXE_SRAV_CTRL	11'b000_0_0_1_1_0000
-
-`define LOGIC_R_CTRL    11'b000_0_0_1_1_0000
-`define EXE_AND_CTRL    11'b000_0_0_1_1_0000
-`define EXE_OR_CTRL     11'b000_0_0_1_1_0000
-`define EXE_NOR_CTRL    11'b000_0_0_1_1_0000
-`define EXE_XOR_CTRL    11'b000_0_0_1_1_0000
-
-`define LOGIC_IMME_CTRL 11'b000_0_1_0_1_0000
-`define EXE_ANDI_CTRL   11'b000_0_1_0_1_0000
-`define EXE_ORI_CTRL    11'b000_0_1_0_1_0000
-`define EXE_XORI_CTRL   11'b000_0_1_0_1_0000
-`define EXE_LUI_CTRL    11'b000_0_1_0_1_0000
+// MEM_branch_alusrc_REG_J
+`define MF_CTRL			12'b000_0_0_110_0000
+`define MFHI_CTRL		12'b000_0_0_110_0000
+`define MFLO_CTRL		12'b000_0_0_110_0000
+//*******************************************
+`define MT_CTRL			12'b000_0_0_001_0000
+`define MTHI_CTRL		12'b000_0_0_001_0000
+`define MTLO_CTRL		12'b000_0_0_001_0000
+//******************************************
+`define SYNC_CTRL		12'b000_0_0_000_0000
+//******************************************
+`define SHIFT_CTRL		12'b000_0_0_110_0000
+`define EXE_SLL_CTRL	12'b000_0_0_110_0000
+`define EXE_SRL_CTRL	12'b000_0_0_110_0000
+`define EXE_SRA_CTRL	12'b000_0_0_110_0000
+`define EXE_SLLV_CTRL	12'b000_0_0_110_0000
+`define EXE_SRLV_CTRL	12'b000_0_0_110_0000
+`define EXE_SRAV_CTRL	12'b000_0_0_110_0000
+//******************************************
+`define LOGIC_R_CTRL    12'b000_0_0_110_0000
+`define EXE_AND_CTRL    12'b000_0_0_110_0000
+`define EXE_OR_CTRL     12'b000_0_0_110_0000
+`define EXE_NOR_CTRL    12'b000_0_0_110_0000
+`define EXE_XOR_CTRL    12'b000_0_0_110_0000
+//******************************************
+`define LOGIC_IMME_CTRL 12'b000_0_1_010_0000
+`define EXE_ANDI_CTRL   12'b000_0_1_010_0000
+`define EXE_ORI_CTRL    12'b000_0_1_010_0000
+`define EXE_XORI_CTRL   12'b000_0_1_010_0000
+`define EXE_LUI_CTRL    12'b000_0_1_010_0000
 
