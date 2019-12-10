@@ -89,7 +89,7 @@ module aludec (
 		if (op != 0)
 			case (op) 
 				`EXE_ADDI:		alucontrol	<=	`EXE_ADDI_OP;
-				`EXE_ADDU:		alucontrol	<=	`EXE_ADDU_OP;
+				`EXE_ADDIU:		alucontrol	<=	`EXE_ADDIU_OP;
 				`EXE_ANDI:		alucontrol	<=	`EXE_ANDI_OP;
 				`EXE_BEQ:		alucontrol	<=	`EXE_BEQ_OP;
 				`EXE_BGEZ:		alucontrol	<=	`EXE_BGEZ_OP;
@@ -128,6 +128,12 @@ module aludec (
 			endcase
 		else
 			case(funct) // RTYPE
+				`EXE_SLT:		alucontrol	<=	`EXE_SLT_OP;
+				`EXE_SLTU:		alucontrol	<=	`EXE_SLTU_OP;
+				`EXE_ADD:		alucontrol	<=	`EXE_ADD_OP;
+				`EXE_ADDU:		alucontrol	<=	`EXE_ADDU_OP;
+				`EXE_SUB:		alucontrol	<=	`EXE_SUB_OP;
+				`EXE_SUBU:		alucontrol	<=	`EXE_SUBU_OP;
 				`EXE_AND:		alucontrol	<=	`EXE_AND_OP;
 				`EXE_NOR:		alucontrol	<=	`EXE_NOR_OP;
 				`EXE_OR:		alucontrol	<=	`EXE_OR_OP;
@@ -144,10 +150,12 @@ module aludec (
 				`EXE_MTLO:		alucontrol	<=	`EXE_MTLO_OP;
 				`EXE_JALR:		alucontrol	<=	`EXE_JALR_OP;
 				`EXE_JR:		alucontrol	<=	`EXE_JR_OP;
-				`EXE_SYNC:		alucontrol	<=	`EXE_SYNC_OP;				
+				`EXE_SYNC:		alucontrol	<=	`EXE_SYNC_OP;
+				`EXE_MULT:		alucontrol	<=	`EXE_MULT_OP;
+				`EXE_MULTU:		alucontrol	<=	`EXE_MULTU_OP;
 				default: begin
 					$display("[ALUDEC] funct = %2d", funct);
-//                	$stop;
+                	$stop;
 				end
 			endcase
 endmodule
@@ -167,6 +175,8 @@ module maindec(
     always @ (*)
     	if (op != 0)
 			case (op)
+				`EXE_ADDI, `EXE_ADDIU, `EXE_SLTI, `EXE_SLTIU:
+					controls <= `ARITH_IMME_CTRL;
 				`EXE_ORI, `EXE_LUI, `EXE_ANDI, `EXE_XORI:
 					controls <= `LOGIC_IMME_CTRL;
 				default: begin
@@ -176,6 +186,8 @@ module maindec(
 			endcase
 		else
 			case (funct)
+				`EXE_ADD, `EXE_ADDU, `EXE_SUB, `EXE_SUBU, `EXE_SLT, `EXE_SLTU:
+					controls <= `ARITH_R_CTRL;
 				`EXE_OR, `EXE_AND, `EXE_XOR, `EXE_NOR:
 					controls <= `LOGIC_R_CTRL;
 				`EXE_SLL, `EXE_SRL, `EXE_SRA, `EXE_SLLV, `EXE_SRLV, `EXE_SRAV:
@@ -186,6 +198,8 @@ module maindec(
 					controls <= `MT_CTRL;
 				`EXE_MFHI, `EXE_MFLO:
 					controls <= `MF_CTRL;
+				`EXE_MULT, `EXE_MULTU:
+					controls <= `MULT_CTRL;
 				default: begin
 					$display("[MAINDEC] funct = %2d", funct);
 //					$stop;

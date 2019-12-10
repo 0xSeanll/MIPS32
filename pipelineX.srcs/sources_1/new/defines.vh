@@ -269,6 +269,25 @@
 //jump, jal, jr, bal
 
 // MEM_branch_alusrc_REG_J
+//*******************************************
+`define MULT_CTRL	12'b000_0_0_001_0000
+`define EXE_MULT_CTRL	12'b000_0_0_001_0000
+`define EXE_MULTU_CTRL	12'b000_0_0_001_0000
+//*******************************************
+`define ARITH_R_CTRL	12'b000_0_0_110_0000
+`define EXE_ADD_CTRL	12'b000_0_0_110_0000
+`define EXE_ADDU_CTRL	12'b000_0_0_110_0000
+`define EXE_SUB_CTRL	12'b000_0_0_110_0000
+`define EXE_SUBU_CTRL	12'b000_0_0_110_0000
+`define EXE_SLT_CTRL	12'b000_0_0_110_0000
+`define EXE_SLTU_CTRL	12'b000_0_0_110_0000
+//*******************************************
+`define ARITH_IMME_CTRL 12'b000_0_1_010_0000
+`define EXE_ADDI_CTRL	12'b000_0_1_010_0000
+`define EXE_ADDIU_CTRL	12'b000_0_1_010_0000
+`define EXE_SLTI_CTRL	12'b000_0_1_010_0000
+`define EXE_SLTIU_CTRL	12'b000_0_1_010_0000
+//*******************************************
 `define MF_CTRL			12'b000_0_0_110_0000
 `define MFHI_CTRL		12'b000_0_0_110_0000
 `define MFLO_CTRL		12'b000_0_0_110_0000

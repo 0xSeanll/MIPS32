@@ -37,24 +37,24 @@ module testbench();
 
 	always begin
 		clk <= 1;
-		#10;
+		#5;
 		clk <= 0;
-		#10;
+		#5;
 	
 	end
 
-	always @(negedge clk) begin
-		if(memwrite) begin
-			/* code */
-			if(dataadr === 84 & writedata === 7) begin
-				/* code */
-				$display("Simulation succeeded");
-				$stop;
-			end else if(dataadr !== 80) begin
-				/* code */
-				$display("Simulation Failed");
-				$stop;
-			end
-		end
-	end
+//	always @(negedge clk) begin
+//		if(memwrite) begin
+//			/* code */
+//			if(dataadr === 84 & writedata === 7) begin
+//				/* code */
+//				$display("Simulation succeeded");
+//				$stop;
+//			end else if(dataadr !== 80) begin
+//				/* code */
+//				$display("Simulation Failed");
+//				$stop;
+//			end
+//		end
+//	end
 endmodule

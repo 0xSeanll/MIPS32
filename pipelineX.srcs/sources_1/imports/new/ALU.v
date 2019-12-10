@@ -29,6 +29,8 @@ module ALU(
     output reg [31:0] result,
     output reg [31:0] hi_o, lo_o
     );
+    reg [63:0] tmp;
+    reg [31:0] mult_a, mult_b;
     always @(*) begin
         case(aluop)
         	`EXE_AND_OP,
@@ -52,9 +54,37 @@ module ALU(
 				hi_o	<=	a;
 				lo_o	<=	lo;
 			end
-			`EXE_MTLO_OP:begin
+			`EXE_MTLO_OP:	begin
 				hi_o	<= hi;
 				lo_o	<= a;
+			end
+			`EXE_ADD_OP,
+			`EXE_ADDI_OP:	begin
+				tmp = a + b;
+				result <= (tmp[32] == 1'b1) ? 0 : tmp;
+			end
+			`EXE_ADDU_OP,
+			`EXE_ADDIU_OP:	result	<=	a + b;
+			`EXE_SUB_OP,
+			`EXE_SUBU_OP:	result	<=	a - b;
+			`EXE_SLT_OP,
+			`EXE_SLTI_OP:	begin
+				tmp = a - b;
+				result <= tmp[31];
+			end
+			`EXE_SLTU_OP,
+			`EXE_SLTIU_OP:	result	<=	(a < b ? 1 : 0);
+			`EXE_MULT_OP:	begin
+				mult_a = (a[31] == 1'b1) ? (~a + 1) : a;
+				mult_b = (b[31] == 1'b1) ? (~b + 1) : b;
+				tmp = (a[31] ^ b[31] == 1'b1) ?  ~(mult_a * mult_b) + 1 : mult_a * mult_b;
+				hi_o <= tmp[63:32];
+				lo_o <= tmp[31:0];
+			end
+			`EXE_MULTU_OP:	begin
+				tmp = a * b;
+				hi_o <= tmp[63:32];
+				lo_o <= tmp[31:0];
 			end
 			default: begin
 				$display("[ALU] op = %2d", aluop);
@@ -89,6 +119,19 @@ module ALU(
 			`EXE_MFLO_OP:	$display("[ALU] Hit MFLO");
 			`EXE_MTHI_OP:	$display("[ALU] Hit MTHI");
 			`EXE_MTLO_OP:	$display("[ALU] Hit MTLO");
+			
+			`EXE_ADD_OP:	$display("[ALU] Hit ADD");
+			`EXE_ADDI_OP:	$display("[ALU] Hit ADDI");
+			`EXE_ADDU_OP:	$display("[ALU] Hit ADDU");
+			`EXE_ADDIU_OP:	$display("[ALU] Hit ADDIU");
+			`EXE_SUB_OP:	$display("[ALU] Hit SUB");
+			`EXE_SUBU_OP:	$display("[ALU] Hit SUBU");
+			`EXE_SLT_OP:	$display("[ALU] Hit SLT");
+			`EXE_SLTI_OP:	$display("[ALU] Hit SLTI");
+			`EXE_SLTU_OP:	$display("[ALU] Hit SLTU");
+			`EXE_SLTIU_OP:	$display("[ALU] Hit SLTIU");
+			`EXE_MULT_OP:	$display("[ALU] Hit MULT");
+			`EXE_MULTU_OP:	$display("[ALU] Hit MULTU");
 			default: begin
 				$display("[ALU] op = %2d", aluop);
 //				$stop;
