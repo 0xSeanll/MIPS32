@@ -14,25 +14,7 @@ Block Memory Generator module testbench.dut.dmem.inst.native_mem_mapped_module.b
 [ALU] Hit ORI
 [ALU] Hit SLL
 [ALU] Hit ORI
-[ALU] Hit SLL
-[ALU] Hit ORI
-[ALU] Hit ADDU
-[ALU] Hit ORI
-[ALU] Hit ADD
-[ALU] Hit SUB
-[ALU] Hit SUBU
-[ALU] Hit ADDI
-[ALU] Hit ORI
-[ALU] Hit ADDIU
-[ALU] Hit ORI
-[ALU] Hit SLL
-[ALU] Hit SLT
-[ALU] Hit SLTU
-[ALU] Hit SLTI
-[ALU] Hit SLTIU
-[ALU] Hit ORI
-[ALU] Hit SLL
-[ALU] Hit ORI
-[ALU] Hit MULT
-[ALU] Hit MULTU
+[ALU] op = 26
+[ALU] op = 27
+[ALU] op = 26
 [ALU] Hit SLL

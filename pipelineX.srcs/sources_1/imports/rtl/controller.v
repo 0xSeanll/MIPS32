@@ -30,7 +30,7 @@ module controller(
 	output wire pcsrcD, branchD, jumpD,
 	
 	//execute stage
-	input wire flushE,
+	input wire flushE,stallE,
 	output wire memtoregE,
 	output wire alusrcE,
 	output wire regdstE, regwriteE,
@@ -64,8 +64,8 @@ module controller(
 	assign pcsrcD = branchD & equalD;
 
 	//pipeline registers
-	floprc #(14) regE(
-		clk, rst, flushE,
+	flopenrc #(14) regE(
+		clk, rst, ~stallE, flushE,
 		{memtoregD,memwriteD,alusrcD,regdstD,regwriteD,writehiloD,alucontrolD},
 		{memtoregE,memwriteE,alusrcE,regdstE,regwriteE,writehiloE,alucontrolE}
 	);
@@ -153,6 +153,8 @@ module aludec (
 				`EXE_SYNC:		alucontrol	<=	`EXE_SYNC_OP;
 				`EXE_MULT:		alucontrol	<=	`EXE_MULT_OP;
 				`EXE_MULTU:		alucontrol	<=	`EXE_MULTU_OP;
+				`EXE_DIV:       alucontrol  <=  `EXE_DIV_OP;
+				`EXE_DIVU:      alucontrol  <=  `EXE_DIVU_OP;
 				default: begin
 					$display("[ALUDEC] funct = %2d", funct);
                 	$stop;
@@ -200,6 +202,8 @@ module maindec(
 					controls <= `MF_CTRL;
 				`EXE_MULT, `EXE_MULTU:
 					controls <= `MULT_CTRL;
+				`EXE_DIV, `EXE_DIVU:
+				    controls <= `DIV_CTRL;
 				default: begin
 					$display("[MAINDEC] funct = %2d", funct);
 //					$stop;

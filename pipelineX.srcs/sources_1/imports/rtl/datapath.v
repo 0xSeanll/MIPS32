@@ -36,7 +36,7 @@ module datapath(
 	input wire regdstE,
 	input wire regwriteE,
 	input wire[7:0] alucontrolE,
-	output wire flushE,
+	output wire flushE, stallE,
 	//mem stage
 	input wire memtoregM,
 	input wire regwriteM, writehiloM,
@@ -76,6 +76,7 @@ module datapath(
 	
 	wire [31:0] hiM, loM, hiW, loW;
 	wire [31:0] hi_iE, lo_iE, hi_oE, lo_oE;
+	wire stall_div;
 	HazardUnit h(
 		rsD, rtD, rsE, rtE,
 		writeregE, writeregM, writeregW,
@@ -83,10 +84,11 @@ module datapath(
 		regwriteE, regwriteM, regwriteW,
 		writehiloM, writehiloW,
 		branchD,
+		stall_div,
 		forwardaE, forwardbE,
 		forwardaD, forwardbD,
 		fwdhiloE,
-		stallF, stallD, flushE
+		stallF, stallD, stallE, flushE
 		);
 	//next PC logic (operates in fetch an decode)
 	mux2 #(32) pcbrmux(pcplus4F,pcbranchD,pcsrcD,pcnextbrFD);
@@ -122,16 +124,16 @@ module datapath(
 	assign rtD = instrD[20:16];
 	assign rdD = instrD[15:11];
 
-// EXE to MEM flip flops
-	floprc #(32) r1E(clk, rst, flushE, srcaD,srcaE);
-	floprc #(32) r2E(clk, rst, flushE, srcbD,srcbE);
-	floprc #(32) r3E(clk, rst, flushE, signimmD,signimmE);
-	floprc #(5)  r4E(clk, rst, flushE, rsD, rsE);
-	floprc #(5)  r5E(clk, rst, flushE, rtD, rtE);
-	floprc #(5)  r6E(clk, rst, flushE, rdD, rdE);
-	floprc #(5)  r7E(clk, rst, flushE, saD, saE);
-	floprc #(32) r8E(clk, rst, flushE, hiD, hiE);
-	floprc #(32) r9E(clk, rst, flushE, loD, loE);
+// ID to EXE flip flops
+	flopenrc #(32) r1E(clk, rst, ~stallE, flushE, srcaD,srcaE);
+    flopenrc #(32) r2E(clk, rst, ~stallE, flushE, srcbD,srcbE);
+    flopenrc #(32) r3E(clk, rst, ~stallE, flushE, signimmD,signimmE);
+    flopenrc #(5)  r4E(clk, rst, ~stallE, flushE, rsD, rsE);
+    flopenrc #(5)  r5E(clk, rst, ~stallE, flushE, rtD, rtE);
+    flopenrc #(5)  r6E(clk, rst, ~stallE, flushE, rdD, rdE);
+    flopenrc #(5)  r7E(clk, rst, ~stallE, flushE, saD, saE);
+    flopenrc #(32) r8E(clk, rst, ~stallE, flushE, hiD, hiE);
+    flopenrc #(32) r9E(clk, rst, ~stallE, flushE, loD, loE);
 	
 	
 	mux3 #(32) fwdAMux(srcaE,resultW,aluoutM,forwardaE,srca2E);
@@ -148,8 +150,7 @@ module datapath(
 	mux3 #(32) fwdHiMux(hiE, hiM, hiW, fwdhiloE, hi_iE);
 	mux3 #(32) fwdLoMux(loE, loM, loW, fwdhiloE, lo_iE);
 //  ***************************************************************************
-	
-	ALU alu(srca2E,srcb3E,hi_iE,lo_iE,alucontrolE,saE,aluoutE,hi_oE,lo_oE);
+	ALU alu(clk,rst,srca2E,srcb3E,hi_iE,lo_iE,alucontrolE,saE,aluoutE,hi_oE,lo_oE,stall_div);
 	
 	mux2 #(5) wrmux(rtE,rdE,regdstE,writeregE);
 

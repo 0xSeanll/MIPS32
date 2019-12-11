@@ -11,9 +11,9 @@ echo "Please update the PATH and LD_LIBRARY_PATH variables below, before executi
 exit
 
 if [ -z "$PATH" ]; then
-  PATH=C:/Xilinx/SDK/2018.3/bin;C:/Xilinx/Vivado/2018.3/ids_lite/ISE/bin/nt64;C:/Xilinx/Vivado/2018.3/ids_lite/ISE/lib/nt64:C:/Xilinx/Vivado/2018.3/bin
+  PATH=E:/vivado2018/SDK/2018.3/bin;E:/vivado2018/Vivado/2018.3/ids_lite/ISE/bin/nt64;E:/vivado2018/Vivado/2018.3/ids_lite/ISE/lib/nt64:E:/vivado2018/Vivado/2018.3/bin
 else
-  PATH=C:/Xilinx/SDK/2018.3/bin;C:/Xilinx/Vivado/2018.3/ids_lite/ISE/bin/nt64;C:/Xilinx/Vivado/2018.3/ids_lite/ISE/lib/nt64:C:/Xilinx/Vivado/2018.3/bin:$PATH
+  PATH=E:/vivado2018/SDK/2018.3/bin;E:/vivado2018/Vivado/2018.3/ids_lite/ISE/bin/nt64;E:/vivado2018/Vivado/2018.3/ids_lite/ISE/lib/nt64:E:/vivado2018/Vivado/2018.3/bin:$PATH
 fi
 export PATH
 
@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/a/Desktop/pipelineX/pipelineX.runs/inst_mem_synth_1'
+HD_PWD='E:/pipelineX/pipelineX.runs/inst_mem_synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

@@ -27,10 +27,11 @@ module HazardUnit(
     input wire RegWriteE, RegWriteM, RegWriteW,
     input wire writehiloM, writehiloW,
     input wire BranchD,
+    input wire stall_div,
     output reg [1:0] ForwardAE, ForwardBE,
     output reg ForwardAD, ForwardBD,
     output wire [1:0] fwdhiloE,
-    output wire STALLF, STALLD, FLUSHE
+    output wire STALLF, STALLD, STALLE, FLUSHE
     );
     assign fwdhiloE = 	writehiloM ? 2'b01:
     					writehiloW ? 2'b10: 
@@ -40,9 +41,10 @@ module HazardUnit(
     assign lwStall = MemtoRegE && ((RsD == RtE) || (RtD == RtE));
 	assign branchStall = (BranchD && RegWriteE && (WriteRegE == RsD || WriteRegE == RtD)) ||
 					   (BranchD && MemtoRegM && (WriteRegM == RsD || WriteRegM == RtD));
-	assign STALLF = (lwStall | branchStall);
-	assign STALLD = (lwStall | branchStall);
+	assign STALLF = (lwStall | branchStall) | stall_div;
+	assign STALLD = (lwStall | branchStall) | stall_div;
 	assign FLUSHE = (lwStall | branchStall);
+	assign STALLE = stall_div;
 
     always @(*) begin 
     	if ((RsE != 0) && (RsE == WriteRegM) && RegWriteM)

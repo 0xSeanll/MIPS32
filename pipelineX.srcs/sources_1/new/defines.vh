@@ -1,5 +1,5 @@
 // global macro definition
-// `define RstEnable 		1'b1
+ `define RstEnable 		1'b1
 // `define RstDisable		1'b0
 `define ZeroWord		32'h00000000
 // `define WriteEnable		1'b1
@@ -270,7 +270,7 @@
 
 // MEM_branch_alusrc_REG_J
 //*******************************************
-`define MULT_CTRL	12'b000_0_0_001_0000
+`define MULT_CTRL	    12'b000_0_0_001_0000
 `define EXE_MULT_CTRL	12'b000_0_0_001_0000
 `define EXE_MULTU_CTRL	12'b000_0_0_001_0000
 //*******************************************
@@ -317,4 +317,15 @@
 `define EXE_ORI_CTRL    12'b000_0_1_010_0000
 `define EXE_XORI_CTRL   12'b000_0_1_010_0000
 `define EXE_LUI_CTRL    12'b000_0_1_010_0000
+//******************************************
+`define DIV_CTRL        12'b000_0_0_001_0000
 
+//******************************************
+`define DivFree 2'b00
+`define DivByZero 2'b01
+`define DivOn 2'b10
+`define DivEnd 2'b11
+`define DivResultReady 1'b1
+`define DivResultNotReady 1'b0
+`define DivStart 1'b1
+`define DivStop 1'b0

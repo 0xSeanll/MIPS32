@@ -22,15 +22,34 @@
 `include "defines.vh"
 
 module ALU(
+    input wire clk, rst,
     input wire [31:0] a, b,
     input wire [31:0] hi, lo,
     input wire [7:0] aluop,
     input wire [4:0] sa,
     output reg [31:0] result,
-    output reg [31:0] hi_o, lo_o
+    output reg [31:0] hi_o, lo_o,
+    output reg stall_div
     );
     reg [63:0] tmp;
     reg [31:0] mult_a, mult_b;
+    reg start_i, signed_div_i;
+    wire ready_o;
+    wire [31:0] rst_hi, rst_lo;
+    wire annul_i;
+    assign annul_i = 0;
+    div my_div(clk, rst, signed_div_i, a, b, start_i, annul_i, {rst_hi, rst_lo}, ready_o);
+    always @(posedge clk) begin
+        if (rst) begin
+            stall_div <= 0;
+        end
+    end
+    always @(posedge ready_o) begin
+        hi_o <= rst_hi;
+        lo_o <= rst_lo;
+        stall_div <= 0;
+        start_i <= 0;
+    end
     always @(*) begin
         case(aluop)
         	`EXE_AND_OP,
@@ -85,6 +104,16 @@ module ALU(
 				tmp = a * b;
 				hi_o <= tmp[63:32];
 				lo_o <= tmp[31:0];
+			end
+			`EXE_DIV_OP: begin
+			     start_i <= 1;
+			     stall_div <= 1;
+			     signed_div_i <= 1;
+			end
+			`EXE_DIVU_OP: begin
+			     start_i <= 1;
+			     stall_div <= 1;
+			     signed_div_i <= 0;
 			end
 			default: begin
 				$display("[ALU] op = %2d", aluop);
