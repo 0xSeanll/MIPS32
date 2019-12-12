@@ -25,10 +25,12 @@ module controller(
 	input wire clk, rst,
 	//decode stage
 	input wire [5:0] opD, functD,
-//	input wire [4:0] rt,
+	input wire [4:0] rt,
 	input wire equalD,
 	output wire pcsrcD, branchD, jumpD,
-	
+	output wire jalE, jr, bal,
+	output wire memen,
+	output wire [7:0] alucontrolD,
 	//execute stage
 	input wire flushE,stallE,
 	output wire memtoregE,
@@ -46,28 +48,26 @@ module controller(
 	wire memtoregD, memwriteD, regdstD, regwriteD;
 	wire writehiloD, writehiloE;
 	wire alusrcD;
-	wire [7:0] alucontrolD;
 
 	//execute stage
 	wire memwriteE;
-	wire [4:0] rt;
-	wire memen, jr, jal, bal;
+	wire jalD;
 	maindec md(
     	opD, functD, rt,
 		memtoregD, memen, memwriteD,
 		branchD, alusrcD,
 		regdstD, regwriteD, writehiloD,
-		jumpD, jal, jr, bal
+		jumpD, jalD, jr, bal
 	);
-	aludec ad(opD,functD,alucontrolD);
+	aludec ad(opD,functD,rt,alucontrolD);
 
 	assign pcsrcD = branchD & equalD;
 
 	//pipeline registers
-	flopenrc #(14) regE(
+	flopenrc #(15) regE(
 		clk, rst, ~stallE, flushE,
-		{memtoregD,memwriteD,alusrcD,regdstD,regwriteD,writehiloD,alucontrolD},
-		{memtoregE,memwriteE,alusrcE,regdstE,regwriteE,writehiloE,alucontrolE}
+		{memtoregD,memwriteD,alusrcD,regdstD,regwriteD,writehiloD,jalD,alucontrolD},
+		{memtoregE,memwriteE,alusrcE,regdstE,regwriteE,writehiloE,jalE,alucontrolE}
 	);
 	flopr #(4) regM(
 		clk, rst,
@@ -83,6 +83,7 @@ endmodule
 
 module aludec (
 	input [5:0] op, funct,
+	input [4:0] rt,
 	output reg [7:0] alucontrol
 	);
 	always @ (*)
@@ -92,12 +93,8 @@ module aludec (
 				`EXE_ADDIU:		alucontrol	<=	`EXE_ADDIU_OP;
 				`EXE_ANDI:		alucontrol	<=	`EXE_ANDI_OP;
 				`EXE_BEQ:		alucontrol	<=	`EXE_BEQ_OP;
-				`EXE_BGEZ:		alucontrol	<=	`EXE_BGEZ_OP;
-				`EXE_BGEZAL:	alucontrol	<=	`EXE_BGEZAL_OP;
 				`EXE_BGTZ:		alucontrol	<=	`EXE_BGTZ_OP;
 				`EXE_BLEZ:		alucontrol	<=	`EXE_BLEZ_OP;
-				`EXE_BLTZ:		alucontrol	<=	`EXE_BLTZ_OP;
-				`EXE_BLTZAL:	alucontrol	<=	`EXE_BLTZAL_OP;
 				`EXE_BNE:		alucontrol	<=	`EXE_BNE_OP;
 				`EXE_J:			alucontrol	<=	`EXE_J_OP;
 				`EXE_JAL:		alucontrol	<=	`EXE_JAL_OP;
@@ -121,6 +118,14 @@ module aludec (
 				`EXE_SWL:		alucontrol	<=	`EXE_SWL_OP;
 				`EXE_SWR:		alucontrol	<=	`EXE_SWR_OP;
 				`EXE_XORI:		alucontrol	<=	`EXE_XORI_OP;
+				`EXE_REGIMM_INST: begin
+					case (rt)
+						`EXE_BLTZ:		alucontrol	<=	`EXE_BLTZ_OP;
+						`EXE_BLTZAL:	alucontrol	<=	`EXE_BLTZAL_OP;
+						`EXE_BGEZ:		alucontrol	<=	`EXE_BGEZ_OP;
+						`EXE_BGEZAL:	alucontrol	<=	`EXE_BGEZAL_OP;
+					endcase
+				end
 				default: begin
 					$display("[ALUDEC] op = %2d", op);
 					$stop;
@@ -128,6 +133,8 @@ module aludec (
 			endcase
 		else
 			case(funct) // RTYPE
+				`EXE_JR:		alucontrol	<=	`EXE_JR_OP;
+				`EXE_JALR:		alucontrol	<=	`EXE_JALR_OP;
 				`EXE_SLT:		alucontrol	<=	`EXE_SLT_OP;
 				`EXE_SLTU:		alucontrol	<=	`EXE_SLTU_OP;
 				`EXE_ADD:		alucontrol	<=	`EXE_ADD_OP;
@@ -157,7 +164,7 @@ module aludec (
 				`EXE_DIVU:      alucontrol  <=  `EXE_DIVU_OP;
 				default: begin
 					$display("[ALUDEC] funct = %2d", funct);
-                	$stop;
+//                	$stop;
 				end
 			endcase
 endmodule
@@ -181,9 +188,16 @@ module maindec(
 					controls <= `ARITH_IMME_CTRL;
 				`EXE_ORI, `EXE_LUI, `EXE_ANDI, `EXE_XORI:
 					controls <= `LOGIC_IMME_CTRL;
+				`EXE_J:
+					controls <= `EXE_J_CTRL;
+				`EXE_JAL:
+					controls <= `EXE_JAL_CTRL;
+				`EXE_REGIMM_INST: begin
+					//123123
+				end
 				default: begin
 					$display("[MAINDEC] OP = %2d", op);
-//					$stop;
+					$stop;
 				end
 			endcase
 		else
@@ -204,6 +218,10 @@ module maindec(
 					controls <= `MULT_CTRL;
 				`EXE_DIV, `EXE_DIVU:
 				    controls <= `DIV_CTRL;
+				`EXE_JR:
+					controls <= `EXE_JR_CTRL;
+				`EXE_JALR:
+					controls <= `EXE_JALR_CTRL;
 				default: begin
 					$display("[MAINDEC] funct = %2d", funct);
 //					$stop;

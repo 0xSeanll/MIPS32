@@ -8,13 +8,499 @@ Block Memory Generator module testbench.dut.imem.inst.native_mem_mapped_module.b
 Block Memory Generator module testbench.dut.dmem.inst.native_mem_mapped_module.blk_mem_gen_v8_4_2_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
 [ALU] op =  0
 [ALU] op =  0
+[CMP] Unknown aluop   124
 [ALU] op =  0
 [ALU] op =  0
 [ALU] Hit SLL
+[CMP] Unknown aluop    90
 [ALU] Hit ORI
-[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop    90
+[CMP] Unknown aluop    90
 [ALU] Hit ORI
+[CMP] Unknown aluop    90
+[CMP] Unknown aluop    90
+[CMP] Unknown aluop    80
+[ALU] op = 80
+[CMP] Unknown aluop    26
+[CMP] Unknown aluop    26
 [ALU] op = 26
-[ALU] op = 27
-[ALU] op = 26
+[CMP] Unknown aluop     9
+[CMP] Unknown aluop     9
+[CMP] Unknown aluop     9
+[CMP] Unknown aluop     9
+[ALU] op =  9
+[CMP] Unknown aluop    37
+[ALU] Hit OR
+[CMP] Unknown aluop    90
+[ALU] Hit ORI
+[CMP] Unknown aluop    90
+[CMP] Unknown aluop    79
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] op = 79
 [ALU] Hit SLL
+[CMP] Unknown aluop    90
+[CMP] Unknown aluop    90
+[ALU] Hit ORI
+[CMP] Unknown aluop     8
+[ALU] op =  8
+[ALU] op =  8
+[ALU] op =  8
+[CMP] Unknown aluop    90
+[CMP] Unknown aluop    90
+[ALU] Hit ORI
+[CMP] Unknown aluop    90
+[CMP] Unknown aluop    90
+[CMP] Unknown aluop    90
+[CMP] Unknown aluop    79
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] op = 79
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124

@@ -162,18 +162,18 @@
 `define EXE_DIV_OP  8'b00011010
 `define EXE_DIVU_OP  8'b00011011
 
-`define EXE_J_OP  8'b01001111
-`define EXE_JAL_OP  8'b01010000
-`define EXE_JALR_OP  8'b00001001
-`define EXE_JR_OP  8'b00001000
-`define EXE_BEQ_OP  8'b01010001
-`define EXE_BGEZ_OP  8'b01000001
-`define EXE_BGEZAL_OP  8'b01001011
-`define EXE_BGTZ_OP  8'b01010100
-`define EXE_BLEZ_OP  8'b01010011
-`define EXE_BLTZ_OP  8'b01000000
-`define EXE_BLTZAL_OP  8'b01001010
-`define EXE_BNE_OP  8'b01010010
+`define EXE_J_OP  		8'b01001111
+`define EXE_JAL_OP  	8'b01010000
+`define EXE_JALR_OP  	8'b00001001
+`define EXE_JR_OP  		8'b00001000
+`define EXE_BEQ_OP  	8'b01010001
+`define EXE_BGEZ_OP  	8'b01000001
+`define EXE_BGEZAL_OP  	8'b01001011
+`define EXE_BGTZ_OP  	8'b01010100
+`define EXE_BLEZ_OP  	8'b01010011
+`define EXE_BLTZ_OP  	8'b01000000
+`define EXE_BLTZAL_OP  	8'b01001010
+`define EXE_BNE_OP  	8'b01010010
 
 `define EXE_LB_OP  8'b11100000
 `define EXE_LBU_OP  8'b11100100
@@ -270,6 +270,21 @@
 
 // MEM_branch_alusrc_REG_J
 //*******************************************
+//`define EXE_B
+//*******************************************
+`define BRANCH_CTRL		12'b000_1_0_000_0000
+`define EXE_BEQ_CTRL	12'b000_1_0_000_0000
+`define EXE_BGTZ_CTRL	12'b000_1_0_000_0000
+`define EXE_BLEZ_CTRL	12'b000_1_0_000_0000
+`define EXE_BNE_CTRL	12'b000_1_0_000_0000
+`define EXE_BLTZ_CTRL	12'b000_1_0_000_0000
+`define EXE_BGEZ_CTRL	12'b000_1_0_000_0000
+//*******************************************
+`define EXE_J_CTRL		12'b000_0_0_000_1000
+`define EXE_JR_CTRL		12'b000_0_0_000_1010
+`define EXE_JAL_CTRL	12'b000_0_0_010_1100
+`define EXE_JALR_CTRL	12'b000_0_0_110_1010
+//*******************************************
 `define MULT_CTRL	    12'b000_0_0_001_0000
 `define EXE_MULT_CTRL	12'b000_0_0_001_0000
 `define EXE_MULTU_CTRL	12'b000_0_0_001_0000
@@ -318,8 +333,9 @@
 `define EXE_XORI_CTRL   12'b000_0_1_010_0000
 `define EXE_LUI_CTRL    12'b000_0_1_010_0000
 //******************************************
-`define DIV_CTRL        12'b000_0_0_001_0000
-
+`define DIV_CTRL		12'b000_0_0_001_0000
+`define EXE_DIV_CTRL	12'b000_0_0_001_0000
+`define EXE_DIVU_CTRL	12'b000_0_0_001_0000
 //******************************************
 `define DivFree 2'b00
 `define DivByZero 2'b01

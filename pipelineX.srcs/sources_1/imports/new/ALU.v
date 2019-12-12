@@ -27,6 +27,7 @@ module ALU(
     input wire [31:0] hi, lo,
     input wire [7:0] aluop,
     input wire [4:0] sa,
+    input wire [31:0] pcplus4,
     output reg [31:0] result,
     output reg [31:0] hi_o, lo_o,
     output reg stall_div
@@ -52,6 +53,8 @@ module ALU(
     end
     always @(*) begin
         case(aluop)
+        	`EXE_JAL_OP,
+        	`EXE_JALR_OP:	result	<= pcplus4 + 32'd4; 
         	`EXE_AND_OP,
 			`EXE_ANDI_OP:	result	<=	a & b;
         	`EXE_LUI_OP:	result	<=	(b << 16);
