@@ -74,6 +74,14 @@ module ALU(
 			`EXE_SYNC_OP:	result	<=	0;
 			`EXE_MFHI_OP:	result	<=	hi;
 			`EXE_MFLO_OP:	result	<=	lo;
+			`EXE_SB_OP,
+			`EXE_SH_OP,
+			`EXE_SW_OP,
+			`EXE_LB_OP,
+			`EXE_LBU_OP,
+			`EXE_LH_OP,
+			`EXE_LHU_OP,
+			`EXE_LW_OP:		result	<= a + b;
 			`EXE_MTHI_OP: 	begin
 				hi_o	<=	a;
 				lo_o	<=	lo;

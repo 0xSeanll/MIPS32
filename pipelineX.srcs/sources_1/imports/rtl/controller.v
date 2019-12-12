@@ -28,40 +28,42 @@ module controller(
 	input wire [4:0] rtD,
 //	input wire equalD,
 	output wire pcsrcD, branchD, jumpD,
-	output wire jalE, jr, bal,
-	output wire memen,
+	output wire jrD,
 //	output wire [7:0] alucontrolD,
 	input wire [31:0] srca2D, srcb2D,	
 	//execute stage
 	input wire flushE,stallE,
+	output wire jalE,
 	output wire memtoregE,
 	output wire alusrcE,
 	output wire regdstE, regwriteE,
 	output wire [7:0] alucontrolE,
 
 	//mem stage
-	output wire memtoregM, memwriteM, regwriteM, writehiloM,
+	output wire memenM,
+	output wire memtoregM, regwriteM, writehiloM,
+	output wire [7:0] alucontrolM,
 	//write back stage
 	output wire memtoregW, regwriteW, writehiloW
 
     );
 	//decode stage
-	wire memtoregD, memwriteD, regdstD, regwriteD;
+	wire memtoregD, regdstD, regwriteD;
 	wire writehiloD, writehiloE;
 	wire alusrcD;
 	wire [7:0] alucontrolD;
 	//execute stage
-	wire memwriteE;
 	wire jalD;
 	wire regwriteB;
 	wire regwrite2D;
 	wire equalD;
+	wire memenD, memenE, bal;
 	maindec md(
     	opD, functD, rtD,
-		memtoregD, memen, memwriteD,
+		memtoregD, memenD,
 		branchD, alusrcD,
 		regdstD, regwriteD, writehiloD,
-		jumpD, jalD, jr, bal
+		jumpD, jalD, jrD, bal
 	);
 	aludec ad(opD,functD,rtD,alucontrolD);
 
@@ -72,13 +74,13 @@ module controller(
 	//pipeline registers
 	flopenrc #(15) regE(
 		clk, rst, ~stallE, flushE,
-		{memtoregD,memwriteD,alusrcD,regdstD,regwrite2D,writehiloD,jalD,alucontrolD},
-		{memtoregE,memwriteE,alusrcE,regdstE,regwriteE,writehiloE,jalE,alucontrolE}
+		{memtoregD,memenD,alusrcD,regdstD,regwrite2D,writehiloD,jalD,alucontrolD},
+		{memtoregE,memenE,alusrcE,regdstE,regwriteE,writehiloE ,jalE,alucontrolE}
 	);
-	flopr #(4) regM(
+	flopr #(12) regM(
 		clk, rst,
-		{memtoregE,memwriteE,regwriteE,writehiloE},
-		{memtoregM,memwriteM,regwriteM,writehiloM}
+		{memtoregE,memenE,regwriteE,writehiloE,alucontrolE},
+		{memtoregM,memenM,regwriteM,writehiloM,alucontrolM}
 	);
 	flopr #(3) regW(
 		clk, rst,
@@ -179,14 +181,14 @@ endmodule
 module maindec(
     input [5:0] op, funct,
     input [4:0] rt,
-	output memtoreg, memen, memwrite,
+	output memtoreg, memen,
 	output branch,
 	output alusrc,
 	output regdst, regwrite, writehilo,
 	output jump, jal, jr, bal
     );
     reg [11:0] controls;
-    assign {memtoreg, memen, memwrite, branch, alusrc, regdst, regwrite, writehilo, jump, jal, jr, bal} = controls;
+    assign {memtoreg, memen, branch, alusrc, regdst, regwrite, writehilo, jump, jal, jr, bal} = controls;
     always @ (*)
     	if (op != 0)
 			case (op)
@@ -200,6 +202,10 @@ module maindec(
 					controls <= `EXE_JAL_CTRL;
 				`EXE_BEQ, `EXE_BGTZ, `EXE_BLEZ, `EXE_BNE:
 					controls <= `BRANCH_CTRL;
+				`EXE_SB, `EXE_SH, `EXE_SW:
+					controls <= `SAVE_CTRL;
+				`EXE_LB, `EXE_LBU, `EXE_LH, `EXE_LHU, `EXE_LW:
+					controls <= `LOAD_CTRL;
 				`EXE_REGIMM_INST: begin
 					case (rt)
 						`EXE_BLTZ, `EXE_BGEZ:

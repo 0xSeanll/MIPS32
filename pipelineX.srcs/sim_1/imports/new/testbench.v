@@ -25,7 +25,7 @@ module testbench();
 	reg rst;
 
 	wire[31:0] writedata,dataadr;
-	wire memwrite;
+	wire [4:0] memwrite;
 
 	top dut(clk,rst,writedata,dataadr,memwrite);
 

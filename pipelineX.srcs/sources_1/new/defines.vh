@@ -262,7 +262,7 @@
 // `define CP0_REG_CONFIG    5'b10000       //Ö»¶Á
 
 
-//memtoreg, memen, memwrite
+//memtoreg, memen
 //branch
 //alusrc
 //regdst, regwrite, writehilo
@@ -271,76 +271,88 @@
 // MEM_branch_alusrc_REG_J
 //*******************************************
 //`define EXE_B
-//*******************************************
-`define BRANCH_CTRL		12'b000_1_0_000_0000
-`define EXE_BEQ_CTRL	12'b000_1_0_000_0000
-`define EXE_BGTZ_CTRL	12'b000_1_0_000_0000
-`define EXE_BLEZ_CTRL	12'b000_1_0_000_0000
-`define EXE_BNE_CTRL	12'b000_1_0_000_0000
-`define EXE_BLTZ_CTRL	12'b000_1_0_000_0000
-`define EXE_BGEZ_CTRL	12'b000_1_0_000_0000
-//*******************************************
-`define BAL_CTRL		12'b000_1_0_0x0_0101
-`define EXE_BGEZAL_CTRL 12'b000_1_0_0x0_0101
-`define EXE_BLTZAL_CTRL 12'b000_1_0_0x0_0101
-//*******************************************
-`define EXE_J_CTRL		12'b000_0_0_000_1000
-`define EXE_JR_CTRL		12'b000_0_0_000_1010
-`define EXE_JAL_CTRL	12'b000_0_0_010_1100
-`define EXE_JALR_CTRL	12'b000_0_0_110_1010
-//*******************************************
-`define MULT_CTRL	    12'b000_0_0_001_0000
-`define EXE_MULT_CTRL	12'b000_0_0_001_0000
-`define EXE_MULTU_CTRL	12'b000_0_0_001_0000
-//*******************************************
-`define ARITH_R_CTRL	12'b000_0_0_110_0000
-`define EXE_ADD_CTRL	12'b000_0_0_110_0000
-`define EXE_ADDU_CTRL	12'b000_0_0_110_0000
-`define EXE_SUB_CTRL	12'b000_0_0_110_0000
-`define EXE_SUBU_CTRL	12'b000_0_0_110_0000
-`define EXE_SLT_CTRL	12'b000_0_0_110_0000
-`define EXE_SLTU_CTRL	12'b000_0_0_110_0000
-//*******************************************
-`define ARITH_IMME_CTRL 12'b000_0_1_010_0000
-`define EXE_ADDI_CTRL	12'b000_0_1_010_0000
-`define EXE_ADDIU_CTRL	12'b000_0_1_010_0000
-`define EXE_SLTI_CTRL	12'b000_0_1_010_0000
-`define EXE_SLTIU_CTRL	12'b000_0_1_010_0000
-//*******************************************
-`define MF_CTRL			12'b000_0_0_110_0000
-`define MFHI_CTRL		12'b000_0_0_110_0000
-`define MFLO_CTRL		12'b000_0_0_110_0000
-//*******************************************
-`define MT_CTRL			12'b000_0_0_001_0000
-`define MTHI_CTRL		12'b000_0_0_001_0000
-`define MTLO_CTRL		12'b000_0_0_001_0000
 //******************************************
-`define SYNC_CTRL		12'b000_0_0_000_0000
+`define SAVE_CTRL		11'b01_0_1_000_0000
+`define EXE_SB_CTRL		11'b01_0_1_000_0000
+`define EXE_SH_CTRL		11'b01_0_1_000_0000
+`define EXE_SW_CTRL		11'b01_0_1_000_0000
 //******************************************
-`define SHIFT_CTRL		12'b000_0_0_110_0000
-`define EXE_SLL_CTRL	12'b000_0_0_110_0000
-`define EXE_SRL_CTRL	12'b000_0_0_110_0000
-`define EXE_SRA_CTRL	12'b000_0_0_110_0000
-`define EXE_SLLV_CTRL	12'b000_0_0_110_0000
-`define EXE_SRLV_CTRL	12'b000_0_0_110_0000
-`define EXE_SRAV_CTRL	12'b000_0_0_110_0000
+`define LOAD_CTRL		11'b11_0_1_010_0000
+`define EXE_LB_CTRL		11'b11_0_1_010_0000
+`define EXE_LBU_CTRL	11'b11_0_1_010_0000
+`define EXE_LH_CTRL		11'b11_0_1_010_0000
+`define EXE_LHU_CTRL	11'b11_0_1_010_0000
+`define EXE_LW_CTRL		11'b11_0_1_010_0000
 //******************************************
-`define LOGIC_R_CTRL    12'b000_0_0_110_0000
-`define EXE_AND_CTRL    12'b000_0_0_110_0000
-`define EXE_OR_CTRL     12'b000_0_0_110_0000
-`define EXE_NOR_CTRL    12'b000_0_0_110_0000
-`define EXE_XOR_CTRL    12'b000_0_0_110_0000
+`define BRANCH_CTRL		11'b00_1_0_000_0000
+`define EXE_BEQ_CTRL	11'b00_1_0_000_0000
+`define EXE_BGTZ_CTRL	11'b00_1_0_000_0000
+`define EXE_BLEZ_CTRL	11'b00_1_0_000_0000
+`define EXE_BNE_CTRL	11'b00_1_0_000_0000
+`define EXE_BLTZ_CTRL	11'b00_1_0_000_0000
+`define EXE_BGEZ_CTRL	11'b00_1_0_000_0000
 //******************************************
-`define LOGIC_IMME_CTRL 12'b000_0_1_010_0000
-`define EXE_ANDI_CTRL   12'b000_0_1_010_0000
-`define EXE_ORI_CTRL    12'b000_0_1_010_0000
-`define EXE_XORI_CTRL   12'b000_0_1_010_0000
-`define EXE_LUI_CTRL    12'b000_0_1_010_0000
+`define BAL_CTRL		11'b00_1_0_0x0_0101
+`define EXE_BGEZAL_CTRL 11'b00_1_0_0x0_0101
+`define EXE_BLTZAL_CTRL 11'b00_1_0_0x0_0101
 //******************************************
-`define DIV_CTRL		12'b000_0_0_001_0000
-`define EXE_DIV_CTRL	12'b000_0_0_001_0000
-`define EXE_DIVU_CTRL	12'b000_0_0_001_0000
+`define EXE_J_CTRL		11'b00_0_0_000_1000
+`define EXE_JR_CTRL		11'b00_0_0_000_1010
+`define EXE_JAL_CTRL	11'b00_0_0_010_1100
+`define EXE_JALR_CTRL	11'b00_0_0_110_1010
 //******************************************
+`define MULT_CTRL	    11'b00_0_0_001_0000
+`define EXE_MULT_CTRL	11'b00_0_0_001_0000
+`define EXE_MULTU_CTRL	11'b00_0_0_001_0000
+//******************************************
+`define ARITH_R_CTRL	11'b00_0_0_110_0000
+`define EXE_ADD_CTRL	11'b00_0_0_110_0000
+`define EXE_ADDU_CTRL	11'b00_0_0_110_0000
+`define EXE_SUB_CTRL	11'b00_0_0_110_0000
+`define EXE_SUBU_CTRL	11'b00_0_0_110_0000
+`define EXE_SLT_CTRL	11'b00_0_0_110_0000
+`define EXE_SLTU_CTRL	11'b00_0_0_110_0000
+//******************************************
+`define ARITH_IMME_CTRL 11'b00_0_1_010_0000
+`define EXE_ADDI_CTRL	11'b00_0_1_010_0000
+`define EXE_ADDIU_CTRL	11'b00_0_1_010_0000
+`define EXE_SLTI_CTRL	11'b00_0_1_010_0000
+`define EXE_SLTIU_CTRL	11'b00_0_1_010_0000
+//******************************************
+`define MF_CTRL			11'b00_0_0_110_0000
+`define MFHI_CTRL		11'b00_0_0_110_0000
+`define MFLO_CTRL		11'b00_0_0_110_0000
+//******************************************
+`define MT_CTRL			11'b00_0_0_001_0000
+`define MTHI_CTRL		11'b00_0_0_001_0000
+`define MTLO_CTRL		11'b00_0_0_001_0000
+//*****************************************
+`define SYNC_CTRL		11'b00_0_0_000_0000
+//*****************************************
+`define SHIFT_CTRL		11'b00_0_0_110_0000
+`define EXE_SLL_CTRL	11'b00_0_0_110_0000
+`define EXE_SRL_CTRL	11'b00_0_0_110_0000
+`define EXE_SRA_CTRL	11'b00_0_0_110_0000
+`define EXE_SLLV_CTRL	11'b00_0_0_110_0000
+`define EXE_SRLV_CTRL	11'b00_0_0_110_0000
+`define EXE_SRAV_CTRL	11'b00_0_0_110_0000
+//*****************************************
+`define LOGIC_R_CTRL    11'b00_0_0_110_0000
+`define EXE_AND_CTRL    11'b00_0_0_110_0000
+`define EXE_OR_CTRL     11'b00_0_0_110_0000
+`define EXE_NOR_CTRL    11'b00_0_0_110_0000
+`define EXE_XOR_CTRL    11'b00_0_0_110_0000
+//*****************************************
+`define LOGIC_IMME_CTRL 11'b00_0_1_010_0000
+`define EXE_ANDI_CTRL   11'b00_0_1_010_0000
+`define EXE_ORI_CTRL    11'b00_0_1_010_0000
+`define EXE_XORI_CTRL   11'b00_0_1_010_0000
+`define EXE_LUI_CTRL    11'b00_0_1_010_0000
+//*****************************************
+`define DIV_CTRL		11'b00_0_0_001_0000
+`define EXE_DIV_CTRL	11'b00_0_0_001_0000
+`define EXE_DIVU_CTRL	11'b00_0_0_001_0000
+//*****************************************
 `define DivFree 2'b00
 `define DivByZero 2'b01
 `define DivOn 2'b10

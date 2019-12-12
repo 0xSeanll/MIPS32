@@ -32,7 +32,7 @@ set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property ip_output_repo c:/Users/a/Desktop/MIPS32/pipelineX.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
-read_ip -quiet C:/Users/a/Desktop/MIPS32/pipelineX.srcs/sources_1/ip/inst_mem/inst_mem.xci
+read_ip -quiet c:/Users/a/Desktop/MIPS32/pipelineX.srcs/sources_1/ip/inst_mem/inst_mem.xci
 set_property used_in_implementation false [get_files -all c:/Users/a/Desktop/MIPS32/pipelineX.srcs/sources_1/ip/inst_mem/inst_mem_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -88,32 +88,32 @@ write_checkpoint -force -noxdef inst_mem.dcp
 create_report "inst_mem_synth_1_synth_report_utilization_0" "report_utilization -file inst_mem_utilization_synth.rpt -pb inst_mem_utilization_synth.pb"
 
 if { [catch {
-  file copy -force C:/Users/a/Desktop/MIPS32/pipelineX.runs/inst_mem_synth_1/inst_mem.dcp C:/Users/a/Desktop/MIPS32/pipelineX.srcs/sources_1/ip/inst_mem/inst_mem.dcp
+  file copy -force C:/Users/a/Desktop/MIPS32/pipelineX.runs/inst_mem_synth_1/inst_mem.dcp c:/Users/a/Desktop/MIPS32/pipelineX.srcs/sources_1/ip/inst_mem/inst_mem.dcp
 } _RESULT ] } { 
   send_msg_id runtcl-3 error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
   error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
 }
 
 if { [catch {
-  write_verilog -force -mode synth_stub C:/Users/a/Desktop/MIPS32/pipelineX.srcs/sources_1/ip/inst_mem/inst_mem_stub.v
+  write_verilog -force -mode synth_stub c:/Users/a/Desktop/MIPS32/pipelineX.srcs/sources_1/ip/inst_mem/inst_mem_stub.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a Verilog synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_vhdl -force -mode synth_stub C:/Users/a/Desktop/MIPS32/pipelineX.srcs/sources_1/ip/inst_mem/inst_mem_stub.vhdl
+  write_vhdl -force -mode synth_stub c:/Users/a/Desktop/MIPS32/pipelineX.srcs/sources_1/ip/inst_mem/inst_mem_stub.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a VHDL synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_verilog -force -mode funcsim C:/Users/a/Desktop/MIPS32/pipelineX.srcs/sources_1/ip/inst_mem/inst_mem_sim_netlist.v
+  write_verilog -force -mode funcsim c:/Users/a/Desktop/MIPS32/pipelineX.srcs/sources_1/ip/inst_mem/inst_mem_sim_netlist.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the Verilog functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_vhdl -force -mode funcsim C:/Users/a/Desktop/MIPS32/pipelineX.srcs/sources_1/ip/inst_mem/inst_mem_sim_netlist.vhdl
+  write_vhdl -force -mode funcsim c:/Users/a/Desktop/MIPS32/pipelineX.srcs/sources_1/ip/inst_mem/inst_mem_sim_netlist.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
@@ -123,32 +123,32 @@ if { [catch {
 
 
 if { [catch {
-  file copy -force C:/Users/a/Desktop/MIPS32/pipelineX.runs/inst_mem_synth_1/inst_mem.dcp C:/Users/a/Desktop/MIPS32/pipelineX.srcs/sources_1/ip/inst_mem/inst_mem.dcp
+  file copy -force C:/Users/a/Desktop/MIPS32/pipelineX.runs/inst_mem_synth_1/inst_mem.dcp c:/Users/a/Desktop/MIPS32/pipelineX.srcs/sources_1/ip/inst_mem/inst_mem.dcp
 } _RESULT ] } { 
   send_msg_id runtcl-3 error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
   error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
 }
 
 if { [catch {
-  file rename -force C:/Users/a/Desktop/MIPS32/pipelineX.runs/inst_mem_synth_1/inst_mem_stub.v C:/Users/a/Desktop/MIPS32/pipelineX.srcs/sources_1/ip/inst_mem/inst_mem_stub.v
+  file rename -force C:/Users/a/Desktop/MIPS32/pipelineX.runs/inst_mem_synth_1/inst_mem_stub.v c:/Users/a/Desktop/MIPS32/pipelineX.srcs/sources_1/ip/inst_mem/inst_mem_stub.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a Verilog synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force C:/Users/a/Desktop/MIPS32/pipelineX.runs/inst_mem_synth_1/inst_mem_stub.vhdl C:/Users/a/Desktop/MIPS32/pipelineX.srcs/sources_1/ip/inst_mem/inst_mem_stub.vhdl
+  file rename -force C:/Users/a/Desktop/MIPS32/pipelineX.runs/inst_mem_synth_1/inst_mem_stub.vhdl c:/Users/a/Desktop/MIPS32/pipelineX.srcs/sources_1/ip/inst_mem/inst_mem_stub.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a VHDL synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force C:/Users/a/Desktop/MIPS32/pipelineX.runs/inst_mem_synth_1/inst_mem_sim_netlist.v C:/Users/a/Desktop/MIPS32/pipelineX.srcs/sources_1/ip/inst_mem/inst_mem_sim_netlist.v
+  file rename -force C:/Users/a/Desktop/MIPS32/pipelineX.runs/inst_mem_synth_1/inst_mem_sim_netlist.v c:/Users/a/Desktop/MIPS32/pipelineX.srcs/sources_1/ip/inst_mem/inst_mem_sim_netlist.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the Verilog functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force C:/Users/a/Desktop/MIPS32/pipelineX.runs/inst_mem_synth_1/inst_mem_sim_netlist.vhdl C:/Users/a/Desktop/MIPS32/pipelineX.srcs/sources_1/ip/inst_mem/inst_mem_sim_netlist.vhdl
+  file rename -force C:/Users/a/Desktop/MIPS32/pipelineX.runs/inst_mem_synth_1/inst_mem_sim_netlist.vhdl c:/Users/a/Desktop/MIPS32/pipelineX.srcs/sources_1/ip/inst_mem/inst_mem_sim_netlist.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
@@ -157,13 +157,13 @@ if { [catch {
 
 if {[file isdir C:/Users/a/Desktop/MIPS32/pipelineX.ip_user_files/ip/inst_mem]} {
   catch { 
-    file copy -force C:/Users/a/Desktop/MIPS32/pipelineX.srcs/sources_1/ip/inst_mem/inst_mem_stub.v C:/Users/a/Desktop/MIPS32/pipelineX.ip_user_files/ip/inst_mem
+    file copy -force c:/Users/a/Desktop/MIPS32/pipelineX.srcs/sources_1/ip/inst_mem/inst_mem_stub.v C:/Users/a/Desktop/MIPS32/pipelineX.ip_user_files/ip/inst_mem
   }
 }
 
 if {[file isdir C:/Users/a/Desktop/MIPS32/pipelineX.ip_user_files/ip/inst_mem]} {
   catch { 
-    file copy -force C:/Users/a/Desktop/MIPS32/pipelineX.srcs/sources_1/ip/inst_mem/inst_mem_stub.vhdl C:/Users/a/Desktop/MIPS32/pipelineX.ip_user_files/ip/inst_mem
+    file copy -force c:/Users/a/Desktop/MIPS32/pipelineX.srcs/sources_1/ip/inst_mem/inst_mem_stub.vhdl C:/Users/a/Desktop/MIPS32/pipelineX.ip_user_files/ip/inst_mem
   }
 }
 file delete __synthesis_is_running__

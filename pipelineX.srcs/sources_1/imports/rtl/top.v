@@ -21,18 +21,20 @@
 
 
 module top(
-	input wire clk,rst,
-	output wire[31:0] writedata,dataadr,
-	output wire memwrite
+	input wire CLK,rst,
+	output wire [31:0] writedata,dataadr,
+	output wire [3:0] memwrite
     );
 	reg clkIM = 0;
-	always @(clk) begin
-		#1 clkIM <= clk;
+	always @(CLK) begin
+		#1 clkIM <= CLK;
 	end
 	
 	wire[31:0] pc,instr,readdata;
-
-	mips mips(clk,rst,pc,instr,memwrite,dataadr,writedata,readdata);
-	inst_mem imem(clkIM,pc[31:0],instr);
-	data_mem dmem(clk,{4{memwrite}},dataadr,writedata,readdata);
+	wire [7:0] alucontrolM;
+	wire memenM;
+	mips mips(CLK,rst,pc,instr,dataadr,writedata,readdata,alucontrolM,memenM);
+	inst_mem instMemory(clkIM,pc[31:0],instr);
+	DataMemory dataMemory(CLK, dataadr, writedata, alucontrolM, memenM, readdata);
+//	data_mem dmem(clk,{4{memwrite}},dataadr,writedata,readdata);
 endmodule

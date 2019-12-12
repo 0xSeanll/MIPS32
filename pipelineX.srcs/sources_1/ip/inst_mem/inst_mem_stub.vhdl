@@ -1,10 +1,10 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
--- Date        : Thu Dec 12 15:10:35 2019
+-- Date        : Fri Dec 13 02:40:53 2019
 -- Host        : liyifan running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub
---               C:/Users/a/Desktop/MIPS32/pipelineX.srcs/sources_1/ip/inst_mem/inst_mem_stub.vhdl
+--               c:/Users/a/Desktop/MIPS32/pipelineX.srcs/sources_1/ip/inst_mem/inst_mem_stub.vhdl
 -- Design      : inst_mem
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7a100tcsg324-1
