@@ -31,7 +31,7 @@ module testbench();
 
 	initial begin
 		rst <= 1;
-		#200;
+		#50;
 		rst <= 0;
 	end
 

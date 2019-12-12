@@ -28,10 +28,11 @@ module datapath(
 	//decode stage
 	input wire pcsrcD,branchD,
 	input wire jumpD,jr,
-	output wire equalD,
+//	output wire equalD,
 	output wire [5:0] opD,functD,
 	output wire [4:0] rtD,
-	output wire [7:0] alucontrolD,
+//	output wire [7:0] alucontrolD,
+	output wire [31:0] srca2D, srcb2D,
 	//execute stage
 	input wire memtoregE,
 	input wire alusrcE,
@@ -61,7 +62,7 @@ module datapath(
 	wire [4:0] rsD,rdD;
 	wire flushD,stallD; 
 	wire [31:0] signimmD,signimmshD;
-	wire [31:0] srcaD,srca2D,srcbD,srcb2D;
+	wire [31:0] srcaD,srcbD;
 	wire [4:0] saD;
 	//execute stage
 	wire [1:0] forwardaE,forwardbE, fwdhiloE;
@@ -105,7 +106,7 @@ module datapath(
 
 
 	//IF->ID
-	assign flushD = /*jumpD |*/ pcsrcD;
+	assign flushD = 0/*jumpD | pcsrcD*/;
 	flopenrc #(32) r1D(clk,rst,~stallD,flushD,pcplus4F,pcplus4D);
 	flopenrc #(32) r2D(clk,rst,~stallD,flushD,instrF,instrD);
 	
@@ -121,7 +122,7 @@ module datapath(
 	adder pcadd2(pcplus4D,signimmshD,pcbranchD);
 	mux2 #(32) forwardamux(srcaD,aluoutM,forwardaD,srca2D);
 	mux2 #(32) forwardbmux(srcbD,aluoutM,forwardbD,srcb2D);
-	comparator CMP(srca2D,srcb2D,alucontrolD,rtD,equalD);
+//	comparator CMP(srca2D,srcb2D,alucontrolD,rtD,equalD);
 	assign saD = instrD[10:6];
 	assign opD = instrD[31:26];
 	assign functD = instrD[5:0];

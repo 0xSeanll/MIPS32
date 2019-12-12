@@ -280,6 +280,10 @@
 `define EXE_BLTZ_CTRL	12'b000_1_0_000_0000
 `define EXE_BGEZ_CTRL	12'b000_1_0_000_0000
 //*******************************************
+`define BAL_CTRL		12'b000_1_0_0x0_0101
+`define EXE_BGEZAL_CTRL 12'b000_1_0_0x0_0101
+`define EXE_BLTZAL_CTRL 12'b000_1_0_0x0_0101
+//*******************************************
 `define EXE_J_CTRL		12'b000_0_0_000_1000
 `define EXE_JR_CTRL		12'b000_0_0_000_1010
 `define EXE_JAL_CTRL	12'b000_0_0_010_1100

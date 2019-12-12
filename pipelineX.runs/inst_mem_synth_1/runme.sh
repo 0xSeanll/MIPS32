@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/a/Desktop/pipelineX/pipelineX.runs/inst_mem_synth_1'
+HD_PWD='C:/Users/a/Desktop/MIPS32/pipelineX.runs/inst_mem_synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

@@ -54,7 +54,9 @@ module ALU(
     always @(*) begin
         case(aluop)
         	`EXE_JAL_OP,
-        	`EXE_JALR_OP:	result	<= pcplus4 + 32'd4; 
+        	`EXE_JALR_OP,
+        	`EXE_BGEZAL_OP,
+        	`EXE_BLTZAL_OP:	result	<= pcplus4 + 32'd4; 
         	`EXE_AND_OP,
 			`EXE_ANDI_OP:	result	<=	a & b;
         	`EXE_LUI_OP:	result	<=	(b << 16);
