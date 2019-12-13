@@ -25,6 +25,7 @@ module controller(
 	input wire clk, rst,
 	//decode stage
 	input wire [5:0] opD, functD,
+	input wire [4:0] rsD,
 	input wire [4:0] rtD,
 //	input wire equalD,
 	output wire pcsrcD, branchD, jumpD,
@@ -44,8 +45,9 @@ module controller(
 	output wire memtoregM, regwriteM, writehiloM,
 	output wire [7:0] alucontrolM,
 	//write back stage
-	output wire memtoregW, regwriteW, writehiloW
-
+	output wire memtoregW, regwriteW, writehiloW,
+    
+    output wire fromcp0, cp0writeM, cp0writeW
     );
 	//decode stage
 	wire memtoregD, regdstD, regwriteD;
@@ -58,39 +60,42 @@ module controller(
 	wire regwrite2D;
 	wire equalD;
 	wire memenD, memenE, bal;
+	wire cp0writeD, cp0writeE;
 	maindec md(
-    	opD, functD, rtD,
+    	opD, functD, rsD, rtD,
 		memtoregD, memenD,
 		branchD, alusrcD,
 		regdstD, regwriteD, writehiloD,
-		jumpD, jalD, jrD, bal
+		jumpD, jalD, jrD, bal,
+		cp0writeD, fromcp0
 	);
-	aludec ad(opD,functD,rtD,alucontrolD);
+	aludec ad(opD,functD,rsD,rtD,alucontrolD);
 
 	comparator CMP(srca2D,srcb2D,alucontrolD,rtD,equalD,regwriteB);
 	mux2 #(1) regWriteMux(regwriteD, regwriteB, bal, regwrite2D);
 	assign pcsrcD = branchD & equalD;
 
 	//pipeline registers
-	flopenrc #(15) regE(
+	flopenrc #(16) regE(
 		clk, rst, ~stallE, flushE,
-		{memtoregD,memenD,alusrcD,regdstD,regwrite2D,writehiloD,jalD,alucontrolD},
-		{memtoregE,memenE,alusrcE,regdstE,regwriteE,writehiloE ,jalE,alucontrolE}
+		{memtoregD,memenD,alusrcD,regdstD,regwrite2D,writehiloD,jalD,alucontrolD,cp0writeD},
+		{memtoregE,memenE,alusrcE,regdstE,regwriteE,writehiloE ,jalE,alucontrolE,cp0writeE}
 	);
-	flopr #(12) regM(
+	flopr #(13) regM(
 		clk, rst,
-		{memtoregE,memenE,regwriteE,writehiloE,alucontrolE},
-		{memtoregM,memenM,regwriteM,writehiloM,alucontrolM}
+		{memtoregE,memenE,regwriteE,writehiloE,alucontrolE,cp0writeE},
+		{memtoregM,memenM,regwriteM,writehiloM,alucontrolM,cp0writeM}
 	);
-	flopr #(3) regW(
+	flopr #(4) regW(
 		clk, rst,
-		{memtoregM,regwriteM,writehiloM},
-		{memtoregW,regwriteW,writehiloW}
+		{memtoregM,regwriteM,writehiloM,cp0writeM},
+		{memtoregW,regwriteW,writehiloW,cp0writeW}
 	);
 endmodule
 
 module aludec (
 	input [5:0] op, funct,
+	input [4:0] rs,
 	input [4:0] rt,
 	output reg [7:0] alucontrol
 	);
@@ -133,6 +138,14 @@ module aludec (
 						`EXE_BGEZ:		alucontrol	<=	`EXE_BGEZ_OP;
 						`EXE_BGEZAL:	alucontrol	<=	`EXE_BGEZAL_OP;
 					endcase
+				end
+				`CPO_COP0:begin
+				    case(rs)
+				        `CP0_MT:
+				            alucontrol <= `EXE_MTC0_OP;
+				        `CP0_MF:
+				            alucontrol <= `EXE_MFC0_OP;
+				    endcase 
 				end
 				default: begin
 					$display("[ALUDEC] op = %2d", op);
@@ -180,17 +193,19 @@ endmodule
 
 module maindec(
     input [5:0] op, funct,
+    input [4:0] rs,
     input [4:0] rt,
 	output memtoreg, memen,
 	output branch,
 	output alusrc,
 	output regdst, regwrite, writehilo,
-	output jump, jal, jr, bal
+	output jump, jal, jr, bal,
+	output cp0write, fromcp0
     );
-    reg [11:0] controls;
-    assign {memtoreg, memen, branch, alusrc, regdst, regwrite, writehilo, jump, jal, jr, bal} = controls;
+    reg [12:0] controls;
+    assign {memtoreg, memen, branch, alusrc, regdst, regwrite, writehilo, jump, jal, jr, bal, cp0write, fromcp0} = controls;
     always @ (*)
-    	if (op != 0)
+    	 if (op != 0)
 			case (op)
 				`EXE_ADDI, `EXE_ADDIU, `EXE_SLTI, `EXE_SLTIU:
 					controls <= `ARITH_IMME_CTRL;
@@ -214,6 +229,14 @@ module maindec(
 							controls <= `BAL_CTRL;
 					endcase
 				end
+				`CPO_COP0:begin
+				    case(rs)
+				        `CP0_MT:
+				            controls <= `CP0_MT_CTRL;
+				        `CP0_MF:
+				            controls <= `CP0_MF_CTRL;
+				    endcase 
+				end    
 				default: begin
 					$display("[MAINDEC] OP = %2d", op);
 					$stop;

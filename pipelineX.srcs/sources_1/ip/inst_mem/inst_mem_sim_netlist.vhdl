@@ -1,10 +1,9 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
--- Date        : Fri Dec 13 02:40:53 2019
--- Host        : liyifan running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim
---               c:/Users/a/Desktop/MIPS32/pipelineX.srcs/sources_1/ip/inst_mem/inst_mem_sim_netlist.vhdl
+-- Date        : Fri Dec 13 22:36:21 2019
+-- Host        : LAPTOP-2EBBDC3I running 64-bit major release  (build 9200)
+-- Command     : write_vhdl -force -mode funcsim E:/MIPS32/pipelineX.srcs/sources_1/ip/inst_mem/inst_mem_sim_netlist.vhdl
 -- Design      : inst_mem
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -46,8 +45,8 @@ begin
       INITP_05 => X"0000000000000000000000000000000000000000000000000000000000000000",
       INITP_06 => X"0000000000000000000000000000000000000000000000000000000000000000",
       INITP_07 => X"0000000000000000000000000000000000000000000000000000000000000000",
-      INIT_00 => X"3401456700000000102200038C0100003401000034021234AC01000034011234",
-      INIT_01 => X"000000000000000000000000000000000800000B00000000340189AB00000000",
+      INIT_00 => X"00000000080000064002600040816000342104013C011000408158003401000F",
+      INIT_01 => X"0000000000000000000000000000000000000000000000000000000000000000",
       INIT_02 => X"0000000000000000000000000000000000000000000000000000000000000000",
       INIT_03 => X"0000000000000000000000000000000000000000000000000000000000000000",
       INIT_04 => X"0000000000000000000000000000000000000000000000000000000000000000",

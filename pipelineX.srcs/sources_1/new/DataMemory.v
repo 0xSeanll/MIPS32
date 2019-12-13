@@ -71,7 +71,7 @@ module DataMemory(
     		`EXE_LH_OP: begin
     			case (addr_i[1:0])
     				2'b00:	rdata_o <= { {16{rdata[31]}}, rdata[31:16] };
-    				2'b10:	rdata_o <= { {16{rdata[31]}}, rdata[15: 0] };
+    				2'b10:	rdata_o <= { {16{rdata[15]}}, rdata[15: 0] };
     				default: begin
     					$display("[DATA MEMORY] Invalid Address.");
     					$stop;

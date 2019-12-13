@@ -1,32 +1,32 @@
 // global macro definition
  `define RstEnable 		1'b1
-// `define RstDisable		1'b0
+ `define RstDisable		1'b0
 `define ZeroWord		32'h00000000
-// `define WriteEnable		1'b1
-// `define WriteDisable	1'b0
-// `define ReadEnable		1'b1
-// `define ReadDisable		1'b0
-// `define AluOpBus		7:0
-// `define AluSelBus		2:0
-// `define InstValid		1'b0
-// `define InstInvalid		1'b1
-// `define Stop 			1'b1
-// `define NoStop 			1'b0
-// `define InDelaySlot 	1'b1
-// `define NotInDelaySlot 	1'b0
-// `define Branch 			1'b1
-// `define NotBranch 		1'b0
-// `define InterruptAssert 1'b1
-// `define InterruptNotAssert 1'b0
-// `define TrapAssert 		1'b1
-// `define TrapNotAssert 	1'b0
-// `define True_v			1'b1
-// `define False_v			1'b0
-// `define ChipEnable		1'b1
-// `define ChipDisable		1'b0
-// `define AHB_IDLE 2'b00
-// `define AHB_BUSY 2'b01
-// `define AHB_WAIT_FOR_STALL 2'b11
+ `define WriteEnable		1'b1
+ `define WriteDisable	1'b0
+ `define ReadEnable		1'b1
+ `define ReadDisable		1'b0
+ `define AluOpBus		7:0
+ `define AluSelBus		2:0
+ `define InstValid		1'b0
+ `define InstInvalid		1'b1
+ `define Stop 			1'b1
+ `define NoStop 			1'b0
+ `define InDelaySlot 	1'b1
+ `define NotInDelaySlot 	1'b0
+ `define Branch 			1'b1
+ `define NotBranch 		1'b0
+ `define InterruptAssert 1'b1
+ `define InterruptNotAssert 1'b0
+ `define TrapAssert 		1'b1
+ `define TrapNotAssert 	1'b0
+ `define True_v			1'b1
+ `define False_v			1'b0
+ `define ChipEnable		1'b1
+ `define ChipDisable		1'b0
+ `define AHB_IDLE 2'b00
+ `define AHB_BUSY 2'b01
+ `define AHB_WAIT_FOR_STALL 2'b11
 
 //specific inst macro definition
 //logic inst
@@ -227,10 +227,10 @@
 `define EXE_RES_NOP 3'b000
 
 //inst ROM macro definition
-// `define InstAddrBus		31:0
-// `define InstBus 		31:0
-// `define InstMemNum		131071
-// `define InstMemNumLog2	17
+ `define InstAddrBus		31:0
+ `define InstBus 		31:0
+ `define InstMemNum		131071
+ `define InstMemNumLog2	17
 
 // //data RAM
 `define DataAddrBus 31:0
@@ -241,25 +241,28 @@
 
 // //regfiles macro definition
 
-// `define RegAddrBus		4:0
-// `define RegBus 			31:0
-// `define RegWidth		32
-// `define DoubleRegWidth	64
-// `define DoubleRegBus	63:0
-// `define RegNum			32
-// `define RegNumLog2		5
-// `define NOPRegAddr		5'b00000
+ `define RegAddrBus		4:0
+ `define RegBus 		31:0
+ `define RegWidth		32
+ `define DoubleRegWidth	64
+ `define DoubleRegBus	63:0
+ `define RegNum			32
+ `define RegNumLog2		5
+ `define NOPRegAddr		5'b00000
 
 
-// //CP0
-// `define CP0_REG_BADVADDR    5'b01000       //只读
-// `define CP0_REG_COUNT    5'b01001        //可读写
-// `define CP0_REG_COMPARE    5'b01011      //可读写
-// `define CP0_REG_STATUS    5'b01100       //可读写
-// `define CP0_REG_CAUSE    5'b01101        //只读
-// `define CP0_REG_EPC    5'b01110          //可读写
-// `define CP0_REG_PRID    5'b01111         //只读
-// `define CP0_REG_CONFIG    5'b10000       //只读
+ //CP0
+ `define CPO_COP0 6'b010000
+ `define CP0_MT 5'b00100
+ `define CP0_MF 5'b00000
+ `define CP0_REG_BADVADDR    5'b01000       //只读
+ `define CP0_REG_COUNT    5'b01001        //可读写
+ `define CP0_REG_COMPARE    5'b01011      //可读写
+ `define CP0_REG_STATUS    5'b01100       //可读写
+ `define CP0_REG_CAUSE    5'b01101        //只读
+ `define CP0_REG_EPC    5'b01110          //可读写
+ `define CP0_REG_PRID    5'b01111         //只读
+ `define CP0_REG_CONFIG    5'b10000       //只读
 
 
 //memtoreg, memen
@@ -272,87 +275,89 @@
 //*******************************************
 //`define EXE_B
 //******************************************
-`define SAVE_CTRL		11'b01_0_1_000_0000
-`define EXE_SB_CTRL		11'b01_0_1_000_0000
-`define EXE_SH_CTRL		11'b01_0_1_000_0000
-`define EXE_SW_CTRL		11'b01_0_1_000_0000
+`define SAVE_CTRL		13'b01_0_1_000_0000_00
+`define EXE_SB_CTRL		13'b01_0_1_000_0000_00
+`define EXE_SH_CTRL		13'b01_0_1_000_0000_00
+`define EXE_SW_CTRL		13'b01_0_1_000_0000_00
 //******************************************
-`define LOAD_CTRL		11'b11_0_1_010_0000
-`define EXE_LB_CTRL		11'b11_0_1_010_0000
-`define EXE_LBU_CTRL	11'b11_0_1_010_0000
-`define EXE_LH_CTRL		11'b11_0_1_010_0000
-`define EXE_LHU_CTRL	11'b11_0_1_010_0000
-`define EXE_LW_CTRL		11'b11_0_1_010_0000
+`define LOAD_CTRL		13'b11_0_1_010_0000_00
+`define EXE_LB_CTRL		13'b11_0_1_010_0000_00
+`define EXE_LBU_CTRL	13'b11_0_1_010_0000_00
+`define EXE_LH_CTRL		13'b11_0_1_010_0000_00
+`define EXE_LHU_CTRL	13'b11_0_1_010_0000_00
+`define EXE_LW_CTRL		13'b11_0_1_010_0000_00
 //******************************************
-`define BRANCH_CTRL		11'b00_1_0_000_0000
-`define EXE_BEQ_CTRL	11'b00_1_0_000_0000
-`define EXE_BGTZ_CTRL	11'b00_1_0_000_0000
-`define EXE_BLEZ_CTRL	11'b00_1_0_000_0000
-`define EXE_BNE_CTRL	11'b00_1_0_000_0000
-`define EXE_BLTZ_CTRL	11'b00_1_0_000_0000
-`define EXE_BGEZ_CTRL	11'b00_1_0_000_0000
+`define BRANCH_CTRL		13'b00_1_0_000_0000_00
+`define EXE_BEQ_CTRL	13'b00_1_0_000_0000_00
+`define EXE_BGTZ_CTRL	13'b00_1_0_000_0000_00
+`define EXE_BLEZ_CTRL	13'b00_1_0_000_0000_00
+`define EXE_BNE_CTRL	13'b00_1_0_000_0000_00
+`define EXE_BLTZ_CTRL	13'b00_1_0_000_0000_00
+`define EXE_BGEZ_CTRL	13'b00_1_0_000_0000_00
 //******************************************
-`define BAL_CTRL		11'b00_1_0_0x0_0101
-`define EXE_BGEZAL_CTRL 11'b00_1_0_0x0_0101
-`define EXE_BLTZAL_CTRL 11'b00_1_0_0x0_0101
+`define BAL_CTRL		13'b00_1_0_0x0_0101_00
+`define EXE_BGEZAL_CTRL 13'b00_1_0_0x0_0101_00
+`define EXE_BLTZAL_CTRL 13'b00_1_0_0x0_0101_00
 //******************************************
-`define EXE_J_CTRL		11'b00_0_0_000_1000
-`define EXE_JR_CTRL		11'b00_0_0_000_1010
-`define EXE_JAL_CTRL	11'b00_0_0_010_1100
-`define EXE_JALR_CTRL	11'b00_0_0_110_1010
+`define EXE_J_CTRL		13'b00_0_0_000_1000_00
+`define EXE_JR_CTRL		13'b00_0_0_000_1010_00
+`define EXE_JAL_CTRL	13'b00_0_0_010_1100_00
+`define EXE_JALR_CTRL	13'b00_0_0_110_1010_00
 //******************************************
-`define MULT_CTRL	    11'b00_0_0_001_0000
-`define EXE_MULT_CTRL	11'b00_0_0_001_0000
-`define EXE_MULTU_CTRL	11'b00_0_0_001_0000
+`define MULT_CTRL	    13'b00_0_0_001_0000_00
+`define EXE_MULT_CTRL	13'b00_0_0_001_0000_00
+`define EXE_MULTU_CTRL	13'b00_0_0_001_0000_00
 //******************************************
-`define ARITH_R_CTRL	11'b00_0_0_110_0000
-`define EXE_ADD_CTRL	11'b00_0_0_110_0000
-`define EXE_ADDU_CTRL	11'b00_0_0_110_0000
-`define EXE_SUB_CTRL	11'b00_0_0_110_0000
-`define EXE_SUBU_CTRL	11'b00_0_0_110_0000
-`define EXE_SLT_CTRL	11'b00_0_0_110_0000
-`define EXE_SLTU_CTRL	11'b00_0_0_110_0000
+`define ARITH_R_CTRL	13'b00_0_0_110_0000_00
+`define EXE_ADD_CTRL	13'b00_0_0_110_0000_00
+`define EXE_ADDU_CTRL	13'b00_0_0_110_0000_00
+`define EXE_SUB_CTRL	13'b00_0_0_110_0000_00
+`define EXE_SUBU_CTRL	13'b00_0_0_110_0000_00
+`define EXE_SLT_CTRL	13'b00_0_0_110_0000_00
+`define EXE_SLTU_CTRL	13'b00_0_0_110_0000_00
 //******************************************
-`define ARITH_IMME_CTRL 11'b00_0_1_010_0000
-`define EXE_ADDI_CTRL	11'b00_0_1_010_0000
-`define EXE_ADDIU_CTRL	11'b00_0_1_010_0000
-`define EXE_SLTI_CTRL	11'b00_0_1_010_0000
-`define EXE_SLTIU_CTRL	11'b00_0_1_010_0000
+`define ARITH_IMME_CTRL 13'b00_0_1_010_0000_00
+`define EXE_ADDI_CTRL	13'b00_0_1_010_0000_00
+`define EXE_ADDIU_CTRL	13'b00_0_1_010_0000_00
+`define EXE_SLTI_CTRL	13'b00_0_1_010_0000_00
+`define EXE_SLTIU_CTRL	13'b00_0_1_010_0000_00
 //******************************************
-`define MF_CTRL			11'b00_0_0_110_0000
-`define MFHI_CTRL		11'b00_0_0_110_0000
-`define MFLO_CTRL		11'b00_0_0_110_0000
+`define MF_CTRL			13'b00_0_0_110_0000_00
+`define MFHI_CTRL		13'b00_0_0_110_0000_00
+`define MFLO_CTRL		13'b00_0_0_110_0000_00
 //******************************************
-`define MT_CTRL			11'b00_0_0_001_0000
-`define MTHI_CTRL		11'b00_0_0_001_0000
-`define MTLO_CTRL		11'b00_0_0_001_0000
+`define MT_CTRL			13'b00_0_0_001_0000_00
+`define MTHI_CTRL		13'b00_0_0_001_0000_00
+`define MTLO_CTRL		13'b00_0_0_001_0000_00
 //*****************************************
-`define SYNC_CTRL		11'b00_0_0_000_0000
+`define SYNC_CTRL		13'b00_0_0_000_0000_00
 //*****************************************
-`define SHIFT_CTRL		11'b00_0_0_110_0000
-`define EXE_SLL_CTRL	11'b00_0_0_110_0000
-`define EXE_SRL_CTRL	11'b00_0_0_110_0000
-`define EXE_SRA_CTRL	11'b00_0_0_110_0000
-`define EXE_SLLV_CTRL	11'b00_0_0_110_0000
-`define EXE_SRLV_CTRL	11'b00_0_0_110_0000
-`define EXE_SRAV_CTRL	11'b00_0_0_110_0000
+`define SHIFT_CTRL		13'b00_0_0_110_0000_00
+`define EXE_SLL_CTRL	13'b00_0_0_110_0000_00
+`define EXE_SRL_CTRL	13'b00_0_0_110_0000_00
+`define EXE_SRA_CTRL	13'b00_0_0_110_0000_00
+`define EXE_SLLV_CTRL	13'b00_0_0_110_0000_00
+`define EXE_SRLV_CTRL	13'b00_0_0_110_0000_00
+`define EXE_SRAV_CTRL	13'b00_0_0_110_0000_00
 //*****************************************
-`define LOGIC_R_CTRL    11'b00_0_0_110_0000
-`define EXE_AND_CTRL    11'b00_0_0_110_0000
-`define EXE_OR_CTRL     11'b00_0_0_110_0000
-`define EXE_NOR_CTRL    11'b00_0_0_110_0000
-`define EXE_XOR_CTRL    11'b00_0_0_110_0000
+`define LOGIC_R_CTRL    13'b00_0_0_110_0000_00
+`define EXE_AND_CTRL    13'b00_0_0_110_0000_00
+`define EXE_OR_CTRL     13'b00_0_0_110_0000_00
+`define EXE_NOR_CTRL    13'b00_0_0_110_0000_00
+`define EXE_XOR_CTRL    13'b00_0_0_110_0000_00
 //*****************************************
-`define LOGIC_IMME_CTRL 11'b00_0_1_010_0000
-`define EXE_ANDI_CTRL   11'b00_0_1_010_0000
-`define EXE_ORI_CTRL    11'b00_0_1_010_0000
-`define EXE_XORI_CTRL   11'b00_0_1_010_0000
-`define EXE_LUI_CTRL    11'b00_0_1_010_0000
+`define LOGIC_IMME_CTRL 13'b00_0_1_010_0000_00
+`define EXE_ANDI_CTRL   13'b00_0_1_010_0000_00
+`define EXE_ORI_CTRL    13'b00_0_1_010_0000_00
+`define EXE_XORI_CTRL   13'b00_0_1_010_0000_00
+`define EXE_LUI_CTRL    13'b00_0_1_010_0000_00
 //*****************************************
-`define DIV_CTRL		11'b00_0_0_001_0000
-`define EXE_DIV_CTRL	11'b00_0_0_001_0000
-`define EXE_DIVU_CTRL	11'b00_0_0_001_0000
+`define DIV_CTRL		13'b00_0_0_001_0000_00
+`define EXE_DIV_CTRL	13'b00_0_0_001_0000_00
+`define EXE_DIVU_CTRL	13'b00_0_0_001_0000_00
 //*****************************************
+`define CP0_MT_CTRL 13'b00_0_0_100_0000_10
+`define CP0_MF_CTRL 13'b00_0_0_010_0000_01
 `define DivFree 2'b00
 `define DivByZero 2'b01
 `define DivOn 2'b10

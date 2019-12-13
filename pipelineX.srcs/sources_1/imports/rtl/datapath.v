@@ -30,6 +30,7 @@ module datapath(
 	input wire jumpD,jr,
 //	output wire equalD,
 	output wire [5:0] opD,functD,
+	output wire [4:0] rsD,
 	output wire [4:0] rtD,
 //	output wire [7:0] alucontrolD,
 	output wire [31:0] srca2D, srcb2D,
@@ -49,7 +50,12 @@ module datapath(
 	//writeback stage
 	input wire memtoregW,
 	input wire regwriteW,
-	input wire writehiloW
+	input wire writehiloW,
+	
+	input wire fromcp0,
+	input wire cp0writeM, cp0writeW,
+	input wire[5:0] int_i,
+	output wire timer_int_o
     );
 	
 	//fetch stage
@@ -59,7 +65,7 @@ module datapath(
 	//decode stage
 	wire [31:0] pcplus4D,instrD;
 	wire forwardaD,forwardbD;
-	wire [4:0] rsD,rdD;
+	wire [4:0] rdD;
 	wire flushD,stallD; 
 	wire [31:0] signimmD,signimmshD;
 	wire [31:0] srcaD,srcbD;
@@ -82,14 +88,32 @@ module datapath(
 	wire [31:0] hi_iE, lo_iE, hi_oE, lo_oE;
 	wire stall_div;
 	wire [31:0] pcplus4E;
+	
+	wire[`RegBus] excepttype_i;
+	wire[`RegBus] current_inst_addr_i;
+	wire is_in_delayslot_i;
+	wire[`RegBus] bad_addr_i;
+	wire[`RegBus] data_o;
+    wire[`RegBus] count_o;
+    wire[`RegBus] compare_o;
+    wire[`RegBus] status_o;
+    wire[`RegBus] cause_o;
+    wire[`RegBus] epc_o;
+    wire[`RegBus] config_o;
+    wire[`RegBus] prid_o;
+    wire[`RegBus] badvaddr;
+    wire timer_int_o;
+    wire [31:0] srcaD_final;
+    
 	HazardUnit h(
-		rsD, rtD, rsE, rtE,
+		rsD, rtD, rdD, rsE, rtE,
 		writeregE, writeregM, writeregW,
 		memtoregE, memtoregM,
 		regwriteE, regwriteM, regwriteW,
 		writehiloM, writehiloW,
 		branchD,
 		stall_div,
+		cp0writeM, cp0writeW,
 		forwardaE, forwardbE,
 		forwardaD, forwardbD,
 		fwdhiloE,
@@ -122,6 +146,10 @@ module datapath(
 	adder pcadd2(pcplus4D,signimmshD,pcbranchD);
 	mux2 #(32) forwardamux(srcaD,aluoutM,forwardaD,srca2D);
 	mux2 #(32) forwardbmux(srcbD,aluoutM,forwardbD,srcb2D);
+	mux2 #(32) fromread1orcp0(srcaD, data_o, fromcp0, srcaD_final);
+	
+	cp0_reg my_cp0_reg(clk, rst, cp0writeW, writeregW, rdD, resultW,int_i, excepttype_i, current_inst_addr_i, is_in_delayslot_i, bad_addr_i,
+	                   data_o, count_o, compare_o, status_o, cause_o, epc_o, config_o, prid_o, badvaddr, timer_int_o);
 //	comparator CMP(srca2D,srcb2D,alucontrolD,rtD,equalD);
 	assign saD = instrD[10:6];
 	assign opD = instrD[31:26];
@@ -131,7 +159,7 @@ module datapath(
 	assign rdD = instrD[15:11];
 
 // ID to EXE flip flops
-	flopenrc #(32) r1E(clk, rst, ~stallE, flushE, srcaD,srcaE);
+	flopenrc #(32) r1E(clk, rst, ~stallE, flushE, srcaD_final,srcaE);
     flopenrc #(32) r2E(clk, rst, ~stallE, flushE, srcbD,srcbE);
     flopenrc #(32) r3E(clk, rst, ~stallE, flushE, signimmD,signimmE);
     flopenrc #(5)  r4E(clk, rst, ~stallE, flushE, rsD, rsE);

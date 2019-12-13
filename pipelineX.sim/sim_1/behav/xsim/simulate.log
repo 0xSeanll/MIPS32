@@ -14,22 +14,25 @@ Block Memory Generator module testbench.dut.dataMemory.D_MEM.inst.native_mem_map
 [ALU] Hit SLL
 [CMP] Unknown aluop    90
 [ALU] Hit ORI
-[CMP] Unknown aluop   235
-[ALU] op = 235
+[CMP] Unknown aluop    96
+[ALU] op = 96
+[CMP] Unknown aluop    92
+[CMP] Unknown aluop    92
+[ALU] Hit LUI
+[CMP] Unknown aluop    90
+[CMP] Unknown aluop    90
 [CMP] Unknown aluop    90
 [ALU] Hit ORI
-[CMP] Unknown aluop    90
-[CMP] Unknown aluop   227
-[ALU] op = 227
-[ALU] op =  0
-[ALU] op =  0
-[ALU] op = 81
-[ALU] op = 81
-[ALU] op = 81
-[CMP] Unknown aluop   124
-[ALU] Hit SLL
-[CMP] Unknown aluop    90
-[ALU] Hit ORI
+[CMP] Unknown aluop    96
+[CMP] Unknown aluop    96
+[ALU] op = 96
+[CMP] Unknown aluop    93
+[CMP] Unknown aluop    93
+[ALU] op = 93
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[ALU] op = 79
 [CMP] Unknown aluop   124
 [ALU] Hit SLL
 [CMP] Unknown aluop    79
@@ -118,3 +121,11 @@ Block Memory Generator module testbench.dut.dataMemory.D_MEM.inst.native_mem_map
 [CMP] Unknown aluop   124
 [ALU] Hit SLL
 [CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124
+[ALU] Hit SLL
+[CMP] Unknown aluop    79
+[ALU] op = 79
+[ALU] op = 79
+[CMP] Unknown aluop   124

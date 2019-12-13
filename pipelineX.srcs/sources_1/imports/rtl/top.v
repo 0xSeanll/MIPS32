@@ -23,7 +23,9 @@
 module top(
 	input wire CLK,rst,
 	output wire [31:0] writedata,dataadr,
-	output wire [3:0] memwrite
+	output wire [3:0] memwrite,
+	input wire [5:0] int_i,
+	output wire timer_int_o
     );
 	reg clkIM = 0;
 	always @(CLK) begin
@@ -33,7 +35,7 @@ module top(
 	wire[31:0] pc,instr,readdata;
 	wire [7:0] alucontrolM;
 	wire memenM;
-	mips mips(CLK,rst,pc,instr,dataadr,writedata,readdata,alucontrolM,memenM);
+	mips mips(CLK,rst,pc,instr,dataadr,writedata,readdata,alucontrolM,memenM,int_i,timer_int_o);
 	inst_mem instMemory(clkIM,pc[31:0],instr);
 	DataMemory dataMemory(CLK, dataadr, writedata, alucontrolM, memenM, readdata);
 //	data_mem dmem(clk,{4{memwrite}},dataadr,writedata,readdata);

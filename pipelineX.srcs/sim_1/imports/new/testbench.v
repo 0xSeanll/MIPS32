@@ -25,9 +25,12 @@ module testbench();
 	reg rst;
 
 	wire[31:0] writedata,dataadr;
-	wire [4:0] memwrite;
+	wire[4:0] memwrite;
+	wire[5:0] int_i;
+	wire timer_int_o;
+	assign int_i = 6'b000000;
 
-	top dut(clk,rst,writedata,dataadr,memwrite);
+	top dut(clk,rst,writedata,dataadr,memwrite,int_i,timer_int_o);
 
 	initial begin
 		rst <= 1;

@@ -128,6 +128,10 @@ module ALU(
 			     stall_div <= 1;
 			     signed_div_i <= 0;
 			end
+			`EXE_MTC0_OP:
+			     result <= b;
+			`EXE_MFC0_OP:
+			     result <= a;
 			default: begin
 				$display("[ALU] op = %2d", aluop);
 //				$stop;

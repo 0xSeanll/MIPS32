@@ -21,13 +21,14 @@
 
 
 module HazardUnit(
-    input wire [4:0] RsD, RtD, RsE, RtE,
+    input wire [4:0] RsD, RtD, RdD, RsE, RtE,
     input wire [4:0] WriteRegE, WriteRegM, WriteRegW,
     input wire MemtoRegE, MemtoRegM,
     input wire RegWriteE, RegWriteM, RegWriteW,
     input wire writehiloM, writehiloW,
     input wire BranchD,
     input wire stall_div,
+    input wire cp0WriteM,cp0WriteW,
     output reg [1:0] ForwardAE, ForwardBE,
     output reg ForwardAD, ForwardBD,
     output wire [1:0] fwdhiloE,
@@ -47,9 +48,9 @@ module HazardUnit(
 	assign STALLE = stall_div;
 
     always @(*) begin 
-    	if ((RsE != 0) && (RsE == WriteRegM) && RegWriteM)
+    	if ((RsE != 0) && (RsE == WriteRegM) && (RegWriteM || cp0WriteM))
     		ForwardAE <= 2'b10;
-    	else if ((RsE != 0) && (RsE == WriteRegW) && RegWriteW)
+    	else if ((RsE != 0) && (RsE == WriteRegW) && (RegWriteW || cp0WriteW))
     		ForwardAE <= 2'b01;
     	else ForwardAE <= 2'b00;
     	
@@ -59,7 +60,7 @@ module HazardUnit(
     		ForwardBE <= 2'b01;
     	else ForwardBE <= 2'b00;
     	
-    	ForwardAD <= (RsD != 0) && (RsD == WriteRegM) && RegWriteM;
-    	ForwardBD <= (RtD != 0) && (RtD == WriteRegM) && RegWriteM;
+    	ForwardAD <= ((RsD != 0) && (RsD == WriteRegM) && RegWriteM) || ((RdD != 0) && (RdD == WriteRegM) && cp0WriteM);
+    	ForwardBD <= ((RtD != 0) && (RtD == WriteRegM) && RegWriteM) || ((RdD != 0) && (RdD == WriteRegM) && cp0WriteM);
     end
 endmodule
