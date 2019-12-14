@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="437909999fs"></ZoomStartTime>
-      <ZoomEndTime time="570910000fs"></ZoomEndTime>
-      <Cursor1Time time="471510000fs"></Cursor1Time>
+      <ZoomStartTime time="88230000fs"></ZoomStartTime>
+      <ZoomEndTime time="151430001fs"></ZoomEndTime>
+      <Cursor1Time time="113190000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="180"></NameColumnWidth>
-      <ValueColumnWidth column_width="84"></ValueColumnWidth>
+      <ValueColumnWidth column_width="79"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="4" />
+   <WVObjectSize size="27" />
    <wvobject fp_name="/testbench/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -35,6 +35,7 @@
       <wvobject fp_name="/testbench/dut/mips/dp/rf/rf" type="array">
          <obj_property name="ElementShortName">rf[31:0][31:0]</obj_property>
          <obj_property name="ObjectShortName">rf[31:0][31:0]</obj_property>
+         <obj_property name="isExpanded"></obj_property>
       </wvobject>
       <wvobject fp_name="/testbench/dut/mips/dp/pcF" type="array">
          <obj_property name="ElementShortName">pcF[31:0]</obj_property>
@@ -592,5 +593,103 @@
          <obj_property name="ElementShortName">forwardaD</obj_property>
          <obj_property name="ObjectShortName">forwardaD</obj_property>
       </wvobject>
+   </wvobject>
+   <wvobject fp_name="/testbench/dut/mips/dp/my_cp0_reg/count_o" type="array">
+      <obj_property name="ElementShortName">count_o[31:0]</obj_property>
+      <obj_property name="ObjectShortName">count_o[31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/dut/mips/dp/my_cp0_reg/status_o" type="array">
+      <obj_property name="ElementShortName">status_o[31:0]</obj_property>
+      <obj_property name="ObjectShortName">status_o[31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/dut/mips/dp/my_cp0_reg/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/dut/mips/dp/my_cp0_reg/rst" type="logic">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/dut/mips/dp/my_cp0_reg/we_i" type="logic">
+      <obj_property name="ElementShortName">we_i</obj_property>
+      <obj_property name="ObjectShortName">we_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/dut/mips/dp/my_cp0_reg/waddr_i" type="array">
+      <obj_property name="ElementShortName">waddr_i[4:0]</obj_property>
+      <obj_property name="ObjectShortName">waddr_i[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/dut/mips/dp/my_cp0_reg/raddr_i" type="array">
+      <obj_property name="ElementShortName">raddr_i[4:0]</obj_property>
+      <obj_property name="ObjectShortName">raddr_i[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/dut/mips/dp/my_cp0_reg/data_i" type="array">
+      <obj_property name="ElementShortName">data_i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">data_i[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/dut/mips/dp/my_cp0_reg/int_i" type="array">
+      <obj_property name="ElementShortName">int_i[5:0]</obj_property>
+      <obj_property name="ObjectShortName">int_i[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/dut/mips/dp/my_cp0_reg/excepttype_i" type="array">
+      <obj_property name="ElementShortName">excepttype_i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">excepttype_i[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/dut/mips/dp/my_cp0_reg/current_inst_addr_i" type="array">
+      <obj_property name="ElementShortName">current_inst_addr_i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">current_inst_addr_i[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/dut/mips/dp/my_cp0_reg/is_in_delayslot_i" type="logic">
+      <obj_property name="ElementShortName">is_in_delayslot_i</obj_property>
+      <obj_property name="ObjectShortName">is_in_delayslot_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/dut/mips/dp/my_cp0_reg/bad_addr_i" type="array">
+      <obj_property name="ElementShortName">bad_addr_i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">bad_addr_i[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/dut/mips/dp/my_cp0_reg/data_o" type="array">
+      <obj_property name="ElementShortName">data_o[31:0]</obj_property>
+      <obj_property name="ObjectShortName">data_o[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/dut/mips/dp/my_cp0_reg/count_o" type="array">
+      <obj_property name="ElementShortName">count_o[31:0]</obj_property>
+      <obj_property name="ObjectShortName">count_o[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/dut/mips/dp/my_cp0_reg/timer_int_o" type="logic">
+      <obj_property name="ElementShortName">timer_int_o</obj_property>
+      <obj_property name="ObjectShortName">timer_int_o</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/dut/mips/dp/my_cp0_reg/compare_o" type="array">
+      <obj_property name="ElementShortName">compare_o[31:0]</obj_property>
+      <obj_property name="ObjectShortName">compare_o[31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/dut/mips/dp/my_cp0_reg/status_o" type="array">
+      <obj_property name="ElementShortName">status_o[31:0]</obj_property>
+      <obj_property name="ObjectShortName">status_o[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/dut/mips/dp/my_cp0_reg/cause_o" type="array">
+      <obj_property name="ElementShortName">cause_o[31:0]</obj_property>
+      <obj_property name="ObjectShortName">cause_o[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/dut/mips/dp/my_cp0_reg/epc_o" type="array">
+      <obj_property name="ElementShortName">epc_o[31:0]</obj_property>
+      <obj_property name="ObjectShortName">epc_o[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/dut/mips/dp/my_cp0_reg/config_o" type="array">
+      <obj_property name="ElementShortName">config_o[31:0]</obj_property>
+      <obj_property name="ObjectShortName">config_o[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/dut/mips/dp/my_cp0_reg/prid_o" type="array">
+      <obj_property name="ElementShortName">prid_o[31:0]</obj_property>
+      <obj_property name="ObjectShortName">prid_o[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/dut/mips/dp/my_cp0_reg/badvaddr" type="array">
+      <obj_property name="ElementShortName">badvaddr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">badvaddr[31:0]</obj_property>
    </wvobject>
 </wave_config>

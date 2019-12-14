@@ -106,7 +106,7 @@ module datapath(
     wire [31:0] srcaD_final;
     
 	HazardUnit h(
-		rsD, rtD, rdD, rsE, rtE,
+		rsD, rtD, rdD, rsE, rtE, rdE,
 		writeregE, writeregM, writeregW,
 		memtoregE, memtoregM,
 		regwriteE, regwriteM, regwriteW,
