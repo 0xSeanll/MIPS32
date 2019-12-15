@@ -21,13 +21,13 @@
 
 
 module flopenrc #(parameter N=32) (
-    input wire clk, rst,
+    input wire CLK, RST,
     input wire ena, clear,
     input wire [N-1:0] dataIn,
     output reg [N-1:0] dataOut
     );
-    always @(posedge clk) begin
-    	if (rst == 1) dataOut <= 0;
+    always @(posedge CLK) begin
+    	if (RST == 1) dataOut <= 0;
 		else if (clear != 1) begin 
 			if (ena != 0) dataOut <= dataIn;
 		end else dataOut <= 0;

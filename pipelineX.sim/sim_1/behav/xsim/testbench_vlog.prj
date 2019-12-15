@@ -1,10 +1,13 @@
 # compile verilog/system verilog design source files
-verilog xil_defaultlib "E:/MIPS32/pipelineX.srcs/sources_1/new/defines.vh" --include "../../../../pipelineX.srcs/sources_1/new" \
+verilog xil_defaultlib "C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/new/defines.vh" --include "../../../../pipelineX.srcs/sources_1/new" \
 "../../../../pipelineX.srcs/sources_1/ip/data_mem/sim/data_mem.v" \
 "../../../../pipelineX.srcs/sources_1/ip/inst_mem/sim/inst_mem.v" \
 "../../../../pipelineX.srcs/sources_1/imports/new/ALU.v" \
-"../../../../pipelineX.srcs/sources_1/new/DataMemory.v" \
+"../../../../pipelineX.srcs/sources_1/new/CTRL.v" \
+"../../../../pipelineX.srcs/sources_1/new/Data_Memory_Controller.v" \
+"../../../../pipelineX.srcs/sources_1/new/Except.v" \
 "../../../../pipelineX.srcs/sources_1/imports/new/HazardUnit.v" \
+"../../../../pipelineX.srcs/sources_1/new/PC.v" \
 "../../../../pipelineX.srcs/sources_1/imports/new/Register.v" \
 "../../../../pipelineX.srcs/sources_1/imports/new/ShiftLeft2.v" \
 "../../../../pipelineX.srcs/sources_1/imports/new/SignExtend.v" \
@@ -14,9 +17,9 @@ verilog xil_defaultlib "E:/MIPS32/pipelineX.srcs/sources_1/new/defines.vh" --inc
 "../../../../pipelineX.srcs/sources_1/imports/rtl/datapath.v" \
 "../../../../pipelineX.srcs/sources_1/imports/rtl/div.v" \
 "../../../../pipelineX.srcs/sources_1/imports/new/eqcmp.v" \
-"../../../../pipelineX.srcs/sources_1/new/flopenr.v" \
 "../../../../pipelineX.srcs/sources_1/new/flopenrc.v" \
 "../../../../pipelineX.srcs/sources_1/new/flopr.v" \
+"../../../../pipelineX.srcs/sources_1/new/floprc.v" \
 "../../../../pipelineX.srcs/sources_1/imports/rtl/hilo_reg.v" \
 "../../../../pipelineX.srcs/sources_1/imports/rtl/mips.v" \
 "../../../../pipelineX.srcs/sources_1/imports/new/mux2.v" \

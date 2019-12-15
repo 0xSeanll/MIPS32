@@ -1,0 +1,216 @@
+/*
+
+Xilinx Vivado v2018.3 (64-bit) [Major: 2018, Minor: 3]
+SW Build: 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build: 2404404 on Fri Dec  7 01:43:56 MST 2018
+
+Process ID (PID): 12256
+License: Customer
+
+Current time: 	Sat Dec 14 19:37:04 CST 2019
+Time zone: 	China Standard Time (Asia/Shanghai)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 4
+
+Screen size: 1440x900
+Screen resolution (DPI): 96
+Available screens: 1
+Available disk space: 119 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	9.0.4 64-bit
+Java home: 	C:/Xilinx/Vivado/2018.3/tps/win64/jre9.0.4
+Java executable location: 	C:/Xilinx/Vivado/2018.3/tps/win64/jre9.0.4/bin/java.exe
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	a
+User home directory: C:/Users/a
+User working directory: C:/Users/a/Desktop/MIPS32
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI_BASEROOT: C:/Xilinx/Vivado
+HDI_APPROOT: C:/Xilinx/Vivado/2018.3
+RDI_DATADIR: C:/Xilinx/Vivado/2018.3/data
+RDI_BINDIR: C:/Xilinx/Vivado/2018.3/bin
+
+Vivado preferences file location: C:/Users/a/AppData/Roaming/Xilinx/Vivado/2018.3/vivado.xml
+Vivado preferences directory: C:/Users/a/AppData/Roaming/Xilinx/Vivado/2018.3/
+Vivado layouts directory: C:/Users/a/AppData/Roaming/Xilinx/Vivado/2018.3/layouts
+PlanAhead jar file location: 	C:/Xilinx/Vivado/2018.3/lib/classes/planAhead.jar
+Vivado log file location: 	C:/Users/a/Desktop/MIPS32/vivado.log
+Vivado journal file location: 	C:/Users/a/Desktop/MIPS32/vivado.jou
+Engine tmp dir: 	C:/Users/a/Desktop/MIPS32/.Xil/Vivado-12256-liyifan
+
+Xilinx Environment Variables
+----------------------------
+XILINX: C:/Xilinx/Vivado/2018.3/ids_lite/ISE
+XILINX_DSP: C:/Xilinx/Vivado/2018.3/ids_lite/ISE
+XILINX_PLANAHEAD: C:/Xilinx/Vivado/2018.3
+XILINX_SDK: C:/Xilinx/SDK/2018.3
+XILINX_VIVADO: C:/Xilinx/Vivado/2018.3
+XILINX_VIVADO_HLS: C:/Xilinx/Vivado/2018.3
+
+
+GUI allocated memory:	128 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 532 MB
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// bx (cp):  Open Project : addNotify
+// Opening Vivado Project: C:\Users\a\Desktop\MIPS32\pipelineX.xpr. Version: Vivado v2018.3 
+// Tcl Message: open_project C:/Users/a/Desktop/MIPS32/pipelineX.xpr 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: MSGMGR_MOVEMSG
+// WARNING: HTimer (HSTRUtils Dump STR Log Timer) is taking 749ms to process. Increasing delay to 4000 ms.
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 532 MB. GUI used memory: 44 MB. Current time: 12/14/19, 7:37:06 PM CST
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 90 MB (+91530kb) [00:00:38]
+// [Engine Memory]: 576 MB (+452127kb) [00:00:38]
+// [GUI Memory]: 97 MB (+2527kb) [00:00:42]
+// WARNING: HEventQueue.dispatchEvent() is taking  6193 ms.
+// Tcl Message: open_project C:/Users/a/Desktop/MIPS32/pipelineX.xpr 
+// Tcl Message: INFO: [Project 1-313] Project file moved from 'E:/MIPS32' since last save. 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.3/data/ip'. 
+// HMemoryUtils.trashcanNow. Engine heap size: 641 MB. GUI used memory: 48 MB. Current time: 12/14/19, 7:37:24 PM CST
+// [Engine Memory]: 641 MB (+38651kb) [00:00:43]
+// Tcl Message: open_project: Time (s): cpu = 00:00:22 ; elapsed = 00:00:21 . Memory (MB): peak = 662.430 ; gain = 94.867 
+// Project name: pipelineX; location: C:/Users/a/Desktop/MIPS32; part: xc7a100tcsg324-1
+dismissDialog("Open Project"); // bx (cp)
+// a (cp): Critical Messages: addNotify
+// Tcl Message: update_compile_order -fileset sources_1 
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // f (a)
+dismissDialog("Critical Messages"); // a (cp)
+selectButton(PAResourceCommand.PACommandNames_TOGGLE_VIEW_NAV, (String) null); // B (E, cp)
+// Run Command: PAResourceCommand.PACommandNames_TOGGLE_VIEW_NAV
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top (top.v)]", 3); // B (D, cp)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top (top.v), mips : mips (mips.v)]", 4); // B (D, cp)
+// PAPropertyPanels.initPanels (datapath.v) elapsed time: 0.3s
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top (top.v), mips : mips (mips.v), dp : datapath (datapath.v)]", 6, true); // B (D, cp) - Node
+// [GUI Memory]: 105 MB (+4190kb) [00:01:08]
+// Elapsed time: 23 seconds
+maximizeView(PAResourceOtoP.PAViews_BASE_WORKSPACE, "BaseWorkspace"); // O (aF, cp)
+selectCodeEditor("datapath.v", 253, 300); // cl (w, cp)
+// Elapsed time: 10 seconds
+selectCodeEditor("datapath.v", 200, 325); // cl (w, cp)
+// Elapsed time: 11 seconds
+selectCodeEditor("datapath.v", 261, 323); // cl (w, cp)
+selectCodeEditor("datapath.v", 260, 323, false, false, false, false, true); // cl (w, cp) - Double Click
+// Elapsed time: 370 seconds
+unMinimizeFrame(PAResourceOtoP.PAViews_SOURCES, "Sources"); // ax
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top (top.v), mips : mips (mips.v), dp : datapath (datapath.v), alu : ALU (ALU.v)]", 40, true); // B (D, cp) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top (top.v), mips : mips (mips.v), dp : datapath (datapath.v), alu : ALU (ALU.v)]", 40, true, false, false, false, false, true); // B (D, cp) - Double Click - Node
+selectCodeEditor("ALU.v", 219, 301); // cl (w, cp)
+selectCodeEditor("ALU.v", 219, 301, false, false, false, false, true); // cl (w, cp) - Double Click
+selectCodeEditor("ALU.v", 216, 253); // cl (w, cp)
+selectCodeEditor("ALU.v", 216, 252, false, false, false, false, true); // cl (w, cp) - Double Click
+// Elapsed time: 197 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "datapath.v", 1); // k (j, cp)
+// Elapsed time: 36 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top (top.v), mips : mips (mips.v), c : controller (controller.v)]", 5, true); // B (D, cp) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top (top.v), mips : mips (mips.v), c : controller (controller.v)]", 5, true, false, false, false, false, true); // B (D, cp) - Double Click - Node
+selectCodeEditor("controller.v", 453, 373); // cl (w, cp)
+selectCodeEditor("controller.v", 453, 373, false, false, false, false, true); // cl (w, cp) - Double Click
+selectCodeEditor("controller.v", 220, 369); // cl (w, cp)
+selectCodeEditor("controller.v", 220, 369, false, false, false, false, true); // cl (w, cp) - Double Click
+// Elapsed time: 409 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "datapath.v", 1); // k (j, cp)
+// Elapsed time: 32 seconds
+selectCodeEditor("datapath.v", 129, 176); // cl (w, cp)
+// Elapsed time: 212 seconds
+selectCodeEditor("datapath.v", 809, 181); // cl (w, cp)
+// Elapsed time: 141 seconds
+selectCodeEditor("datapath.v", 559, 429); // cl (w, cp)
+selectCodeEditor("datapath.v", 559, 429, false, false, false, false, true); // cl (w, cp) - Double Click
+selectCodeEditor("datapath.v", 626, 424); // cl (w, cp)
+selectCodeEditor("datapath.v", 626, 424, false, false, false, false, true); // cl (w, cp) - Double Click
+// Elapsed time: 18 seconds
+selectCodeEditor("datapath.v", 570, 374); // cl (w, cp)
+selectCodeEditor("datapath.v", 570, 374, false, false, false, false, true); // cl (w, cp) - Double Click
+selectCodeEditor("datapath.v", 621, 372); // cl (w, cp)
+selectCodeEditor("datapath.v", 621, 372, false, false, false, false, true); // cl (w, cp) - Double Click
+selectCodeEditor("datapath.v", 872, 296); // cl (w, cp)
+// Elapsed time: 127 seconds
+selectCodeEditor("datapath.v", 164, 349); // cl (w, cp)
+selectCodeEditor("datapath.v", 164, 349, false, false, false, false, true); // cl (w, cp) - Double Click
+selectCodeEditor("datapath.v", 234, 349); // cl (w, cp)
+selectCodeEditor("datapath.v", 234, 349, false, false, false, false, true); // cl (w, cp) - Double Click
+// HMemoryUtils.trashcanNow. Engine heap size: 666 MB. GUI used memory: 50 MB. Current time: 12/14/19, 8:07:27 PM CST
+// Elapsed time: 201 seconds
+unMinimizeFrame(PAResourceOtoP.PAViews_SOURCES, "Sources"); // ax
+// Elapsed time: 10 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top (top.v), mips : mips (mips.v), dp : datapath (datapath.v), h : HazardUnit (HazardUnit.v)]", 14, false); // B (D, cp)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top (top.v), mips : mips (mips.v), dp : datapath (datapath.v), h : HazardUnit (HazardUnit.v)]", 14, false, false, false, false, false, true); // B (D, cp) - Double Click
+// Elapsed time: 13 seconds
+selectCodeEditor("HazardUnit.v", 466, 163); // cl (w, cp)
+selectCodeEditor("HazardUnit.v", 471, 157); // cl (w, cp)
+// Elapsed time: 16 seconds
+selectCodeEditor("HazardUnit.v", 382, 202); // cl (w, cp)
+selectCodeEditor("HazardUnit.v", 391, 208); // cl (w, cp)
+selectCodeEditor("HazardUnit.v", 344, 155); // cl (w, cp)
+selectCodeEditor("HazardUnit.v", 375, 206); // cl (w, cp)
+selectCodeEditor("HazardUnit.v", 105, 211); // cl (w, cp)
+selectCodeEditor("HazardUnit.v", 614, 200); // cl (w, cp)
+// Elapsed time: 68 seconds
+selectCodeEditor("HazardUnit.v", 398, 509); // cl (w, cp)
+// Elapsed time: 19 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ALU.v", 2); // k (j, cp)
+selectCodeEditor("ALU.v", 338, 350); // cl (w, cp)
+selectCodeEditor("ALU.v", 321, 232); // cl (w, cp)
+selectCodeEditor("ALU.v", 319, 232, false, false, false, false, true); // cl (w, cp) - Double Click
+selectCodeEditor("ALU.v", 319, 232); // cl (w, cp)
+selectCodeEditor("ALU.v", 308, 344); // cl (w, cp)
+selectCodeEditor("ALU.v", 308, 344, false, false, false, false, true); // cl (w, cp) - Double Click
+selectCodeEditor("ALU.v", 353, 247); // cl (w, cp)
+selectCodeEditor("ALU.v", 348, 350); // cl (w, cp)
+selectCodeEditor("ALU.v", 381, 262); // cl (w, cp)
+selectCodeEditor("ALU.v", 371, 332); // cl (w, cp)
+// Elapsed time: 13 seconds
+selectCodeEditor("ALU.v", 306, 261); // cl (w, cp)
+selectCodeEditor("ALU.v", 358, 253); // cl (w, cp)
+selectCodeEditor("ALU.v", 380, 360); // cl (w, cp)
+selectCodeEditor("ALU.v", 247, 357); // cl (w, cp)
+selectCodeEditor("ALU.v", 308, 351); // cl (w, cp)
+selectCodeEditor("ALU.v", 337, 325); // cl (w, cp)
+// Elapsed time: 37 seconds
+selectCodeEditor("ALU.v", 662, 422); // cl (w, cp)
+// Elapsed time: 755 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "datapath.v", 1); // k (j, cp)
+// HMemoryUtils.trashcanNow. Engine heap size: 666 MB. GUI used memory: 47 MB. Current time: 12/14/19, 8:37:27 PM CST
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 1285 ms. Increasing delay to 3855 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 666 MB. GUI used memory: 41 MB. Current time: 12/14/19, 9:07:27 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 666 MB. GUI used memory: 41 MB. Current time: 12/14/19, 9:37:27 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 666 MB. GUI used memory: 40 MB. Current time: 12/14/19, 10:07:28 PM CST
+// Elapsed time: 6746 seconds
+closeMainWindow("pipelineX - [C:/Users/a/Desktop/MIPS32/pipelineX.xpr] - Vivado 2018.3"); // cp
+// al (cp): Save Project: addNotify

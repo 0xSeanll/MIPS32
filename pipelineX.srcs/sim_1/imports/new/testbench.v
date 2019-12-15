@@ -21,32 +21,32 @@
 
 
 module testbench();
-	reg clk;
-	reg rst;
+	reg CLK;
+	reg RST;
 
-	wire[31:0] writedata,dataadr;
-	wire[4:0] memwrite;
-	wire[5:0] int_i;
-	wire timer_int_o;
-	assign int_i = 6'b000000;
+//	wire[31:0] writedata,dataadr;
+//	wire[4:0] memwrite;
+//	wire[5:0] int_i;
+//	wire timer_int_o;
+//	assign int_i = 6'b000000;
 
-	top dut(clk,rst,writedata,dataadr,memwrite,int_i,timer_int_o);
+	soc_lite_top dut(RST, CLK);
 
 	initial begin
-		rst <= 1;
-		#50;
-		rst <= 0;
+		RST <= 1;
+		#200;
+		RST <= 0;
 	end
 
 	always begin
-		clk <= 1;
-		#5;
-		clk <= 0;
-		#5;
+		CLK <= 1;
+		#10;
+		CLK <= 0;
+		#10;
 	
 	end
 
-//	always @(negedge clk) begin
+//	always @(negedge CLK) begin
 //		if(memwrite) begin
 //			/* code */
 //			if(dataadr === 84 & writedata === 7) begin

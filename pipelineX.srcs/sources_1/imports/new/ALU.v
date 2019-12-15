@@ -22,14 +22,16 @@
 `include "defines.vh"
 
 module ALU(
-    input wire clk, rst,
+    input wire CLK, RST,
     input wire [31:0] a, b,
     input wire [31:0] hi, lo,
     input wire [7:0] aluop,
     input wire [4:0] sa,
     input wire [31:0] pcplus4,
+    input wire [31:0] exceptType_i,
     output reg [31:0] result,
     output reg [31:0] hi_o, lo_o,
+    output wire [31:0] exceptType_o,
     output reg stall_div
     );
     reg [63:0] tmp;
@@ -38,19 +40,78 @@ module ALU(
     wire ready_o;
     wire [31:0] rst_hi, rst_lo;
     wire annul_i;
+    reg except_overflow;
+    reg except_lh_not_aligned; // include lhu
+    reg except_lw_not_aligned;
+    reg except_sh_not_aligned;
+    reg except_sw_not_aligned;
+    wire [31:0] bmux, result_sum;
+    wire ov_sum;
+    wire [31:0] addr;
+// Except Detection
+    assign exceptType_o = {
+    	exceptType_i[31:18],
+    	except_sw_not_aligned,
+    	except_sh_not_aligned,
+    	except_lw_not_aligned,
+    	except_lh_not_aligned,
+    	exceptType_i[13:12],
+    	except_overflow,
+    	exceptType_i[10:0]
+    };
+    
+    // Overflow detection
+    assign bmux = ((aluop == `EXE_SUB_OP) ||
+    				(aluop == `EXE_SUBU_OP)||
+    				(aluop == `EXE_SLT_OP)) ? (~b)+1 : b;
+    assign result_sum = a + bmux;
+    assign ov_sum = ((!a[31 && !bmux[31]]) && result_sum[31]) ||
+    				((a[31] && bmux[31]) && !result_sum[31]);
+
+    always @(*) begin
+    	if (((aluop == `EXE_ADD_OP) || (aluop == `EXE_ADDI_OP) ||
+    		(aluop ==`EXE_SUB_OP)) && ov_sum == `True_v) begin
+    		except_overflow <= `True_v;
+    	end else begin
+    		except_overflow <= `False_v;
+    	end
+    end
+	// Address-not-aligned detection
+	assign addr = a + b;
+	always @(*) begin
+		except_lh_not_aligned <= `False_v;
+		except_sh_not_aligned <= `False_v;
+		except_lw_not_aligned <= `False_v;
+		except_sw_not_aligned <= `False_v;
+		if  ((aluop == `EXE_LH_OP || aluop == `EXE_LHU_OP) && addr[0] != 1'b0)
+			except_lh_not_aligned <= `True_v;
+		else if ((aluop == `EXE_LW_OP) && addr[1:0] != 2'b00)
+			except_lw_not_aligned <= `True_v;
+		else if ((aluop == `EXE_SH_OP) && addr[0] != 1'b0)
+			except_sh_not_aligned <= `True_v;
+		else if ((aluop == `EXE_SW_OP) && addr[1:0] != 2'b00)
+			except_sw_not_aligned <= `True_v;
+	end
+
+
+// Divider
     assign annul_i = 0;
-    div my_div(clk, rst, signed_div_i, a, b, start_i, annul_i, {rst_hi, rst_lo}, ready_o);
-    always @(posedge clk) begin
-        if (rst) begin
+    div my_div(CLK, RST, signed_div_i, a, b, start_i, annul_i, {rst_hi, rst_lo}, ready_o);
+    always @(posedge CLK) begin
+        if (RST) begin
             stall_div <= 0;
         end
     end
+    
+// HiLo Reg
     always @(posedge ready_o) begin
         hi_o <= rst_hi;
         lo_o <= rst_lo;
         stall_div <= 0;
         start_i <= 0;
     end
+    
+// Other operations
     always @(*) begin
         case(aluop)
         	`EXE_JAL_OP,
@@ -91,10 +152,7 @@ module ALU(
 				lo_o	<= a;
 			end
 			`EXE_ADD_OP,
-			`EXE_ADDI_OP:	begin
-				tmp = a + b;
-				result <= (tmp[32] == 1'b1) ? 0 : tmp;
-			end
+			`EXE_ADDI_OP,
 			`EXE_ADDU_OP,
 			`EXE_ADDIU_OP:	result	<=	a + b;
 			`EXE_SUB_OP,

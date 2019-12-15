@@ -21,12 +21,12 @@
 
 
 module flopenr #(parameter N=32) (
-    input clk, reset, ena,
+    input CLK, reset, ena,
     input [N-1:0] d,
     output reg [N-1:0] q
     );
     
-    always @(posedge clk, posedge reset) begin
+    always @(posedge CLK/*, posedge reset*/) begin
         if (reset) begin
             q <= 0;
         end else if (ena != 0) begin

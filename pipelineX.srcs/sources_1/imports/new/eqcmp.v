@@ -24,41 +24,41 @@ module comparator (
 	input wire [31:0] a, b,
 	input wire [7:0] aluop,
 	input wire [4:0] rt,
-	output reg y, regwriteB
+	output reg y, regWrite_B
     );
     always @(*) begin
     	case (aluop)
 			`EXE_BEQ_OP:	begin
 				y <= (a == b);
-				regwriteB <= 0;
+				regWrite_B <= 0;
 			end
 			`EXE_BGTZ_OP:	begin
 				y <= (a != `ZeroWord && a[31] == 1'b0);
-				regwriteB <= 0;
+				regWrite_B <= 0;
 			end
 			`EXE_BLEZ_OP:	begin
 				y <= (a == `ZeroWord || a[31] == 1'b1);
-				regwriteB <= 0;
+				regWrite_B <= 0;
 			end
 			`EXE_BNE_OP: 	begin
 				y <= (a != b);
-				regwriteB <= 0;
+				regWrite_B <= 0;
 			end
 			`EXE_BLTZ_OP:	begin
 				y <= (a[31] == 1'b1);
-				regwriteB <= 0;
+				regWrite_B <= 0;
 			end
 			`EXE_BGEZ_OP:	begin
 				y <= (a[31] == 1'b0);
-				regwriteB <= 0;
+				regWrite_B <= 0;
 			end
 			`EXE_BGEZAL_OP:	begin
 				y <= (a[31] == 1'b0);
-				regwriteB <= (a[31] == 1'b0);
+				regWrite_B <= (a[31] == 1'b0);
 			end
 			`EXE_BLTZAL_OP:	begin
 				y <= (a[31] == 1'b1);
-				regwriteB <= (a[31] == 1'b1);
+				regWrite_B <= (a[31] == 1'b1);
 			end
    			default: begin
    				$display("[CMP] Unknown aluop %5d", aluop);

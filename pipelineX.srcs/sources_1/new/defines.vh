@@ -1,3 +1,5 @@
+
+
 // global macro definition
  `define RstEnable 		1'b1
  `define RstDisable		1'b0
@@ -114,7 +116,8 @@
 `define EXE_TNE 6'b110110
 `define EXE_TNEI 5'b01110
    
-`define EXE_ERET 32'b01000010000000000000000000011000
+//`define EXE_ERET 32'b01000010000000000000000000011000
+`define EXE_ERET 5'b10000
 
 `define EXE_SYNC		6'b001111
 `define EXE_PREF		6'b110011

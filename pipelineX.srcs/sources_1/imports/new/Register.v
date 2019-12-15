@@ -21,7 +21,7 @@
 
 
 module Register (
-	input wire clk,
+	input wire CLK,
 	input wire RegWrite,
 	input wire [4:0] Rs, Rt, Rd,
 	input wire [31:0] WriteData,
@@ -29,7 +29,7 @@ module Register (
 //	output reg [31:0] RD1, RD2
     );
 	reg [31:0] rf [31:0];
-	always @(negedge clk) begin
+	always @(negedge CLK) begin
 //		#0.5;
 		if (RegWrite) rf[Rd] <= WriteData;
 //		RD1 <= (Rs != 0) ? rf[Rs] : 0;

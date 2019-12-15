@@ -19,77 +19,121 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
+/*
+Except Type Table
+0~7 bit: software interruption
+8 bit: syscall
+9 bit: invalid instruction
+10 bit: break
+12 bit: eret  
+*/
+
 `include "defines.vh"
 
 module controller(
-	input wire clk, rst,
+	input wire CLK, RST,
 	//decode stage
-	input wire [5:0] opD, functD,
+	input wire [5:0] inst_op_D, inst_funct_D,
 	input wire [4:0] rsD,
 	input wire [4:0] rtD,
-//	input wire equalD,
-	output wire pcsrcD, branchD, jumpD,
+//	input wire equal_D,
+	output wire [1:0] pcsrcD,
+	output wire branchD, jumpD,
 	output wire jrD,
-//	output wire [7:0] alucontrolD,
+//	output wire [7:0] ALUControl_D,
 	input wire [31:0] srca2D, srcb2D,	
 	//execute stage
-	input wire flushE,stallE,
-	output wire jalE,
-	output wire memtoregE,
-	output wire alusrcE,
-	output wire regdstE, regwriteE,
-	output wire [7:0] alucontrolE,
-
+	input wire flush_E,stall_E,
+	output wire jal_E,
+	output wire memToReg_E,
+	output wire ALUSrc_E,
+	output wire regDst_E, regWrite_E,
+	output wire [7:0] ALUctrl_E,
+	output wire [31:0] exceptType_E,
+	input wire stopRegWrite,
+	input wire stopMemWrite,
 	//mem stage
-	output wire memenM,
-	output wire memtoregM, regwriteM, writehiloM,
-	output wire [7:0] alucontrolM,
+	input wire flush_M,
+	output wire memEn_M,
+	output wire memToReg_M, regWrite_M, writeHiLo_M,
+	output wire [7:0] ALUControl_M,
+	output wire isInDelayslot_M,
 	//write back stage
-	output wire memtoregW, regwriteW, writehiloW,
+	input wire flush_W,
+	output wire memToReg_W, regWrite_W, writeHiLo_W,
     
-    output wire fromcp0, cp0writeM, cp0writeW
+    output wire fromCP0, writeCP0_M, writeCP0_W
     );
+    wire regWrite_E_final;
+    wire memEn_E_final;
 	//decode stage
-	wire memtoregD, regdstD, regwriteD;
+	wire memToReg_D, regdstD, regWrite_D_tmp;
 	wire writehiloD, writehiloE;
-	wire alusrcD;
-	wire [7:0] alucontrolD;
+	wire ALUSrc_D;
+	wire [7:0] ALUControl_D;
 	//execute stage
-	wire jalD;
-	wire regwriteB;
-	wire regwrite2D;
-	wire equalD;
-	wire memenD, memenE, bal;
-	wire cp0writeD, cp0writeE;
+	wire jal_D;
+	wire regWrite_B;
+	wire regWrite_D_final;
+	wire equal_D;
+	wire memEn_D, memEn_E, bal;
+	wire writeCP0_D, writeCP0_E;
+	wire next_inst_in_delayslot_D, next_inst_in_delayslot_E;
+	wire isInDelayslot_D, isInDelayslot_E;
+	wire [31:0] exceptType_D;
 	maindec md(
-    	opD, functD, rsD, rtD,
-		memtoregD, memenD,
-		branchD, alusrcD,
-		regdstD, regwriteD, writehiloD,
-		jumpD, jalD, jrD, bal,
-		cp0writeD, fromcp0
+    	inst_op_D, inst_funct_D, rsD, rtD,
+		memToReg_D, memEn_D,
+		branchD, ALUSrc_D,
+		regdstD, regWrite_D_tmp, writehiloD,
+		jumpD, jal_D, jrD, bal,
+		writeCP0_D, fromCP0,
+		exceptType_D
 	);
-	aludec ad(opD,functD,rsD,rtD,alucontrolD);
+	aludec ad(inst_op_D,inst_funct_D,rsD,rtD,ALUControl_D);
 
-	comparator CMP(srca2D,srcb2D,alucontrolD,rtD,equalD,regwriteB);
-	mux2 #(1) regWriteMux(regwriteD, regwriteB, bal, regwrite2D);
-	assign pcsrcD = branchD & equalD;
-
-	//pipeline registers
+	comparator CMP(srca2D,srcb2D,ALUControl_D,rtD,equal_D,regWrite_B);
+	mux2 #(1) regWriteMux(regWrite_D_tmp, regWrite_B, bal, regWrite_D_final);
+	 
+	assign pcsrcD = {jumpD, branchD & equal_D};
+	assign next_inst_in_delayslot_D = |pcsrcD;
+	flopenrc #(1)  next_dsE(
+		CLK, RST, ~stall_E, flush_E,
+		next_inst_in_delayslot_D,
+		next_inst_in_delayslot_E
+	);
+	flopenrc #(1)  dsE(
+		CLK, RST, ~stall_E, flush_E,
+		isInDelayslot_D,
+		isInDelayslot_E
+	);
+	flopenrc #(32) exceptE(
+		CLK, RST, ~stall_E, flush_E,
+		exceptType_D,
+		exceptType_E
+	);
+	assign isInDelayslot_D = next_inst_in_delayslot_E;
 	flopenrc #(16) regE(
-		clk, rst, ~stallE, flushE,
-		{memtoregD,memenD,alusrcD,regdstD,regwrite2D,writehiloD,jalD,alucontrolD,cp0writeD},
-		{memtoregE,memenE,alusrcE,regdstE,regwriteE,writehiloE ,jalE,alucontrolE,cp0writeE}
+		CLK, RST, ~stall_E, flush_E,
+		{memToReg_D,memEn_D,ALUSrc_D,regdstD,regWrite_D_final,writehiloD,jal_D,ALUControl_D,writeCP0_D},
+		{memToReg_E,memEn_E,ALUSrc_E,regDst_E,regWrite_E,writehiloE ,jal_E,ALUctrl_E,writeCP0_E}
 	);
-	flopr #(13) regM(
-		clk, rst,
-		{memtoregE,memenE,regwriteE,writehiloE,alucontrolE,cp0writeE},
-		{memtoregM,memenM,regwriteM,writehiloM,alucontrolM,cp0writeM}
+	floprc #(1) dsM (
+		CLK, RST, flush_M,
+		isInDelayslot_E,
+		isInDelayslot_M
 	);
-	flopr #(4) regW(
-		clk, rst,
-		{memtoregM,regwriteM,writehiloM,cp0writeM},
-		{memtoregW,regwriteW,writehiloW,cp0writeW}
+	mux2 #(1) stp1(regWrite_E, 1'b0, stopRegWrite, regWrite_E_final);
+	mux2 #(1) stp2(memEn_E, 1'b0, stopMemWrite, memEn_E_final);
+	floprc #(13) regM(
+		CLK, RST, flush_M,
+		{memToReg_E,memEn_E_final,regWrite_E_final,writehiloE,ALUctrl_E,writeCP0_E},
+		{memToReg_M,memEn_M,regWrite_M,writeHiLo_M,ALUControl_M,writeCP0_M}
+	);
+	floprc #(4) regW(
+		CLK, RST, flush_W,
+		{memToReg_M,regWrite_M,writeHiLo_M,writeCP0_M},
+		{memToReg_W,regWrite_W,writeHiLo_W,writeCP0_W}
 	);
 endmodule
 
@@ -200,11 +244,27 @@ module maindec(
 	output alusrc,
 	output regdst, regwrite, writehilo,
 	output jump, jal, jr, bal,
-	output cp0write, fromcp0
+	output cp0write, fromCP0,
+	output [31:0] exceptType
     );
     reg [12:0] controls;
-    assign {memtoreg, memen, branch, alusrc, regdst, regwrite, writehilo, jump, jal, jr, bal, cp0write, fromcp0} = controls;
-    always @ (*)
+    assign {memtoreg, memen, branch, alusrc, regdst, regwrite, writehilo, jump, jal, jr, bal, cp0write, fromCP0} = controls;
+    reg excepttype_is_syscall, excepttype_is_eret, excepttype_is_break;
+    reg invalid_inst;
+    assign exceptType = {
+    	19'b0,						// [31:13]
+    	excepttype_is_eret,			// [12]
+    	1'b0,						// [11]
+    	excepttype_is_break,		// [10]
+    	invalid_inst,				// [9]
+    	excepttype_is_syscall,		// [8]
+    	8'b00000000					// [7:0]
+    };
+    always @ (*) begin
+    	excepttype_is_syscall = `False_v;
+    	excepttype_is_eret = `False_v;
+    	excepttype_is_break = `False_v;
+    	invalid_inst = `False_v;
     	 if (op != 0)
 			case (op)
 				`EXE_ADDI, `EXE_ADDIU, `EXE_SLTI, `EXE_SLTIU:
@@ -227,19 +287,24 @@ module maindec(
 							controls <= `BRANCH_CTRL;
 						`EXE_BLTZAL, `EXE_BGEZAL:
 							controls <= `BAL_CTRL;
+						default:
+				        	invalid_inst <= `True_v;
 					endcase
 				end
-				`CPO_COP0:begin
+				`CPO_COP0: begin
 				    case(rs)
 				        `CP0_MT:
 				            controls <= `CP0_MT_CTRL;
 				        `CP0_MF:
 				            controls <= `CP0_MF_CTRL;
+				        `EXE_ERET:
+				        	excepttype_is_eret <= `True_v;
+				        default:
+				        	invalid_inst <= `True_v;
 				    endcase 
 				end    
 				default: begin
-					$display("[MAINDEC] OP = %2d", op);
-					$stop;
+					invalid_inst <= `True_v;
 				end
 			endcase
 		else
@@ -264,11 +329,14 @@ module maindec(
 					controls <= `EXE_JR_CTRL;
 				`EXE_JALR:
 					controls <= `EXE_JALR_CTRL;
+				`EXE_BREAK:
+					excepttype_is_break <= `True_v;
+				`EXE_SYSCALL:
+					excepttype_is_syscall <= `True_v;
 				default: begin
-					$display("[MAINDEC] funct = %2d", funct);
-//					$stop;
+					invalid_inst <= `True_v;
 				end
 			endcase 
-//		controls <= `ARITH_R_CTRL;
-				
+	end
+	
 endmodule

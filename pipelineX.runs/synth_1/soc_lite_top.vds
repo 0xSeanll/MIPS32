@@ -1,0 +1,1135 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Sun Dec 15 20:32:51 2019
+# Process ID: 3388
+# Current directory: C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.runs/synth_1
+# Command line: vivado.exe -log soc_lite_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source soc_lite_top.tcl
+# Log file: C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.runs/synth_1/soc_lite_top.vds
+# Journal file: C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source soc_lite_top.tcl -notrace
+Command: synth_design -top soc_lite_top -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 12164 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 373.379 ; gain = 102.742
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'soc_lite_top' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/top.v:65]
+	Parameter SIMULATION bound to: 1'b0 
+INFO: [Synth 8-6157] synthesizing module 'Nestor' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/mips.v:34]
+INFO: [Synth 8-6157] synthesizing module 'flopr' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/new/flopr.v:23]
+	Parameter N bound to: 4 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'flopr' (1#1) [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/new/flopr.v:23]
+INFO: [Synth 8-6157] synthesizing module 'controller' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/controller.v:24]
+INFO: [Synth 8-6157] synthesizing module 'maindec' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/controller.v:195]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/controller.v:226]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/controller.v:234]
+INFO: [Synth 8-6155] done synthesizing module 'maindec' (2#1) [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/controller.v:195]
+INFO: [Synth 8-6157] synthesizing module 'aludec' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/controller.v:97]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/controller.v:136]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/controller.v:144]
+WARNING: [Synth 8-151] case item 6'b001001 is unreachable [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/controller.v:157]
+WARNING: [Synth 8-151] case item 6'b001000 is unreachable [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/controller.v:157]
+INFO: [Synth 8-6155] done synthesizing module 'aludec' (3#1) [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/controller.v:97]
+INFO: [Synth 8-6157] synthesizing module 'comparator' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/eqcmp.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'comparator' (4#1) [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/eqcmp.v:23]
+INFO: [Synth 8-6157] synthesizing module 'mux2' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/mux2.v:23]
+	Parameter N bound to: 1 - type: integer 
+WARNING: [Synth 8-589] replacing case/wildcard equality operator !== with logical equality operator != [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/mux2.v:30]
+INFO: [Synth 8-6155] done synthesizing module 'mux2' (5#1) [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/mux2.v:23]
+INFO: [Synth 8-6157] synthesizing module 'flopenrc' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/new/flopenrc.v:23]
+	Parameter N bound to: 16 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'flopenrc' (6#1) [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/new/flopenrc.v:23]
+INFO: [Synth 8-6157] synthesizing module 'flopr__parameterized0' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/new/flopr.v:23]
+	Parameter N bound to: 13 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'flopr__parameterized0' (6#1) [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/new/flopr.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'controller' (7#1) [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/controller.v:24]
+INFO: [Synth 8-6157] synthesizing module 'datapath' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:23]
+INFO: [Synth 8-6157] synthesizing module 'flopenrc__parameterized0' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/new/flopenrc.v:23]
+	Parameter N bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'flopenrc__parameterized0' (7#1) [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/new/flopenrc.v:23]
+INFO: [Synth 8-6157] synthesizing module 'flopr__parameterized1' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/new/flopr.v:23]
+	Parameter N bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'flopr__parameterized1' (7#1) [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/new/flopr.v:23]
+INFO: [Synth 8-6157] synthesizing module 'HazardUnit' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/HazardUnit.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'HazardUnit' (8#1) [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/HazardUnit.v:23]
+INFO: [Synth 8-6157] synthesizing module 'mux2__parameterized0' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/mux2.v:23]
+	Parameter N bound to: 32 - type: integer 
+WARNING: [Synth 8-589] replacing case/wildcard equality operator !== with logical equality operator != [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/mux2.v:30]
+INFO: [Synth 8-6155] done synthesizing module 'mux2__parameterized0' (8#1) [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/mux2.v:23]
+INFO: [Synth 8-6157] synthesizing module 'mux3' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/mux3.v:23]
+	Parameter N bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'mux3' (9#1) [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/mux3.v:23]
+INFO: [Synth 8-6157] synthesizing module 'flopenr' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/new/flopenr.v:23]
+	Parameter N bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'flopenr' (10#1) [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/new/flopenr.v:23]
+INFO: [Synth 8-6157] synthesizing module 'adder' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/adder.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'adder' (11#1) [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/adder.v:23]
+INFO: [Synth 8-6157] synthesizing module 'SignExtend' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/SignExtend.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'SignExtend' (12#1) [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/SignExtend.v:23]
+INFO: [Synth 8-6157] synthesizing module 'ShiftLeft2' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ShiftLeft2.v:23]
+	Parameter N bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'ShiftLeft2' (13#1) [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ShiftLeft2.v:23]
+INFO: [Synth 8-6157] synthesizing module 'Register' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/Register.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Register' (14#1) [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/Register.v:23]
+INFO: [Synth 8-6157] synthesizing module 'hilo_reg' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/hilo_reg.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'hilo_reg' (15#1) [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/hilo_reg.v:23]
+INFO: [Synth 8-6157] synthesizing module 'cp0_reg' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/cp0_reg.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'cp0_reg' (16#1) [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/cp0_reg.v:23]
+INFO: [Synth 8-6157] synthesizing module 'flopenrc__parameterized1' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/new/flopenrc.v:23]
+	Parameter N bound to: 5 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'flopenrc__parameterized1' (16#1) [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/new/flopenrc.v:23]
+INFO: [Synth 8-6157] synthesizing module 'ALU' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:24]
+INFO: [Synth 8-6157] synthesizing module 'div' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/div.v:35]
+WARNING: [Synth 8-6014] Unused sequential element temp_op1_reg was removed.  [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/div.v:75]
+WARNING: [Synth 8-6014] Unused sequential element temp_op2_reg was removed.  [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/div.v:80]
+INFO: [Synth 8-6155] done synthesizing module 'div' (17#1) [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/div.v:35]
+INFO: [Synth 8-6155] done synthesizing module 'ALU' (18#1) [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:24]
+INFO: [Synth 8-6157] synthesizing module 'mux3__parameterized0' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/mux3.v:23]
+	Parameter N bound to: 5 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'mux3__parameterized0' (18#1) [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/mux3.v:23]
+INFO: [Synth 8-6157] synthesizing module 'flopr__parameterized2' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/new/flopr.v:23]
+	Parameter N bound to: 5 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'flopr__parameterized2' (18#1) [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/new/flopr.v:23]
+WARNING: [Synth 8-3848] Net excepttype_i in module/entity datapath does not have driver. [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:96]
+WARNING: [Synth 8-3848] Net current_inst_addr_i in module/entity datapath does not have driver. [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:97]
+WARNING: [Synth 8-3848] Net is_in_delayslot_i in module/entity datapath does not have driver. [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:98]
+WARNING: [Synth 8-3848] Net bad_addr_i in module/entity datapath does not have driver. [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:99]
+INFO: [Synth 8-6155] done synthesizing module 'datapath' (19#1) [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:23]
+INFO: [Synth 8-6157] synthesizing module 'Data_Memory_Controller' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/new/Data_Memory_Controller.v:23]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/new/Data_Memory_Controller.v:36]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/new/Data_Memory_Controller.v:71]
+INFO: [Synth 8-6155] done synthesizing module 'Data_Memory_Controller' (20#1) [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/new/Data_Memory_Controller.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Nestor' (21#1) [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/mips.v:34]
+INFO: [Synth 8-6157] synthesizing module 'inst_mem' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.runs/synth_1/.Xil/Vivado-3388-liyifan/realtime/inst_mem_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'inst_mem' (22#1) [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.runs/synth_1/.Xil/Vivado-3388-liyifan/realtime/inst_mem_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'data_mem' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.runs/synth_1/.Xil/Vivado-3388-liyifan/realtime/data_mem_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'data_mem' (23#1) [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.runs/synth_1/.Xil/Vivado-3388-liyifan/realtime/data_mem_stub.v:6]
+WARNING: [Synth 8-3848] Net cpu_data_rdata in module/entity soc_lite_top does not have driver. [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/top.v:125]
+WARNING: [Synth 8-3848] Net data_sram_en in module/entity soc_lite_top does not have driver. [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/top.v:128]
+WARNING: [Synth 8-3848] Net data_sram_wen in module/entity soc_lite_top does not have driver. [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/top.v:129]
+WARNING: [Synth 8-3848] Net data_sram_addr in module/entity soc_lite_top does not have driver. [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/top.v:130]
+WARNING: [Synth 8-3848] Net data_sram_wdata in module/entity soc_lite_top does not have driver. [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/top.v:131]
+INFO: [Synth 8-6155] done synthesizing module 'soc_lite_top' (24#1) [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/top.v:65]
+WARNING: [Synth 8-3331] design ShiftLeft2 has unconnected port a[31]
+WARNING: [Synth 8-3331] design ShiftLeft2 has unconnected port a[30]
+WARNING: [Synth 8-3331] design HazardUnit has unconnected port RdD[4]
+WARNING: [Synth 8-3331] design HazardUnit has unconnected port RdD[3]
+WARNING: [Synth 8-3331] design HazardUnit has unconnected port RdD[2]
+WARNING: [Synth 8-3331] design HazardUnit has unconnected port RdD[1]
+WARNING: [Synth 8-3331] design HazardUnit has unconnected port RdD[0]
+WARNING: [Synth 8-3331] design datapath has unconnected port jumpD
+WARNING: [Synth 8-3331] design comparator has unconnected port rt[4]
+WARNING: [Synth 8-3331] design comparator has unconnected port rt[3]
+WARNING: [Synth 8-3331] design comparator has unconnected port rt[2]
+WARNING: [Synth 8-3331] design comparator has unconnected port rt[1]
+WARNING: [Synth 8-3331] design comparator has unconnected port rt[0]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:09 . Memory (MB): peak = 429.418 ; gain = 158.781
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+WARNING: [Synth 8-3295] tying undriven pin CP0:excepttype_i[31] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:excepttype_i[30] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:excepttype_i[29] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:excepttype_i[28] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:excepttype_i[27] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:excepttype_i[26] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:excepttype_i[25] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:excepttype_i[24] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:excepttype_i[23] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:excepttype_i[22] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:excepttype_i[21] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:excepttype_i[20] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:excepttype_i[19] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:excepttype_i[18] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:excepttype_i[17] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:excepttype_i[16] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:excepttype_i[15] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:excepttype_i[14] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:excepttype_i[13] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:excepttype_i[12] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:excepttype_i[11] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:excepttype_i[10] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:excepttype_i[9] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:excepttype_i[8] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:excepttype_i[7] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:excepttype_i[6] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:excepttype_i[5] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:excepttype_i[4] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:excepttype_i[3] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:excepttype_i[2] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:excepttype_i[1] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:excepttype_i[0] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:current_inst_addr_i[31] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:current_inst_addr_i[30] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:current_inst_addr_i[29] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:current_inst_addr_i[28] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:current_inst_addr_i[27] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:current_inst_addr_i[26] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:current_inst_addr_i[25] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:current_inst_addr_i[24] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:current_inst_addr_i[23] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:current_inst_addr_i[22] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:current_inst_addr_i[21] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:current_inst_addr_i[20] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:current_inst_addr_i[19] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:current_inst_addr_i[18] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:current_inst_addr_i[17] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:current_inst_addr_i[16] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:current_inst_addr_i[15] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:current_inst_addr_i[14] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:current_inst_addr_i[13] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:current_inst_addr_i[12] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:current_inst_addr_i[11] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:current_inst_addr_i[10] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:current_inst_addr_i[9] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:current_inst_addr_i[8] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:current_inst_addr_i[7] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:current_inst_addr_i[6] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:current_inst_addr_i[5] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:current_inst_addr_i[4] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:current_inst_addr_i[3] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:current_inst_addr_i[2] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:current_inst_addr_i[1] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:current_inst_addr_i[0] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:is_in_delayslot_i to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:bad_addr_i[31] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:bad_addr_i[30] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:bad_addr_i[29] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:bad_addr_i[28] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:bad_addr_i[27] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:bad_addr_i[26] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:bad_addr_i[25] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:bad_addr_i[24] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:bad_addr_i[23] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:bad_addr_i[22] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:bad_addr_i[21] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:bad_addr_i[20] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:bad_addr_i[19] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:bad_addr_i[18] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:bad_addr_i[17] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:bad_addr_i[16] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:bad_addr_i[15] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:bad_addr_i[14] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:bad_addr_i[13] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:bad_addr_i[12] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:bad_addr_i[11] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:bad_addr_i[10] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:bad_addr_i[9] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:bad_addr_i[8] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:bad_addr_i[7] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:bad_addr_i[6] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:bad_addr_i[5] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:bad_addr_i[4] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:bad_addr_i[3] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:bad_addr_i[2] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:bad_addr_i[1] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin CP0:bad_addr_i[0] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/datapath.v:182]
+WARNING: [Synth 8-3295] tying undriven pin cpu:data_sram_rdata[31] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/top.v:141]
+WARNING: [Synth 8-3295] tying undriven pin cpu:data_sram_rdata[30] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/top.v:141]
+WARNING: [Synth 8-3295] tying undriven pin cpu:data_sram_rdata[29] to constant 0 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/top.v:141]
+INFO: [Common 17-14] Message 'Synth 8-3295' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 429.418 ; gain = 158.781
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 429.418 ; gain = 158.781
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [c:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/ip/data_mem/data_mem/data_mem_in_context.xdc] for cell 'data_ram'
+Finished Parsing XDC File [c:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/ip/data_mem/data_mem/data_mem_in_context.xdc] for cell 'data_ram'
+Parsing XDC File [c:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/ip/inst_mem/inst_mem/inst_mem_in_context.xdc] for cell 'inst_ram'
+Finished Parsing XDC File [c:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/ip/inst_mem/inst_mem/inst_mem_in_context.xdc] for cell 'inst_ram'
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 782.906 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 782.906 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.074 . Memory (MB): peak = 782.906 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:19 ; elapsed = 00:00:26 . Memory (MB): peak = 782.906 ; gain = 512.270
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:19 ; elapsed = 00:00:26 . Memory (MB): peak = 782.906 ; gain = 512.270
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property DONT_TOUCH = true for data_ram. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst_ram. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:26 . Memory (MB): peak = 782.906 ; gain = 512.270
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5546] ROM "controls" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "controls" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "alucontrol" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "alucontrol" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "alucontrol" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "regWrite_B" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "compare_o" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "status_o" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "cause_o" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "epc_o" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "badvaddr" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'div'
+INFO: [Synth 8-5545] ROM "cnt" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "state" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "result" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "hi_o" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "start_i" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:117]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:112]
+INFO: [Synth 8-5546] ROM "wData" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-327] inferring latch for variable 'controls_reg' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/controller.v:207]
+WARNING: [Synth 8-327] inferring latch for variable 'alucontrol_reg' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/rtl/controller.v:106]
+WARNING: [Synth 8-327] inferring latch for variable 'regWrite_B_reg' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/eqcmp.v:33]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 iSTATE1 |                               00 |                               00
+                 iSTATE0 |                               01 |                               01
+                  iSTATE |                               10 |                               10
+                 iSTATE2 |                               11 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'div'
+WARNING: [Synth 8-327] inferring latch for variable 'result_reg' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:59]
+WARNING: [Synth 8-327] inferring latch for variable 'hi_o_reg' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:86]
+WARNING: [Synth 8-327] inferring latch for variable 'lo_o_reg' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:87]
+WARNING: [Synth 8-327] inferring latch for variable 'stall_div_reg' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:123]
+WARNING: [Synth 8-327] inferring latch for variable 'signed_div_i_reg' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:42]
+WARNING: [Synth 8-327] inferring latch for variable 'start_i_reg' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:122]
+WARNING: [Synth 8-327] inferring latch for variable 'wData_reg' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/new/Data_Memory_Controller.v:39]
+WARNING: [Synth 8-327] inferring latch for variable 'wEna_reg' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/new/Data_Memory_Controller.v:38]
+WARNING: [Synth 8-327] inferring latch for variable 'rdata_o_reg' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/new/Data_Memory_Controller.v:72]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:21 ; elapsed = 00:00:28 . Memory (MB): peak = 782.906 ; gain = 512.270
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     64 Bit       Adders := 3     
+	   3 Input     33 Bit       Adders := 1     
+	   2 Input     33 Bit       Adders := 1     
+	   2 Input     32 Bit       Adders := 11    
+	   3 Input     32 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 3     
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
+	   2 Input      1 Bit         XORs := 3     
++---Registers : 
+	               65 Bit    Registers := 1     
+	               64 Bit    Registers := 1     
+	               32 Bit    Registers := 31    
+	               16 Bit    Registers := 1     
+	               13 Bit    Registers := 1     
+	                6 Bit    Registers := 1     
+	                5 Bit    Registers := 6     
+	                4 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     65 Bit        Muxes := 5     
+	   4 Input     65 Bit        Muxes := 2     
+	   2 Input     64 Bit        Muxes := 2     
+	   4 Input     64 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 52    
+	   6 Input     32 Bit        Muxes := 3     
+	  10 Input     32 Bit        Muxes := 3     
+	  30 Input     32 Bit        Muxes := 2     
+	   5 Input     32 Bit        Muxes := 1     
+	   3 Input     32 Bit        Muxes := 2     
+	   4 Input     32 Bit        Muxes := 1     
+	   7 Input     24 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 1     
+	   2 Input     13 Bit        Muxes := 3     
+	   3 Input     13 Bit        Muxes := 3     
+	  10 Input     13 Bit        Muxes := 2     
+	  12 Input     13 Bit        Muxes := 2     
+	   2 Input      8 Bit        Muxes := 1     
+	   3 Input      8 Bit        Muxes := 1     
+	  32 Input      8 Bit        Muxes := 1     
+	  29 Input      8 Bit        Muxes := 1     
+	   4 Input      8 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 1     
+	   4 Input      6 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 8     
+	   2 Input      4 Bit        Muxes := 3     
+	   5 Input      4 Bit        Muxes := 1     
+	   3 Input      4 Bit        Muxes := 1     
+	   4 Input      4 Bit        Muxes := 1     
+	   9 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 5     
+	   3 Input      2 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 1     
+	   5 Input      1 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 34    
+	   3 Input      1 Bit        Muxes := 2     
+	  32 Input      1 Bit        Muxes := 1     
+	  29 Input      1 Bit        Muxes := 1     
+	   9 Input      1 Bit        Muxes := 2     
+	   4 Input      1 Bit        Muxes := 7     
+	   6 Input      1 Bit        Muxes := 5     
+	  10 Input      1 Bit        Muxes := 4     
+	  30 Input      1 Bit        Muxes := 3     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module flopr 
+Detailed RTL Component Info : 
++---Registers : 
+	                4 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      4 Bit        Muxes := 1     
+Module maindec 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     13 Bit        Muxes := 2     
+	   3 Input     13 Bit        Muxes := 3     
+	  10 Input     13 Bit        Muxes := 2     
+	  12 Input     13 Bit        Muxes := 2     
+Module aludec 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	   3 Input      8 Bit        Muxes := 1     
+	  32 Input      8 Bit        Muxes := 1     
+	  29 Input      8 Bit        Muxes := 1     
+	   5 Input      1 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+	   3 Input      1 Bit        Muxes := 1     
+	  32 Input      1 Bit        Muxes := 1     
+	  29 Input      1 Bit        Muxes := 1     
+Module comparator 
+Detailed RTL Component Info : 
++---Muxes : 
+	   9 Input      2 Bit        Muxes := 1     
+	   9 Input      1 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 2     
+	   4 Input      1 Bit        Muxes := 1     
+Module mux2 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module flopenrc 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module flopr__parameterized0 
+Detailed RTL Component Info : 
++---Registers : 
+	               13 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     13 Bit        Muxes := 1     
+Module flopenrc__parameterized0 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module flopr__parameterized1 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+Module HazardUnit 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      2 Bit        Muxes := 2     
+	   3 Input      2 Bit        Muxes := 1     
+Module mux2__parameterized0 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+Module mux3 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 2     
+Module flopenr 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
+Module adder 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+Module SignExtend 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+Module Register 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 2     
+Module hilo_reg 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 2     
+Module cp0_reg 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 2     
++---Registers : 
+	               32 Bit    Registers := 7     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 8     
+	   6 Input     32 Bit        Muxes := 3     
+	  10 Input     32 Bit        Muxes := 3     
+	   7 Input     24 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 10    
+	   6 Input      1 Bit        Muxes := 4     
+	  10 Input      1 Bit        Muxes := 4     
+Module flopenrc__parameterized1 
+Detailed RTL Component Info : 
++---Registers : 
+	                5 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      5 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module div 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     33 Bit       Adders := 1     
+	   2 Input     32 Bit       Adders := 3     
+	   2 Input      6 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 2     
++---Registers : 
+	               65 Bit    Registers := 1     
+	               64 Bit    Registers := 1     
+	               32 Bit    Registers := 1     
+	                6 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     65 Bit        Muxes := 5     
+	   4 Input     65 Bit        Muxes := 2     
+	   2 Input     64 Bit        Muxes := 1     
+	   4 Input     64 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 2     
+	   2 Input      6 Bit        Muxes := 1     
+	   4 Input      6 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 2     
+	   4 Input      1 Bit        Muxes := 6     
+Module ALU 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     64 Bit       Adders := 3     
+	   2 Input     33 Bit       Adders := 1     
+	   2 Input     32 Bit       Adders := 4     
+	   3 Input     32 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 2     
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
+	   2 Input      1 Bit         XORs := 1     
++---Muxes : 
+	   2 Input     64 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 3     
+	  30 Input     32 Bit        Muxes := 2     
+	  30 Input      1 Bit        Muxes := 3     
+Module mux3__parameterized0 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      5 Bit        Muxes := 2     
+Module flopr__parameterized2 
+Detailed RTL Component Info : 
++---Registers : 
+	                5 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      5 Bit        Muxes := 1     
+Module Data_Memory_Controller 
+Detailed RTL Component Info : 
++---Muxes : 
+	   5 Input     32 Bit        Muxes := 1     
+	   3 Input     32 Bit        Muxes := 2     
+	   4 Input     32 Bit        Muxes := 1     
+	   4 Input      8 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   5 Input      4 Bit        Muxes := 1     
+	   3 Input      4 Bit        Muxes := 1     
+	   4 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 3     
+	   5 Input      1 Bit        Muxes := 2     
+	   3 Input      1 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-5544] ROM "md/controls" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5545] ROM "cnt" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "result" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "hi_o" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "start_i" won't be mapped to RAM because it is too sparse
+DSP Report: Generating DSP hi_o3, operation Mode is: A*B.
+DSP Report: operator hi_o3 is absorbed into DSP hi_o3.
+DSP Report: operator hi_o3 is absorbed into DSP hi_o3.
+DSP Report: Generating DSP hi_o3, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator hi_o3 is absorbed into DSP hi_o3.
+DSP Report: operator hi_o3 is absorbed into DSP hi_o3.
+DSP Report: Generating DSP hi_o3, operation Mode is: A*B.
+DSP Report: operator hi_o3 is absorbed into DSP hi_o3.
+DSP Report: operator hi_o3 is absorbed into DSP hi_o3.
+DSP Report: Generating DSP hi_o3, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator hi_o3 is absorbed into DSP hi_o3.
+DSP Report: operator hi_o3 is absorbed into DSP hi_o3.
+DSP Report: Generating DSP hi_o0, operation Mode is: A*B.
+DSP Report: operator hi_o0 is absorbed into DSP hi_o0.
+DSP Report: operator hi_o0 is absorbed into DSP hi_o0.
+DSP Report: Generating DSP hi_o0, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator hi_o0 is absorbed into DSP hi_o0.
+DSP Report: operator hi_o0 is absorbed into DSP hi_o0.
+DSP Report: Generating DSP hi_o0, operation Mode is: A*B.
+DSP Report: operator hi_o0 is absorbed into DSP hi_o0.
+DSP Report: operator hi_o0 is absorbed into DSP hi_o0.
+DSP Report: Generating DSP hi_o0, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator hi_o0 is absorbed into DSP hi_o0.
+DSP Report: operator hi_o0 is absorbed into DSP hi_o0.
+WARNING: [Synth 8-3331] design datapath has unconnected port jumpD
+WARNING: [Synth 8-3332] Sequential element (cpu/c/md/controls_reg[11]) is unused and will be removed from module soc_lite_top.
+WARNING: [Synth 8-3332] Sequential element (cpu/c/md/controls_reg[5]) is unused and will be removed from module soc_lite_top.
+WARNING: [Synth 8-3332] Sequential element (cpu/dmc/wData_reg[31]) is unused and will be removed from module soc_lite_top.
+WARNING: [Synth 8-3332] Sequential element (cpu/dmc/wData_reg[30]) is unused and will be removed from module soc_lite_top.
+WARNING: [Synth 8-3332] Sequential element (cpu/dmc/wData_reg[29]) is unused and will be removed from module soc_lite_top.
+WARNING: [Synth 8-3332] Sequential element (cpu/dmc/wData_reg[28]) is unused and will be removed from module soc_lite_top.
+WARNING: [Synth 8-3332] Sequential element (cpu/dmc/wData_reg[27]) is unused and will be removed from module soc_lite_top.
+WARNING: [Synth 8-3332] Sequential element (cpu/dmc/wData_reg[26]) is unused and will be removed from module soc_lite_top.
+WARNING: [Synth 8-3332] Sequential element (cpu/dmc/wData_reg[25]) is unused and will be removed from module soc_lite_top.
+WARNING: [Synth 8-3332] Sequential element (cpu/dmc/wData_reg[24]) is unused and will be removed from module soc_lite_top.
+WARNING: [Synth 8-3332] Sequential element (cpu/dmc/wData_reg[23]) is unused and will be removed from module soc_lite_top.
+WARNING: [Synth 8-3332] Sequential element (cpu/dmc/wData_reg[22]) is unused and will be removed from module soc_lite_top.
+WARNING: [Synth 8-3332] Sequential element (cpu/dmc/wData_reg[21]) is unused and will be removed from module soc_lite_top.
+WARNING: [Synth 8-3332] Sequential element (cpu/dmc/wData_reg[20]) is unused and will be removed from module soc_lite_top.
+WARNING: [Synth 8-3332] Sequential element (cpu/dmc/wData_reg[19]) is unused and will be removed from module soc_lite_top.
+WARNING: [Synth 8-3332] Sequential element (cpu/dmc/wData_reg[18]) is unused and will be removed from module soc_lite_top.
+WARNING: [Synth 8-3332] Sequential element (cpu/dmc/wData_reg[17]) is unused and will be removed from module soc_lite_top.
+WARNING: [Synth 8-3332] Sequential element (cpu/dmc/wData_reg[16]) is unused and will be removed from module soc_lite_top.
+WARNING: [Synth 8-3332] Sequential element (cpu/dmc/wData_reg[15]) is unused and will be removed from module soc_lite_top.
+WARNING: [Synth 8-3332] Sequential element (cpu/dmc/wData_reg[14]) is unused and will be removed from module soc_lite_top.
+WARNING: [Synth 8-3332] Sequential element (cpu/dmc/wData_reg[13]) is unused and will be removed from module soc_lite_top.
+WARNING: [Synth 8-3332] Sequential element (cpu/dmc/wData_reg[12]) is unused and will be removed from module soc_lite_top.
+WARNING: [Synth 8-3332] Sequential element (cpu/dmc/wData_reg[11]) is unused and will be removed from module soc_lite_top.
+WARNING: [Synth 8-3332] Sequential element (cpu/dmc/wData_reg[10]) is unused and will be removed from module soc_lite_top.
+WARNING: [Synth 8-3332] Sequential element (cpu/dmc/wData_reg[9]) is unused and will be removed from module soc_lite_top.
+WARNING: [Synth 8-3332] Sequential element (cpu/dmc/wData_reg[8]) is unused and will be removed from module soc_lite_top.
+WARNING: [Synth 8-3332] Sequential element (cpu/dmc/wData_reg[7]) is unused and will be removed from module soc_lite_top.
+WARNING: [Synth 8-3332] Sequential element (cpu/dmc/wData_reg[6]) is unused and will be removed from module soc_lite_top.
+WARNING: [Synth 8-3332] Sequential element (cpu/dmc/wData_reg[5]) is unused and will be removed from module soc_lite_top.
+WARNING: [Synth 8-3332] Sequential element (cpu/dmc/wData_reg[4]) is unused and will be removed from module soc_lite_top.
+WARNING: [Synth 8-3332] Sequential element (cpu/dmc/wData_reg[3]) is unused and will be removed from module soc_lite_top.
+WARNING: [Synth 8-3332] Sequential element (cpu/dmc/wData_reg[2]) is unused and will be removed from module soc_lite_top.
+WARNING: [Synth 8-3332] Sequential element (cpu/dmc/wData_reg[1]) is unused and will be removed from module soc_lite_top.
+WARNING: [Synth 8-3332] Sequential element (cpu/dmc/wData_reg[0]) is unused and will be removed from module soc_lite_top.
+WARNING: [Synth 8-3332] Sequential element (cpu/dmc/wEna_reg[3]) is unused and will be removed from module soc_lite_top.
+WARNING: [Synth 8-3332] Sequential element (cpu/dmc/wEna_reg[2]) is unused and will be removed from module soc_lite_top.
+WARNING: [Synth 8-3332] Sequential element (cpu/dmc/wEna_reg[1]) is unused and will be removed from module soc_lite_top.
+WARNING: [Synth 8-3332] Sequential element (cpu/dmc/wEna_reg[0]) is unused and will be removed from module soc_lite_top.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:53 ; elapsed = 00:01:00 . Memory (MB): peak = 782.906 ; gain = 512.270
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Preliminary Mapping  Report (see note below)
++------------+------------+-----------+----------------------+---------------+
+|Module Name | RTL Object | Inference | Size (Depth x Width) | Primitives    | 
++------------+------------+-----------+----------------------+---------------+
+|\cpu/dp     | rf/rf_reg  | Implied   | 32 x 32              | RAM32M x 12   | 
++------------+------------+-----------+----------------------+---------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+
+DSP: Preliminary Mapping  Report (see note below)
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping    | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|ALU         | A*B            | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ALU         | (PCIN>>17)+A*B | 16     | 16     | -      | -      | 30     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ALU         | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ALU         | (PCIN>>17)+A*B | 18     | 16     | -      | -      | 47     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ALU         | A*B            | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ALU         | (PCIN>>17)+A*B | 16     | 16     | -      | -      | 30     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ALU         | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ALU         | (PCIN>>17)+A*B | 18     | 16     | -      | -      | 47     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:11 ; elapsed = 00:01:19 . Memory (MB): peak = 826.262 ; gain = 555.625
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:01:11 ; elapsed = 00:01:19 . Memory (MB): peak = 827.105 ; gain = 556.469
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Final Mapping  Report
++------------+------------+-----------+----------------------+---------------+
+|Module Name | RTL Object | Inference | Size (Depth x Width) | Primitives    | 
++------------+------------+-----------+----------------------+---------------+
+|\cpu/dp     | rf/rf_reg  | Implied   | 32 x 32              | RAM32M x 12   | 
++------------+------------+-----------+----------------------+---------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3332] Sequential element (cpu/c/md/controls_reg[3]) is unused and will be removed from module soc_lite_top.
+WARNING: [Synth 8-3332] Sequential element (cpu/dmc/rdata_o_reg[31]) is unused and will be removed from module soc_lite_top.
+WARNING: [Synth 8-3332] Sequential element (cpu/dmc/rdata_o_reg[30]) is unused and will be removed from module soc_lite_top.
+WARNING: [Synth 8-3332] Sequential element (cpu/dmc/rdata_o_reg[29]) is unused and will be removed from module soc_lite_top.
+WARNING: [Synth 8-3332] Sequential element (cpu/dmc/rdata_o_reg[28]) is unused and will be removed from module soc_lite_top.
+WARNING: [Synth 8-3332] Sequential element (cpu/dmc/rdata_o_reg[27]) is unused and will be removed from module soc_lite_top.
+WARNING: [Synth 8-3332] Sequential element (cpu/dmc/rdata_o_reg[26]) is unused and will be removed from module soc_lite_top.
+WARNING: [Synth 8-3332] Sequential element (cpu/dmc/rdata_o_reg[25]) is unused and will be removed from module soc_lite_top.
+WARNING: [Synth 8-3332] Sequential element (cpu/dmc/rdata_o_reg[24]) is unused and will be removed from module soc_lite_top.
+WARNING: [Synth 8-3332] Sequential element (cpu/dmc/rdata_o_reg[23]) is unused and will be removed from module soc_lite_top.
+WARNING: [Synth 8-3332] Sequential element (cpu/dmc/rdata_o_reg[22]) is unused and will be removed from module soc_lite_top.
+WARNING: [Synth 8-3332] Sequential element (cpu/dmc/rdata_o_reg[21]) is unused and will be removed from module soc_lite_top.
+WARNING: [Synth 8-3332] Sequential element (cpu/dmc/rdata_o_reg[20]) is unused and will be removed from module soc_lite_top.
+WARNING: [Synth 8-3332] Sequential element (cpu/dmc/rdata_o_reg[19]) is unused and will be removed from module soc_lite_top.
+WARNING: [Synth 8-3332] Sequential element (cpu/dmc/rdata_o_reg[18]) is unused and will be removed from module soc_lite_top.
+WARNING: [Synth 8-3332] Sequential element (cpu/dmc/rdata_o_reg[17]) is unused and will be removed from module soc_lite_top.
+WARNING: [Synth 8-3332] Sequential element (cpu/dmc/rdata_o_reg[16]) is unused and will be removed from module soc_lite_top.
+WARNING: [Synth 8-3332] Sequential element (cpu/dmc/rdata_o_reg[15]) is unused and will be removed from module soc_lite_top.
+WARNING: [Synth 8-3332] Sequential element (cpu/dmc/rdata_o_reg[14]) is unused and will be removed from module soc_lite_top.
+WARNING: [Synth 8-3332] Sequential element (cpu/dmc/rdata_o_reg[13]) is unused and will be removed from module soc_lite_top.
+WARNING: [Synth 8-3332] Sequential element (cpu/dmc/rdata_o_reg[12]) is unused and will be removed from module soc_lite_top.
+WARNING: [Synth 8-3332] Sequential element (cpu/dmc/rdata_o_reg[11]) is unused and will be removed from module soc_lite_top.
+WARNING: [Synth 8-3332] Sequential element (cpu/dmc/rdata_o_reg[10]) is unused and will be removed from module soc_lite_top.
+WARNING: [Synth 8-3332] Sequential element (cpu/dmc/rdata_o_reg[9]) is unused and will be removed from module soc_lite_top.
+WARNING: [Synth 8-3332] Sequential element (cpu/dmc/rdata_o_reg[8]) is unused and will be removed from module soc_lite_top.
+WARNING: [Synth 8-3332] Sequential element (cpu/dmc/rdata_o_reg[7]) is unused and will be removed from module soc_lite_top.
+WARNING: [Synth 8-3332] Sequential element (cpu/dmc/rdata_o_reg[6]) is unused and will be removed from module soc_lite_top.
+WARNING: [Synth 8-3332] Sequential element (cpu/dmc/rdata_o_reg[5]) is unused and will be removed from module soc_lite_top.
+WARNING: [Synth 8-3332] Sequential element (cpu/dmc/rdata_o_reg[4]) is unused and will be removed from module soc_lite_top.
+WARNING: [Synth 8-3332] Sequential element (cpu/dmc/rdata_o_reg[3]) is unused and will be removed from module soc_lite_top.
+WARNING: [Synth 8-3332] Sequential element (cpu/dmc/rdata_o_reg[2]) is unused and will be removed from module soc_lite_top.
+WARNING: [Synth 8-3332] Sequential element (cpu/dmc/rdata_o_reg[1]) is unused and will be removed from module soc_lite_top.
+WARNING: [Synth 8-3332] Sequential element (cpu/dmc/rdata_o_reg[0]) is unused and will be removed from module soc_lite_top.
+INFO: [Synth 8-5966] Removing register instance (\cpu/dp/alu/stall_div_reg ) from module (soc_lite_top) as it has self-loop and (\cpu/dp/alu/stall_div_reg__0 ) is actual driver [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:123]
+INFO: [Synth 8-5966] Removing register instance (\cpu/dp/alu/stall_div_reg__1 ) from module (soc_lite_top) as it has self-loop and (\cpu/dp/alu/stall_div_reg__0 ) is actual driver [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:45]
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:01:13 ; elapsed = 00:01:22 . Memory (MB): peak = 915.340 ; gain = 644.703
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+CRITICAL WARNING: [Synth 8-4442] BlackBox module data_ram has unconnected pin ena
+CRITICAL WARNING: [Synth 8-4442] BlackBox module data_ram has unconnected pin wea[3]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module data_ram has unconnected pin wea[2]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module data_ram has unconnected pin wea[1]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module data_ram has unconnected pin wea[0]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module data_ram has unconnected pin addra[31]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module data_ram has unconnected pin addra[30]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module data_ram has unconnected pin addra[29]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module data_ram has unconnected pin addra[28]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module data_ram has unconnected pin addra[27]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module data_ram has unconnected pin addra[26]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module data_ram has unconnected pin addra[25]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module data_ram has unconnected pin addra[24]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module data_ram has unconnected pin addra[23]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module data_ram has unconnected pin addra[22]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module data_ram has unconnected pin addra[21]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module data_ram has unconnected pin addra[20]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module data_ram has unconnected pin addra[19]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module data_ram has unconnected pin addra[18]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module data_ram has unconnected pin addra[17]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module data_ram has unconnected pin addra[16]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module data_ram has unconnected pin addra[15]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module data_ram has unconnected pin addra[14]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module data_ram has unconnected pin addra[13]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module data_ram has unconnected pin addra[12]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module data_ram has unconnected pin addra[11]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module data_ram has unconnected pin addra[10]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module data_ram has unconnected pin addra[9]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module data_ram has unconnected pin addra[8]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module data_ram has unconnected pin addra[7]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module data_ram has unconnected pin addra[6]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module data_ram has unconnected pin addra[5]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module data_ram has unconnected pin addra[4]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module data_ram has unconnected pin addra[3]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module data_ram has unconnected pin addra[2]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module data_ram has unconnected pin addra[1]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module data_ram has unconnected pin addra[0]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module data_ram has unconnected pin dina[31]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module data_ram has unconnected pin dina[30]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module data_ram has unconnected pin dina[29]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module data_ram has unconnected pin dina[28]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module data_ram has unconnected pin dina[27]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module data_ram has unconnected pin dina[26]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module data_ram has unconnected pin dina[25]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module data_ram has unconnected pin dina[24]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module data_ram has unconnected pin dina[23]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module data_ram has unconnected pin dina[22]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module data_ram has unconnected pin dina[21]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module data_ram has unconnected pin dina[20]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module data_ram has unconnected pin dina[19]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module data_ram has unconnected pin dina[18]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module data_ram has unconnected pin dina[17]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module data_ram has unconnected pin dina[16]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module data_ram has unconnected pin dina[15]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module data_ram has unconnected pin dina[14]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module data_ram has unconnected pin dina[13]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module data_ram has unconnected pin dina[12]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module data_ram has unconnected pin dina[11]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module data_ram has unconnected pin dina[10]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module data_ram has unconnected pin dina[9]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module data_ram has unconnected pin dina[8]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module data_ram has unconnected pin dina[7]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module data_ram has unconnected pin dina[6]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module data_ram has unconnected pin dina[5]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module data_ram has unconnected pin dina[4]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module data_ram has unconnected pin dina[3]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module data_ram has unconnected pin dina[2]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module data_ram has unconnected pin dina[1]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module data_ram has unconnected pin dina[0]
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:16 ; elapsed = 00:01:24 . Memory (MB): peak = 915.340 ; gain = 644.703
+---------------------------------------------------------------------------------
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/alu/my_div/state0 with 1st driver pin 'cpu/dp/alu/start_i_reg/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:122]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/alu/my_div/state0 with 2nd driver pin 'cpu/dp/alu/start_i_reg__0/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:42]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/hi_oE[31] with 1st driver pin 'cpu/dp/alu/hi_o_reg[31]/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:86]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/hi_oE[31] with 2nd driver pin 'cpu/dp/alu/hi_o_reg[31]__0/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:49]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/hi_oE[30] with 1st driver pin 'cpu/dp/alu/hi_o_reg[30]/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:86]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/hi_oE[30] with 2nd driver pin 'cpu/dp/alu/hi_o_reg[30]__0/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:49]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/hi_oE[29] with 1st driver pin 'cpu/dp/alu/hi_o_reg[29]/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:86]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/hi_oE[29] with 2nd driver pin 'cpu/dp/alu/hi_o_reg[29]__0/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:49]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/hi_oE[28] with 1st driver pin 'cpu/dp/alu/hi_o_reg[28]/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:86]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/hi_oE[28] with 2nd driver pin 'cpu/dp/alu/hi_o_reg[28]__0/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:49]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/hi_oE[27] with 1st driver pin 'cpu/dp/alu/hi_o_reg[27]/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:86]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/hi_oE[27] with 2nd driver pin 'cpu/dp/alu/hi_o_reg[27]__0/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:49]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/hi_oE[26] with 1st driver pin 'cpu/dp/alu/hi_o_reg[26]/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:86]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/hi_oE[26] with 2nd driver pin 'cpu/dp/alu/hi_o_reg[26]__0/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:49]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/hi_oE[25] with 1st driver pin 'cpu/dp/alu/hi_o_reg[25]/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:86]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/hi_oE[25] with 2nd driver pin 'cpu/dp/alu/hi_o_reg[25]__0/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:49]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/hi_oE[24] with 1st driver pin 'cpu/dp/alu/hi_o_reg[24]/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:86]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/hi_oE[24] with 2nd driver pin 'cpu/dp/alu/hi_o_reg[24]__0/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:49]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/hi_oE[23] with 1st driver pin 'cpu/dp/alu/hi_o_reg[23]/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:86]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/hi_oE[23] with 2nd driver pin 'cpu/dp/alu/hi_o_reg[23]__0/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:49]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/hi_oE[22] with 1st driver pin 'cpu/dp/alu/hi_o_reg[22]/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:86]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/hi_oE[22] with 2nd driver pin 'cpu/dp/alu/hi_o_reg[22]__0/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:49]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/hi_oE[21] with 1st driver pin 'cpu/dp/alu/hi_o_reg[21]/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:86]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/hi_oE[21] with 2nd driver pin 'cpu/dp/alu/hi_o_reg[21]__0/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:49]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/hi_oE[20] with 1st driver pin 'cpu/dp/alu/hi_o_reg[20]/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:86]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/hi_oE[20] with 2nd driver pin 'cpu/dp/alu/hi_o_reg[20]__0/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:49]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/hi_oE[19] with 1st driver pin 'cpu/dp/alu/hi_o_reg[19]/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:86]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/hi_oE[19] with 2nd driver pin 'cpu/dp/alu/hi_o_reg[19]__0/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:49]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/hi_oE[18] with 1st driver pin 'cpu/dp/alu/hi_o_reg[18]/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:86]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/hi_oE[18] with 2nd driver pin 'cpu/dp/alu/hi_o_reg[18]__0/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:49]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/hi_oE[17] with 1st driver pin 'cpu/dp/alu/hi_o_reg[17]/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:86]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/hi_oE[17] with 2nd driver pin 'cpu/dp/alu/hi_o_reg[17]__0/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:49]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/hi_oE[16] with 1st driver pin 'cpu/dp/alu/hi_o_reg[16]/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:86]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/hi_oE[16] with 2nd driver pin 'cpu/dp/alu/hi_o_reg[16]__0/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:49]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/hi_oE[15] with 1st driver pin 'cpu/dp/alu/hi_o_reg[15]/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:86]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/hi_oE[15] with 2nd driver pin 'cpu/dp/alu/hi_o_reg[15]__0/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:49]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/hi_oE[14] with 1st driver pin 'cpu/dp/alu/hi_o_reg[14]/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:86]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/hi_oE[14] with 2nd driver pin 'cpu/dp/alu/hi_o_reg[14]__0/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:49]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/hi_oE[13] with 1st driver pin 'cpu/dp/alu/hi_o_reg[13]/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:86]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/hi_oE[13] with 2nd driver pin 'cpu/dp/alu/hi_o_reg[13]__0/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:49]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/hi_oE[12] with 1st driver pin 'cpu/dp/alu/hi_o_reg[12]/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:86]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/hi_oE[12] with 2nd driver pin 'cpu/dp/alu/hi_o_reg[12]__0/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:49]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/hi_oE[11] with 1st driver pin 'cpu/dp/alu/hi_o_reg[11]/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:86]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/hi_oE[11] with 2nd driver pin 'cpu/dp/alu/hi_o_reg[11]__0/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:49]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/hi_oE[10] with 1st driver pin 'cpu/dp/alu/hi_o_reg[10]/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:86]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/hi_oE[10] with 2nd driver pin 'cpu/dp/alu/hi_o_reg[10]__0/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:49]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/hi_oE[9] with 1st driver pin 'cpu/dp/alu/hi_o_reg[9]/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:86]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/hi_oE[9] with 2nd driver pin 'cpu/dp/alu/hi_o_reg[9]__0/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:49]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/hi_oE[8] with 1st driver pin 'cpu/dp/alu/hi_o_reg[8]/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:86]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/hi_oE[8] with 2nd driver pin 'cpu/dp/alu/hi_o_reg[8]__0/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:49]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/hi_oE[7] with 1st driver pin 'cpu/dp/alu/hi_o_reg[7]/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:86]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/hi_oE[7] with 2nd driver pin 'cpu/dp/alu/hi_o_reg[7]__0/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:49]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/hi_oE[6] with 1st driver pin 'cpu/dp/alu/hi_o_reg[6]/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:86]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/hi_oE[6] with 2nd driver pin 'cpu/dp/alu/hi_o_reg[6]__0/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:49]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/hi_oE[5] with 1st driver pin 'cpu/dp/alu/hi_o_reg[5]/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:86]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/hi_oE[5] with 2nd driver pin 'cpu/dp/alu/hi_o_reg[5]__0/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:49]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/hi_oE[4] with 1st driver pin 'cpu/dp/alu/hi_o_reg[4]/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:86]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/hi_oE[4] with 2nd driver pin 'cpu/dp/alu/hi_o_reg[4]__0/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:49]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/hi_oE[3] with 1st driver pin 'cpu/dp/alu/hi_o_reg[3]/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:86]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/hi_oE[3] with 2nd driver pin 'cpu/dp/alu/hi_o_reg[3]__0/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:49]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/hi_oE[2] with 1st driver pin 'cpu/dp/alu/hi_o_reg[2]/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:86]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/hi_oE[2] with 2nd driver pin 'cpu/dp/alu/hi_o_reg[2]__0/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:49]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/hi_oE[1] with 1st driver pin 'cpu/dp/alu/hi_o_reg[1]/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:86]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/hi_oE[1] with 2nd driver pin 'cpu/dp/alu/hi_o_reg[1]__0/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:49]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/hi_oE[0] with 1st driver pin 'cpu/dp/alu/hi_o_reg[0]/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:86]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/hi_oE[0] with 2nd driver pin 'cpu/dp/alu/hi_o_reg[0]__0/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:49]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/lo_oE[31] with 1st driver pin 'cpu/dp/alu/lo_o_reg[31]/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:87]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/lo_oE[31] with 2nd driver pin 'cpu/dp/alu/lo_o_reg[31]__0/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:50]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/lo_oE[30] with 1st driver pin 'cpu/dp/alu/lo_o_reg[30]/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:87]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/lo_oE[30] with 2nd driver pin 'cpu/dp/alu/lo_o_reg[30]__0/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:50]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/lo_oE[29] with 1st driver pin 'cpu/dp/alu/lo_o_reg[29]/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:87]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/lo_oE[29] with 2nd driver pin 'cpu/dp/alu/lo_o_reg[29]__0/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:50]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/lo_oE[28] with 1st driver pin 'cpu/dp/alu/lo_o_reg[28]/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:87]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/lo_oE[28] with 2nd driver pin 'cpu/dp/alu/lo_o_reg[28]__0/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:50]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/lo_oE[27] with 1st driver pin 'cpu/dp/alu/lo_o_reg[27]/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:87]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/lo_oE[27] with 2nd driver pin 'cpu/dp/alu/lo_o_reg[27]__0/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:50]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/lo_oE[26] with 1st driver pin 'cpu/dp/alu/lo_o_reg[26]/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:87]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/lo_oE[26] with 2nd driver pin 'cpu/dp/alu/lo_o_reg[26]__0/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:50]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/lo_oE[25] with 1st driver pin 'cpu/dp/alu/lo_o_reg[25]/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:87]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/lo_oE[25] with 2nd driver pin 'cpu/dp/alu/lo_o_reg[25]__0/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:50]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/lo_oE[24] with 1st driver pin 'cpu/dp/alu/lo_o_reg[24]/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:87]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/lo_oE[24] with 2nd driver pin 'cpu/dp/alu/lo_o_reg[24]__0/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:50]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/lo_oE[23] with 1st driver pin 'cpu/dp/alu/lo_o_reg[23]/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:87]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/lo_oE[23] with 2nd driver pin 'cpu/dp/alu/lo_o_reg[23]__0/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:50]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/lo_oE[22] with 1st driver pin 'cpu/dp/alu/lo_o_reg[22]/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:87]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/lo_oE[22] with 2nd driver pin 'cpu/dp/alu/lo_o_reg[22]__0/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:50]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/lo_oE[21] with 1st driver pin 'cpu/dp/alu/lo_o_reg[21]/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:87]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/lo_oE[21] with 2nd driver pin 'cpu/dp/alu/lo_o_reg[21]__0/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:50]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/lo_oE[20] with 1st driver pin 'cpu/dp/alu/lo_o_reg[20]/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:87]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/lo_oE[20] with 2nd driver pin 'cpu/dp/alu/lo_o_reg[20]__0/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:50]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/lo_oE[19] with 1st driver pin 'cpu/dp/alu/lo_o_reg[19]/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:87]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/lo_oE[19] with 2nd driver pin 'cpu/dp/alu/lo_o_reg[19]__0/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:50]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/lo_oE[18] with 1st driver pin 'cpu/dp/alu/lo_o_reg[18]/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:87]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/lo_oE[18] with 2nd driver pin 'cpu/dp/alu/lo_o_reg[18]__0/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:50]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/lo_oE[17] with 1st driver pin 'cpu/dp/alu/lo_o_reg[17]/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:87]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/lo_oE[17] with 2nd driver pin 'cpu/dp/alu/lo_o_reg[17]__0/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:50]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/lo_oE[16] with 1st driver pin 'cpu/dp/alu/lo_o_reg[16]/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:87]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/lo_oE[16] with 2nd driver pin 'cpu/dp/alu/lo_o_reg[16]__0/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:50]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/lo_oE[15] with 1st driver pin 'cpu/dp/alu/lo_o_reg[15]/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:87]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin cpu/dp/lo_oE[15] with 2nd driver pin 'cpu/dp/alu/lo_o_reg[15]__0/Q' [C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.srcs/sources_1/imports/new/ALU.v:50]
+INFO: [Common 17-14] Message 'Synth 8-6859' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|       65|Failed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:16 ; elapsed = 00:01:25 . Memory (MB): peak = 915.340 ; gain = 644.703
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:16 ; elapsed = 00:01:25 . Memory (MB): peak = 915.340 ; gain = 644.703
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:16 ; elapsed = 00:01:25 . Memory (MB): peak = 915.340 ; gain = 644.703
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:17 ; elapsed = 00:01:26 . Memory (MB): peak = 915.340 ; gain = 644.703
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:17 ; elapsed = 00:01:26 . Memory (MB): peak = 915.340 ; gain = 644.703
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |inst_mem      |         1|
+|2     |data_mem      |         1|
++------+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |data_mem |     1|
+|2     |inst_mem |     1|
+|3     |BUFG     |     4|
+|4     |CARRY4   |   157|
+|5     |DSP48E1  |     8|
+|6     |LUT1     |   228|
+|7     |LUT2     |   536|
+|8     |LUT3     |   266|
+|9     |LUT4     |   187|
+|10    |LUT5     |   447|
+|11    |LUT6     |   904|
+|12    |MUXF7    |    11|
+|13    |RAM32M   |    12|
+|14    |FDRE     |   980|
+|15    |FDSE     |     1|
+|16    |LD       |   117|
+|17    |IBUF     |     2|
++------+---------+------+
+
+Report Instance Areas: 
++------+---------------+----------------------------+------+
+|      |Instance       |Module                      |Cells |
++------+---------------+----------------------------+------+
+|1     |top            |                            |  3924|
+|2     |  cpu          |Nestor                      |  3839|
+|3     |    c          |controller                  |   223|
+|4     |      CMP      |comparator                  |     1|
+|5     |      ad       |aludec                      |    23|
+|6     |      md       |maindec                     |    19|
+|7     |      regE     |flopenrc                    |   168|
+|8     |      regM     |flopr__parameterized0       |     4|
+|9     |      regW     |flopr                       |     8|
+|10    |    dp         |datapath                    |  3616|
+|11    |      fwdHiMux |mux3                        |    32|
+|12    |      fwdLoMux |mux3_0                      |    32|
+|13    |      CP0      |cp0_reg                     |   211|
+|14    |      HiLo     |hilo_reg                    |   128|
+|15    |      alu      |ALU                         |   838|
+|16    |        my_div |div                         |   474|
+|17    |      pcreg    |flopenr                     |    40|
+|18    |      r10E     |flopenrc__parameterized0    |    71|
+|19    |      r1D      |flopenrc__parameterized0_1  |    62|
+|20    |      r1E      |flopenrc__parameterized0_2  |    32|
+|21    |      r1W      |flopr__parameterized1       |    96|
+|22    |      r2D      |flopenrc__parameterized0_3  |   200|
+|23    |      r2E      |flopenrc__parameterized0_4  |    32|
+|24    |      r2M      |flopr__parameterized1_5     |    42|
+|25    |      r3E      |flopenrc__parameterized0_6  |   103|
+|26    |      r3M      |flopr__parameterized1_7     |    32|
+|27    |      r3W      |flopr__parameterized2       |    82|
+|28    |      r4E      |flopenrc__parameterized1    |    13|
+|29    |      r4M      |flopr__parameterized1_8     |    32|
+|30    |      r4W      |flopr__parameterized1_9     |    97|
+|31    |      r5E      |flopenrc__parameterized1_10 |   446|
+|32    |      r5M      |flopr__parameterized2_11    |     6|
+|33    |      r5W      |flopr__parameterized1_12    |    32|
+|34    |      r6E      |flopenrc__parameterized1_13 |   671|
+|35    |      r7E      |flopenrc__parameterized1_14 |   210|
+|36    |      r8E      |flopenrc__parameterized0_15 |    32|
+|37    |      r9E      |flopenrc__parameterized0_16 |    32|
+|38    |      rf       |Register                    |    12|
++------+---------------+----------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:17 ; elapsed = 00:01:26 . Memory (MB): peak = 915.340 ; gain = 644.703
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 199 critical warnings and 84 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:02 ; elapsed = 00:01:14 . Memory (MB): peak = 915.340 ; gain = 291.215
+Synthesis Optimization Complete : Time (s): cpu = 00:01:17 ; elapsed = 00:01:27 . Memory (MB): peak = 915.340 ; gain = 644.703
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 305 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 1 inverter(s) to 12 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 915.340 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 129 instances were transformed.
+  LD => LDCE: 117 instances
+  RAM32M => RAM32M (inverted pins: WCLK) (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 12 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+110 Infos, 212 Warnings, 169 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:22 ; elapsed = 00:01:34 . Memory (MB): peak = 915.340 ; gain = 651.129
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 915.340 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/a/Desktop/MIPS32_SOC_lite/pipelineX.runs/synth_1/soc_lite_top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file soc_lite_top_utilization_synth.rpt -pb soc_lite_top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sun Dec 15 20:34:36 2019...

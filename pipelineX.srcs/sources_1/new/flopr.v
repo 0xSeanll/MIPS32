@@ -21,12 +21,12 @@
 
 
 module flopr #(parameter N=32) (
-	input clk, rst,
+	input CLK, RST,
 	input [N-1:0] dataIn,
 	output reg [N-1:0] dataOut
     );
-    always @(posedge clk) begin
-    	if (rst != 1) begin 
+    always @(posedge CLK) begin
+    	if (RST != 1) begin 
     		dataOut <= dataIn;
     	end else begin
     		dataOut <= 0;

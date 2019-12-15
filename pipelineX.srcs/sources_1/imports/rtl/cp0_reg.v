@@ -21,8 +21,8 @@
 
 `include "defines.vh"
 module cp0_reg(
-	input wire clk,
-	input wire rst,
+	input wire CLK,
+	input wire RST,
 
 	input wire we_i,
 	input[4:0] waddr_i,
@@ -48,8 +48,8 @@ module cp0_reg(
 	output reg timer_int_o
     );
 
-	always @(posedge clk) begin
-		if(rst == `RstEnable) begin
+	always @(posedge CLK) begin
+		if(RST == `RstEnable) begin
 			count_o <= `ZeroWord;
 			compare_o <= `ZeroWord;
 			status_o <= 32'b00010000000000000000000000000000;
@@ -197,7 +197,7 @@ module cp0_reg(
 	end
 
 	always @(*) begin
-		if(rst == `RstEnable) begin
+		if(RST == `RstEnable) begin
 			/* code */
 			data_o <= `ZeroWord;
 		end else begin 

@@ -34,8 +34,8 @@
 
 module div(
 
-	input wire clk,
-	input wire rst,
+	input wire CLK,
+	input wire RST,
 	
 	input wire signed_div_i,
 	input wire[31:0] opdata1_i,
@@ -57,8 +57,8 @@ module div(
 	
 	assign div_temp = {1'b0,dividend[63:32]} - {1'b0,divisor};
 
-	always @ (posedge clk) begin
-		if (rst == `RstEnable) begin
+	always @ (posedge CLK) begin
+		if (RST == `RstEnable) begin
 			state <= `DivFree;
 			ready_o <= `DivResultNotReady;
 			result_o <= {`ZeroWord,`ZeroWord};
